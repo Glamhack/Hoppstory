@@ -42,46 +42,103 @@
     return d ? String(d).slice(0, 4) : '';
   }
 
-  // URL of a displayable image for a medium. Memobase links point to an HTML
-  // viewer; the same image is served as JPEG through its IIIF endpoint.
+  // URL of a displayable image for a medium. Some sources link to an HTML page
+  // about the image rather than the image itself:
+  // - Memobase viewer -> the same image as JPEG through its IIIF endpoint
+  // - Wikimedia Commons file page (…/wiki/File:Name.jpg) -> Special:FilePath,
+  //   which redirects to a scaled copy of the actual image
   function imageSrc(url) {
-    const memo = String(url).match(/^(https:\/\/media\.memobase\.ch\/memo\/[^/?#]+)\/viewer/);
+    const s = String(url);
+    const memo = s.match(/^(https:\/\/media\.memobase\.ch\/memo\/[^/?#]+)\/viewer/);
     if (memo) return `${memo[1]}/iiif/full/600,/0/default.jpg`;
+    const commons = s.match(/^https:\/\/commons\.(?:m\.)?wikimedia\.org\/wiki\/File:([^?#]+)/);
+    if (commons) return `https://commons.wikimedia.org/wiki/Special:FilePath/${commons[1]}?width=800`;
     return url;
   }
 
-  // Photo carousel: one photo at a time, with previous/next buttons, a counter and
-  // swipe on touch screens. Each photo opens the full image in a new tab.
-  // Images that fail to load (e.g. expired links) are dropped from the carousel.
-  function photosHtml(photos) {
-    if (!photos.length) return '';
-    const figs = photos.map((m, i) => {
+  // Embeddable player URL for a video medium, or null if the source has none:
+  // - Memobase player (media.memobase.ch/memo/<id>/viewer…) -> as is, without query
+  // - Memobase record page (memobase.ch/<lang>/object/<id>) -> its player, <id>-1/viewer
+  //   (record pages themselves refuse to be embedded)
+  // - SRF Play (…?urn=urn:srf:video:<id>) -> SRF's embed player
+  function videoEmbedSrc(url) {
+    const s = String(url);
+    let m = s.match(/^https:\/\/media\.memobase\.ch\/memo\/([A-Za-z0-9_.-]+)\/viewer/);
+    if (m) return `https://media.memobase.ch/memo/${m[1]}/viewer`;
+    m = s.match(/^https:\/\/(?:www\.)?memobase\.ch\/[a-z]{2}\/object\/([A-Za-z0-9_.-]+)/);
+    if (m) return `https://media.memobase.ch/memo/${m[1]}-1/viewer`;
+    m = s.match(/^https:\/\/(?:www\.)?srf\.ch\/play\/.*[?&]urn=(urn:srf:video:[0-9a-f-]+)/i);
+    if (m) return `https://www.srf.ch/play/embed?urn=${m[1]}`;
+    return null;
+  }
+
+  // Name of a video's source, for the "watch at the source" link.
+  function sourceName(url) {
+    if (/memobase\.ch/.test(url)) return 'Memobase';
+    if (/srf\.ch/.test(url)) return 'SRF Play';
+    return 'der Quelle';
+  }
+
+  // Media carousel: one photo or video at a time, with previous/next buttons, a
+  // counter and swipe on touch screens. Photos come first, then videos.
+  // Photos open the full image in a new tab; images that fail to load (e.g.
+  // expired links) are dropped. Videos play in the source's embedded player,
+  // which is only loaded while its slide is shown (see showPhoto).
+  function mediaHtml(media) {
+    const items = [...media.filter((m) => m.typ === 'Foto'), ...media.filter((m) => m.typ !== 'Foto')];
+    if (!items.length) return '';
+    const figs = items.map((m, i) => {
       const caption = m.legende || m.titel || '';
-      return `<figure class="popup-photo"${i ? ' hidden' : ''}>
-          <a href="${esc(m.url)}" target="_blank" rel="noopener">
+      let body;
+      if (m.typ === 'Foto') {
+        body = `<a href="${esc(m.url)}" target="_blank" rel="noopener">
             <img src="${esc(imageSrc(m.url))}" alt="${esc(caption)}" loading="lazy" onerror="hoppPhotoFailed(this)">
-          </a>
+          </a>`;
+      } else {
+        const embed = videoEmbedSrc(m.url);
+        // Memobase films are mostly 4:3 and its player scrolls inside a wider
+        // frame, so it gets a 4:3 frame; SRF is 16:9. scrolling="no" hides the
+        // player's own scrollbar in any case.
+        const ratio = embed && embed.includes('memobase.ch') ? ' media-frame-4x3' : '';
+        body = embed
+          ? `<div class="media-frame${ratio}">
+              <iframe data-src="${esc(embed)}"${i === 0 ? ` src="${esc(embed)}"` : ''} title="${esc(caption || 'Video')}"
+                      scrolling="no" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>`
+          : `<a class="media-frame media-placeholder" href="${esc(m.url)}" target="_blank" rel="noopener">&#9654; Video ansehen</a>`;
+        body += `<a class="media-source" href="${esc(m.url)}" target="_blank" rel="noopener">Video bei ${sourceName(m.url)} öffnen &#8599;</a>`;
+      }
+      return `<figure class="popup-photo"${i ? ' hidden' : ''}>
+          ${body}
           ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
           ${m.credits ? `<div class="popup-credits">${esc(m.credits)}</div>` : ''}
         </figure>`;
     }).join('');
-    const nav = photos.length > 1 ? '' : ' hidden';
+    const nav = items.length > 1 ? '' : ' hidden';
     return `<div class="carousel" data-index="0">
         <div class="carousel-track">${figs}</div>
         <div class="carousel-nav"${nav}>
-          <button type="button" class="carousel-btn" data-step="-1" aria-label="Vorheriges Foto">&#8249;</button>
-          <span class="carousel-count">1 / ${photos.length}</span>
-          <button type="button" class="carousel-btn" data-step="1" aria-label="Nächstes Foto">&#8250;</button>
+          <button type="button" class="carousel-btn" data-step="-1" aria-label="Vorheriges Medium">&#8249;</button>
+          <span class="carousel-count">1 / ${items.length}</span>
+          <button type="button" class="carousel-btn" data-step="1" aria-label="Nächstes Medium">&#8250;</button>
         </div>
       </div>`;
   }
 
-  // Show photo number `index` (wrapping around) and update the counter.
+  // Show slide number `index` (wrapping around) and update the counter.
+  // A video player is loaded when its slide is shown and unloaded when it is
+  // hidden, so a video stops playing as soon as you move to another slide.
   function showPhoto(carousel, index) {
     const figs = carousel.querySelectorAll('.popup-photo');
     if (!figs.length) { carousel.remove(); return; }
     const i = ((index % figs.length) + figs.length) % figs.length;
-    figs.forEach((f, k) => { f.hidden = k !== i; });
+    figs.forEach((f, k) => {
+      f.hidden = k !== i;
+      const frame = f.querySelector('iframe[data-src]');
+      if (!frame) return;
+      if (k === i && !frame.getAttribute('src')) frame.setAttribute('src', frame.dataset.src);
+      if (k !== i && frame.getAttribute('src')) frame.removeAttribute('src');
+    });
     carousel.dataset.index = i;
     carousel.querySelector('.carousel-count').textContent = `${i + 1} / ${figs.length}`;
     carousel.querySelector('.carousel-nav').hidden = figs.length < 2;
@@ -149,7 +206,7 @@
   // Austragungen with a year badge each (oldest first).
   // opts.link: URL of the event page, shown as a link at the bottom (popups).
   // opts.description: true to add the event description at the bottom (event page).
-  function eventHtml(event, group, photos, color, opts = {}) {
+  function eventHtml(event, group, media, color, opts = {}) {
     const locations = [...new Set(group.map((a) => a.location).filter(Boolean))];
     const items = group
       .slice()
@@ -176,7 +233,7 @@
         </header>
         <div class="popup-body">
           ${locations.length ? `<div class="popup-location">${LOCATION_ICON}${esc(locations.join(' · '))}</div>` : ''}
-          ${photosHtml(photos)}
+          ${mediaHtml(media)}
           <div class="popup-heading">Austragungen</div>
           <ul class="popup-editions">${items}</ul>
           ${opts.description && event && event.beschreibung ? `
@@ -213,8 +270,8 @@
   }
 
   // Austragung page: header in the event colour (Austragung name, link to its
-  // event), location, exact start and end date, its photos, and the Rangliste.
-  function austragungHtml(a, event, photos, color) {
+  // event), location, exact start and end date, its photos and videos, and the Rangliste.
+  function austragungHtml(a, event, media, color) {
     return `
       <div class="event-popup" style="--event-color: ${color}">
         <header class="popup-header">
@@ -230,7 +287,7 @@
             <div><dt>Startdatum</dt><dd>${esc(singleDate(a.datumStart))}</dd></div>
             <div><dt>Enddatum</dt><dd>${esc(singleDate(a.datumEnde))}</dd></div>
           </dl>
-          ${photosHtml(photos)}
+          ${mediaHtml(media)}
           <div class="popup-heading">Rangliste</div>
           ${rankingHtml(a.rangliste)}
           ${event ? `<a class="popup-more" href="${esc(eventPageUrl(event.id))}">Alle Austragungen von ${esc(event.name)} &rarr;</a>` : ''}
@@ -321,7 +378,7 @@
   }
 
   // Prepares the exported data for display: event lookup, event colours,
-  // Austragungen linked to their event, and photos. Shared by map and event page.
+  // Austragungen linked to their event, and media. Shared by map and pages.
   function prepare(data) {
     const eventsById = new Map((data.events || []).map((e) => [e.id, e]));
     const colorByEvent = new Map();
@@ -333,21 +390,21 @@
     }
     (data.events || []).forEach((e) => colorFor(e.id));
 
-    // Photos per Austragung and per event (medien with typ "Foto" and a URL).
-    const photosByAustragung = new Map();
-    const photosByEvent = new Map();
+    // Photos and videos per Austragung and per event (medien of typ "Foto" or "Video" with a URL).
+    const mediaByAustragung = new Map();
+    const mediaByEvent = new Map();
     (data.medien || []).forEach((m) => {
-      if (m.typ !== 'Foto' || !m.url) return;
-      const [map, id] = m.austragungId ? [photosByAustragung, m.austragungId] : [photosByEvent, m.eventId];
+      if ((m.typ !== 'Foto' && m.typ !== 'Video') || !m.url) return;
+      const [map, id] = m.austragungId ? [mediaByAustragung, m.austragungId] : [mediaByEvent, m.eventId];
       if (!id) return;
       if (!map.has(id)) map.set(id, []);
       map.get(id).push(m);
     });
-    // Photos of these Austragungen plus the photos of the event as a whole.
-    function photosFor(items, eventId) {
+    // Media of these Austragungen plus the media of the event as a whole.
+    function mediaFor(items, eventId) {
       return [
-        ...items.flatMap((it) => photosByAustragung.get(it.id) || []),
-        ...(photosByEvent.get(eventId) || []),
+        ...items.flatMap((it) => mediaByAustragung.get(it.id) || []),
+        ...(mediaByEvent.get(eventId) || []),
       ];
     }
 
@@ -361,7 +418,7 @@
       return guess ? { ...a, eventId: guess.id } : a;
     });
 
-    return { eventsById, colorFor, photosFor, austragungen };
+    return { eventsById, colorFor, mediaFor, austragungen };
   }
 
   // For the event and Austragung pages (js/event-page.js, js/austragung-page.js).
@@ -369,7 +426,7 @@
 
   // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
   window.buildEventLayer = function buildEventLayer(data, options = {}) {
-    const { eventsById, colorFor, photosFor, austragungen } = prepare(data);
+    const { eventsById, colorFor, mediaFor, austragungen } = prepare(data);
 
     // Group Austragungen by event + start point (+ end point if it is a route).
     const groups = new Map();
@@ -386,8 +443,8 @@
       const event = eventsById.get(items[0].eventId);
       const color = colorFor(items[0].eventId);
       const title = event ? event.name : items[0].name;
-      const photos = photosFor(items, items[0].eventId);
-      const html = eventHtml(event, items, photos, color, { link: event ? eventPageUrl(event.id) : null });
+      const media = mediaFor(items, items[0].eventId);
+      const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null });
       const a = [start.lat, start.lng];
 
       if (!end) {
