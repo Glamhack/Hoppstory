@@ -23,7 +23,33 @@
     return d ? String(d).slice(0, 4) : '';
   }
 
-  function popupHtml(event, group) {
+  // URL of a displayable image for a medium. Memobase links point to an HTML
+  // viewer; the same image is served as JPEG through its IIIF endpoint.
+  function imageSrc(url) {
+    const memo = String(url).match(/^(https:\/\/media\.memobase\.ch\/memo\/[^/?#]+)\/viewer/);
+    if (memo) return `${memo[1]}/iiif/full/600,/0/default.jpg`;
+    return url;
+  }
+
+  // Horizontally scrollable strip of photos; each opens the full image in a new tab.
+  // Images that fail to load (e.g. expired links) are removed from the strip.
+  function photosHtml(photos) {
+    if (!photos.length) return '';
+    const figs = photos.map((m) => {
+      const caption = m.legende || m.titel || '';
+      return `<figure class="popup-photo">
+          <a href="${esc(m.url)}" target="_blank" rel="noopener">
+            <img src="${esc(imageSrc(m.url))}" alt="${esc(caption)}" loading="lazy"
+                 onerror="var f=this.closest('figure'),s=f.parentNode;f.remove();if(!s.children.length)s.remove();">
+          </a>
+          ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
+          ${m.credits ? `<div class="popup-credits">${esc(m.credits)}</div>` : ''}
+        </figure>`;
+    }).join('');
+    return `<div class="popup-photos">${figs}</div>`;
+  }
+
+  function popupHtml(event, group, photos = []) {
     const items = group
       .slice()
       .sort((a, b) => String(a.datumStart).localeCompare(String(b.datumStart)))
@@ -35,6 +61,7 @@
         ${event && event.sportart ? `<div class="popup-sport">${esc(event.sportart)}</div>` : ''}
         <div class="popup-location">${esc(group[0].location)}</div>
         <ul>${items}</ul>
+        ${photosHtml(photos)}
       </div>`;
   }
 
@@ -87,6 +114,8 @@
     });
   }
 
+  const POPUP_OPTS = { maxWidth: 280, minWidth: 220 };
+
   window.buildEventLayer = function buildEventLayer(data) {
     const eventsById = new Map((data.events || []).map((e) => [e.id, e]));
     const colorByEvent = new Map();
@@ -97,6 +126,17 @@
       return colorByEvent.get(eventId);
     }
     (data.events || []).forEach((e) => colorFor(e.id));
+
+    // Photos per Austragung and per event (medien with typ "Foto" and a URL).
+    const photosByAustragung = new Map();
+    const photosByEvent = new Map();
+    (data.medien || []).forEach((m) => {
+      if (m.typ !== 'Foto' || !m.url) return;
+      const [map, id] = m.austragungId ? [photosByAustragung, m.austragungId] : [photosByEvent, m.eventId];
+      if (!id) return;
+      if (!map.has(id)) map.set(id, []);
+      map.get(id).push(m);
+    });
 
     // Group Austragungen by event + start point (+ end point if it is a route).
     const groups = new Map();
@@ -113,19 +153,23 @@
       const event = eventsById.get(items[0].eventId);
       const color = colorFor(items[0].eventId);
       const title = event ? event.name : items[0].name;
-      const html = popupHtml(event, items);
+      const photos = [
+        ...items.flatMap((it) => photosByAustragung.get(it.id) || []),
+        ...(photosByEvent.get(items[0].eventId) || []),
+      ];
+      const html = popupHtml(event, items, photos);
       const a = [start.lat, start.lng];
 
       if (!end) {
-        layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html));
+        layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html, POPUP_OPTS));
         return;
       }
       // Route: start pin, end pin and a straight line between them, all opening the same popup.
       const b = [end.lat, end.lng];
       layers.push(
-        L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' }).bindPopup(html),
-        L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html),
-        L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html),
+        L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' }).bindPopup(html, POPUP_OPTS),
+        L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html, POPUP_OPTS),
+        L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html, POPUP_OPTS),
       );
     });
     return L.featureGroup(layers);

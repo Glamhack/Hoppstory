@@ -1,23 +1,530 @@
 {
-  "exportiert": "2026-11-13T14:50:00.000Z",
+  "exportiert": "2026-11-13T16:42:54.719Z",
   "events": [
-    { "id": "E001", "name": "Rallye International du Valais", "beschreibung": "Testdaten: Rallye im Wallis.", "sportart": "Motorsport (Rallye)" },
-    { "id": "E002", "name": "Grosser Preis der Schweiz (Bremgarten)", "beschreibung": "Testdaten: Rundstreckenrennen im Bremgartenwald bei Bern.", "sportart": "Motorsport (Rundstrecke)" },
-    { "id": "E003", "name": "Engadin Skimarathon", "beschreibung": "Testdaten: Langlaufrennen im Oberengadin.", "sportart": "Langlauf" }
+    {
+      "id": "E001",
+      "name": "Bergrennen Tiefencastel-Lenzerheide",
+      "beschreibung": "Das Bergrennen Tiefencastel–Lenzerheide war ein klassisches Automobil-Bergrennen (Hillclimb) im Schweizer Kanton Graubünden, das 1951 und 1957 auf einer abgesperrten öffentlichen Bergstrasse ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer einzeln nacheinander gegen die Stoppuhr, um die 6,25 Kilometer lange und kurvenreiche Strecke mit über 500 Höhenmetern so schnell wie möglich zu bewältigen. Während die erste Austragung 1951 ein nationales Rennen zur Wiederbelebung des Schweizer Motorsports nach dem Krieg war, zählte das zweite Rennen 1957 bereits als hochkarätiger Lauf zur offiziellen Europa-Bergmeisterschaft. Heute lebt die Tradition durch die Lenzerheide Motor Classics weiter, allerdings als reine Demonstrationsfahrt ohne Zeitnahme auf einem kürzeren Rundkurs.",
+      "sportart": "Automobil Bergrennen"
+    },
+    {
+      "id": "E002",
+      "name": "Klausenrennen",
+      "beschreibung": "Das Klausenrennen war ein legendäres internationales Bergrennen für Automobile und Motorräder, das zwischen 1922 und 1934 zehnmal auf der unbefestigten Klausenpassstrasse ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer einzeln gegen die Stoppuhr, um die gefährliche, 21,5 Kilometer lange Strecke von Linthal (GL) über 136 Kurven und rund 1'240 Höhenmeter hinauf bis zur Passhöhe (UR) zu bewältigen. Der Wettbewerb galt als das bekannteste und härteste Bergrennen Europas sowie als «Grosser Bergpreis der Schweiz», der Weltstars und Werksteams wie die berühmten Silberpfeile anzog. Heute lebt der Mythos durch regelmässige Oldtimer-Gedenkfahrten wie das geplante Klausenrennen Revival weiter.",
+      "sportart": "Automobil Bergrennen"
+    },
+    {
+      "id": "E003",
+      "name": "Grand-Prix Bern",
+      "beschreibung": "Der Grand-Prix von Bern (historisch bekannt als Grosser Preis der Schweiz) war ein legendäres internationales Rundstreckenrennen für Automobile und Motorräder, das zwischen 1934 und 1954 auf der Bremgarten-Rundstrecke im Bremgartenwald bei Bern ausgetragen wurde. Im direkten Massenstart-Rennen kämpften die Fahrer auf dem 7,28 Kilometer langen, extrem schnellen und gefährlichen Naturstrassenkurs mit seinen langen Waldpassagen und tückischen Licht-Schatten-Wechseln um den Sieg. Ab 1950 zählte das Rennen offiziell zur neu geschaffenen Formel-1-Weltmeisterschaft (sowie zur Motorrad-WM) und zog über 100'000 Zuschauer sowie Legenden wie Rudolf Caracciola oder Juan Manuel Fangio an. Nach dem schweren Unfall in Le Mans 1955 und dem anschliessenden Rundstreckenverbot in der Schweiz wurde der Rennbetrieb eingestellt, doch vereinzelt erinnern heute noch Gedenkveranstaltungen wie das GP Suisse Memorial an diese Ära.",
+      "sportart": "Automobil Rundstreckenrennen"
+    }
   ],
   "austragungen": [
-    { "id": "A001", "name": "Rallye du Valais 1990", "eventId": "E001", "location": "Sion", "start": { "lat": 46.2331, "lng": 7.3606 }, "ende": { "lat": 46.1024, "lng": 7.0727 }, "datumStart": "1990-10-18", "datumEnde": "1990-10-20", "rangliste": "Testdaten: 1. Fahrer A, 2. Fahrer B, 3. Fahrer C" },
-    { "id": "A002", "name": "Rallye du Valais 2010", "eventId": "E001", "location": "Crans-Montana", "start": { "lat": 46.3108, "lng": 7.48 }, "ende": { "lat": 46.292, "lng": 7.5323 }, "datumStart": "2010-10-28", "datumEnde": "2010-10-30", "rangliste": "Testdaten: 1. Fahrer D, 2. Fahrer E" },
-    { "id": "A003", "name": "GP Bremgarten 1950", "eventId": "E002", "location": "Bremgarten, Bern", "start": { "lat": 46.9655, "lng": 7.4105 }, "ende": { "lat": 46.9655, "lng": 7.4105 }, "datumStart": "1950-06-04", "datumEnde": "1950-06-04", "rangliste": "Testdaten: 1. Fahrer F, 2. Fahrer G" },
-    { "id": "A004", "name": "GP Bremgarten 1954", "eventId": "E002", "location": "Bremgarten, Bern", "start": { "lat": 46.9655, "lng": 7.4105 }, "ende": null, "datumStart": "1954-08-22", "datumEnde": null, "rangliste": null },
-    { "id": "A005", "name": "Engadin Skimarathon 2020", "eventId": "E003", "location": "Maloja – S-chanf", "start": { "lat": 46.404, "lng": 9.695 }, "ende": { "lat": 46.612, "lng": 9.987 }, "datumStart": "2020-03-08", "datumEnde": "2020-03-08", "rangliste": "Testdaten: 1. Läuferin H, 2. Läufer I" }
+    {
+      "id": "A001",
+      "name": "Bergrennen Tiefencastel-Lenzerheide 1957",
+      "location": "Tiefencastel-Lenzerheide",
+      "start": {
+        "lat": 46.664303990210506,
+        "lng": 9.586191454011402
+      },
+      "ende": {
+        "lat": 46.6962616294476,
+        "lng": 9.558598309800137
+      },
+      "datumStart": "1957",
+      "datumEnde": null,
+      "rangliste": "Lenzerheide (Switzerland)  (Aug. 25th)\r\n\r\n1st: W. von Trips (Porsche 1,680-c.c.)\r\n\r\n2nd: R. von Frankenberg (Porsche 1,585-c.c.)\r\n\r\n3rd: W. Daetwyler (Maserati 200S)\r\n\r\n4th: H. Herrmann (Borgward 1500RS)\r\n\r\n5th: P. Monteverdi (Ferrari 750S)\r\n\r\n6th: T. Sopwith (Cooper F2)",
+      "eventId": null
+    },
+    {
+      "id": "A002",
+      "name": "11. Klausenrennen",
+      "location": "Klausenpass",
+      "start": {
+        "lat": 46.91980336827304,
+        "lng": 8.993024055507899
+      },
+      "ende": {
+        "lat": 46.86978264811088,
+        "lng": 8.858000506635708
+      },
+      "datumStart": null,
+      "datumEnde": null,
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A003",
+      "name": "Klausenrennen",
+      "location": "Klausenpass",
+      "start": {
+        "lat": 46.91980336827304,
+        "lng": 8.993024055507899
+      },
+      "ende": {
+        "lat": 46.86978264811088,
+        "lng": 8.858000506635708
+      },
+      "datumStart": "1934",
+      "datumEnde": "1934",
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A004",
+      "name": "Bergrennen Tiefencastel-Lenzerheide 1951",
+      "location": "Tiefencastel-Lenzerheide",
+      "start": {
+        "lat": 46.664303990210506,
+        "lng": 9.586191454011402
+      },
+      "ende": {
+        "lat": 46.6962616294476,
+        "lng": 9.558598309800137
+      },
+      "datumStart": "1951",
+      "datumEnde": null,
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A007",
+      "name": "2. International Klausenrennen 1923",
+      "location": "Klausenpass",
+      "start": {
+        "lat": 46.91980336827304,
+        "lng": 8.993024055507899
+      },
+      "ende": {
+        "lat": 46.86978264811088,
+        "lng": 8.858000506635708
+      },
+      "datumStart": "1923-07-29",
+      "datumEnde": "1923-07-29",
+      "rangliste": "2. Platz: Walter Kaufmann (Rennfahrer)",
+      "eventId": null
+    },
+    {
+      "id": "A005",
+      "name": "Grand Prix, Bern 1954",
+      "location": "Bern",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "datumStart": "1954-08-21",
+      "datumEnde": "1954-08-22",
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A006",
+      "name": "Grand Prix Bern 1950",
+      "location": "Bern",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "datumStart": "1950-06-03",
+      "datumEnde": "1950-06-04",
+      "rangliste": null,
+      "eventId": null
+    }
   ],
   "medien": [
-    { "id": "M001", "url": "https://picsum.photos/seed/glam1/800/600", "legende": "Testbild: Start in Sion", "typ": "Foto", "credits": "Platzhalter (picsum.photos)", "eventId": "E001", "austragungId": "A001" },
-    { "id": "M002", "url": "https://picsum.photos/seed/glam2/800/600", "legende": "Testbild: Sonderprüfung", "typ": "Foto", "credits": "Platzhalter (picsum.photos)", "eventId": "E001", "austragungId": "A002" },
-    { "id": "M003", "url": "https://picsum.photos/seed/glam3/800/600", "legende": "Testbild: Boxengasse", "typ": "Foto", "credits": "Platzhalter (picsum.photos)", "eventId": "E002", "austragungId": "A003" },
-    { "id": "M004", "url": "https://example.org/test-interview.mp3", "legende": "Test-Audio: Interview (Platzhalter-URL)", "typ": "Audio", "credits": "Platzhalter", "eventId": "E002", "austragungId": null },
-    { "id": "M005", "url": "https://example.org/test-video.mp4", "legende": "Test-Video: Zieleinlauf (Platzhalter-URL)", "typ": "Video", "credits": "Platzhalter", "eventId": "E003", "austragungId": "A005" },
-    { "id": "M006", "url": "https://example.org/test-artikel.html", "legende": "Test-Text: Zeitungsartikel (Platzhalter-URL)", "typ": "Text", "credits": "Platzhalter", "eventId": "E003", "austragungId": null }
+    {
+      "id": "M001",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/3df4677d-ac87-483c-92cc-4716a7ae4a09?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0001-Screen.jpg&rsct=image%2Fjpeg&sig=cs0Dg%2B5TdZnIDtoXcG5X0U2RK2diPcragMbo%2F9jUdmk%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": null,
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0001",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M002",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/51251bcf-8199-47cd-b624-acb420ebe4c8?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0002-Screen.jpg&rsct=image%2Fjpeg&sig=%2FZ%2BWegMl1W4hiqjGAN%2FQOc9iNQ94C61Jy3V7hnx7FdE%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Attilio Buffa, Maserati 200S.",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0002",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M002",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/04105133-2123-4e23-8534-374a57668b5c?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0003-Screen.jpg&rsct=image%2Fjpeg&sig=uVVHbFq6Z0%2Fi4YruY06kHYhg%2Bs07ZZ8pUJSKG4jP06I%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Richard von Frankenberg, Porsche 550.",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0003",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M003",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/db2bd869-0d33-48ee-9e78-695ef6fb44d2?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0004-Screen.jpg&rsct=image%2Fjpeg&sig=fWrD419MWFdOjbU0mrKpaPxGl2mCMMqKie8YjHsR8Jo%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: August 25, 1957 Maserati 200SI with Willy-Peter Daetwyler - Background at the top: Viglia veia Gelgia",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0004",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M004",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/7a7bf89d-12fc-4ce7-916c-632ec34f730d?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0005-Screen.jpg&rsct=image%2Fjpeg&sig=gY9LJc9qR%2F8tFEXmmDn8ufGh92btzsps7kntKApp5P8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": null,
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0005",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M005",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/b2e972ac-81a4-4b37-b23f-f7a9ec038a29?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0006-Screen.jpg&rsct=image%2Fjpeg&sig=ZSI9rQcfXkucG59NHiRHVLbELBT5vr9sfimSn2m7uTs%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: August 25, 1957. Porsche 550 with Wolfgang Graf Berghe von Trips—in the background on the left: Viglia veia Gelgia",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0006",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M006",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/1c166494-2348-46ad-8aa0-e666419c1cb1?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0007-Screen.jpg&rsct=image%2Fjpeg&sig=0r2nqEYX35tZkqBb%2Bkq07i9xpK3im38E%2FHlkzsTF7m8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: August 25, 1957. Maserati 200SI with Willy-Peter Daetwyler—in the background, center: Viglia veia Gelgia",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0007",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M007",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/8c5ac986-113b-4943-8135-52e1e263e04c?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0008-Screen.jpg&rsct=image%2Fjpeg&sig=muL4ibnovoOo%2Flr78QkONGFheKtusVIvHgJ1rRoUPY0%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: August 25, 1957. Borgward RS with Hans Herrmann[?]",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0008",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M008",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c8e12fc1-32e6-499f-9a8a-170078175245?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0009-Screen.jpg&rsct=image%2Fjpeg&sig=pJ6kt7aqn3AJLXFw3f5%2BWFBSwcoZYdRz6qBoTrIz2XU%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0009",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M009",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/d617903d-042b-4cb1-bfde-3b30918b17c7?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0010-Screen.jpg&rsct=image%2Fjpeg&sig=7eA4kRyZR276XXjeYvrc1V5Xcc19UNHJX0PTIbQbLuw%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0010",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M010",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/f5642f16-4350-4887-8ba7-08a2c4afb209?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0011-Screen.jpg&rsct=image%2Fjpeg&sig=uZd8YsdcUh8UoO%2F%2BV%2FolxrDU8YzG4kTkbA5QwjH40qM%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Porsche 550 with Wolfgang von Trips; behind it, Willy-Peter Daetwyler with children; Maserati 200SI.",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0011",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M011",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/52a63b73-c7c2-402a-9cba-bae7a764a0f9?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0012-Screen.jpg&rsct=image%2Fjpeg&sig=r9787oXxZLAXf80OAoai2BG89t3Lr%2Bs%2BzNBLXhxKpkk%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": null,
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0012",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M012",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c008c783-83c3-40ce-9e61-91a8abdc41d5?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0013-Screen.jpg&rsct=image%2Fjpeg&sig=xZ2MOd6GJh9gMf0PtPGmcJE1VmswjlaYTQ25J84zG7k%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Wolfgang Graf Berghe von Trips. // Anonymous: August 25, 1957",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0013",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M013",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4dbc273f-5ef8-46b5-8b8a-95f34c2f8bd6?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0014-Screen.jpg&rsct=image%2Fjpeg&sig=3CgGGhAoDWz%2BbMMMNCzCp%2FG9yh1zXzG605tf6Q909h8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0014",
+      "urheber": "Lindroos, Björn Erik (1919-1984)",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M014",
+      "url": "https://www.srf.ch/play/tv/-/video/-?urn=urn:srf:video:945d4876-5c57-4b88-89c3-37423be8b404",
+      "titel": "Klausenrennen",
+      "legende": "Schweiz, Klausenpass, UR, Glarus, Linthal, GL: Star am 11. Klausenrennen ist der mit 4,5 Millionen versicherte \"Silberpfeil\"-Oldtimer von Mercedes-Benz",
+      "datum": "2013-09-27",
+      "typ": "Video",
+      "credits": "Fremdrechte/ unklare Rechtesituation",
+      "urheber": "Schweizer Radio und Fernsehen (SRF)",
+      "eventId": null,
+      "austragungId": null
+    },
+    {
+      "id": "M015",
+      "url": "https://media.memobase.ch/memo/agl-001-PA_111_Sch_Y06_002_Nr_47-1/viewer?auth=",
+      "titel": "Klausenrennen 1934",
+      "legende": "Thema: Klausenrennen 1934. Radrennen, Motorradrennen, Autorennen. Zeltlager Zuschauer, Rückzug der Zuschauer. Rennen Aussicht vom Bergli Linthal, Frutt. Zwischentitel: Der Klausensieger 1934: R. Caracciola auf Mercedes Benz [Silberpfeil]. Zwischentitel: H. Stuckauf Auto-Union [heute Audi]. Nachspann: Zur Unterhaltung am Vereinsabend Natur-und Sportsfilme aus dem Glarnerland vorgeführt von Hans Schönwetter, Glarus sind immer interessant!",
+      "datum": "1934",
+      "typ": "Video",
+      "credits": "Landesarchiv des Kantons Glarus",
+      "urheber": "Schönwetter Hans Jakob (1906-1997)",
+      "eventId": null,
+      "austragungId": "A002"
+    },
+    {
+      "id": "M016",
+      "url": "https://media.memobase.ch/memo/bar-001-SFW_1618-1-1/viewer?auth=",
+      "titel": "Klausenrennen 1923",
+      "legende": "Schweiz, UR, GL: Klausenpass-Rennen 1923 und Klausenpass heute",
+      "datum": "1974-08-09",
+      "typ": "Video",
+      "credits": "Cinémathèque suisse, Schweizerisches Bundesarchiv",
+      "urheber": "Schweizer Filmwochenschau (SFW)",
+      "eventId": null,
+      "austragungId": null
+    },
+    {
+      "id": "M017",
+      "url": "https://memobase.ch/de/object/bar-001-SFW_0488-5_f",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Schweizer Filmwochenschau, 31.08.1951, \"Ein neues Bergrennen\"",
+      "datum": null,
+      "typ": "Video",
+      "credits": "Schweizer Filmwochenschau (SFW), Ein neues Bergrennen (0488-5), Schweizer Filmwochenschau, Schweizer Filmwochenschau vom 31.08.1951",
+      "urheber": null,
+      "eventId": null,
+      "austragungId": "A004"
+    },
+    {
+      "id": "M018",
+      "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=1e05d4701afd47b392f79200bae653ae-29057&version=1&rendition=Image",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
+      "datum": "1951-08-26",
+      "typ": "Foto",
+      "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
+      "urheber": "Heinze Kurt",
+      "eventId": null,
+      "austragungId": "A004"
+    },
+    {
+      "id": "M019",
+      "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=f68353dee3d44f82ba4608702c78da2b-29057&version=1&rendition=Image",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
+      "datum": "1951-08-26",
+      "typ": "Foto",
+      "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
+      "urheber": "Heinze Kurt",
+      "eventId": null,
+      "austragungId": "A004"
+    },
+    {
+      "id": "M020",
+      "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=cf392ad33aa0442fb993629c6b85afec-29057&version=1&rendition=Image",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
+      "datum": "1951-08-26",
+      "typ": "Foto",
+      "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
+      "urheber": "Heinze Kurt",
+      "eventId": null,
+      "austragungId": "A004"
+    },
+    {
+      "id": "M021",
+      "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=eb6ba820acc94aae88ed2417e1cb34c6-29057&version=1&rendition=Image",
+      "titel": "Tiefencastel-Lenzerheide Hill Climb",
+      "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
+      "datum": "1951-08-26",
+      "typ": "Foto",
+      "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
+      "urheber": "Heinze Kurt",
+      "eventId": null,
+      "austragungId": "A004"
+    },
+    {
+      "id": "M022",
+      "url": "https://media.memobase.ch/memo/ako-002-StaOW_263267-1/viewer?auth=\"",
+      "titel": "Klausenrennen. Autorennen, Bergprüfungsfahrt Sarnen - Stalden des Automobilklubs Luzern, mit Start in Sarnen (oberhalb Rathausbrücke).",
+      "legende": null,
+      "datum": "1930",
+      "typ": "Video",
+      "credits": null,
+      "urheber": "Abächerli, Carl",
+      "eventId": null,
+      "austragungId": null
+    },
+    {
+      "id": "M023",
+      "url": "https://nb-posters.primo.exlibrisgroup.com/discovery/delivery/41SNL_53_INST:posters/991000002989703978?lang=fr#1335628400003978",
+      "titel": "Grand Prix, Bern, 21.-22. August 1954",
+      "legende": "Wortlaut des Plakates: Grand Prix Bern // 21./22. August 1954 P.O: monogramme inconnu",
+      "datum": "1954",
+      "typ": "Foto",
+      "credits": null,
+      "urheber": null,
+      "eventId": null,
+      "austragungId": null
+    },
+    {
+      "id": "M024",
+      "url": "https://nb-posters.primo.exlibrisgroup.com/discovery/delivery/41SNL_53_INST:posters/991000159309703978?lang=fr#1335628550003978",
+      "titel": "Grand Prix Bern, Championnat du monde, 3.-4. Juni 1950",
+      "legende": "Libellé de l’affiche: Grand Prix // Bern // 3./4. Juni 1950 // Championnat du monde Existe aussi dans le format 68 x 49 cm",
+      "datum": "1950",
+      "typ": "Foto",
+      "credits": null,
+      "urheber": null,
+      "eventId": null,
+      "austragungId": null
+    },
+    {
+      "id": "M026",
+      "url": "https://www.letempsarchives.ch/page/GDL_1951_08_24/5/article/2101077",
+      "titel": "La course de côte de La Lenzerheide",
+      "legende": "Gazette de Lausanne, S. 5: Vorschau aufs erste Rennen, «une participation record sur un parcours nouveau»",
+      "datum": "1951-08-24",
+      "typ": "Text",
+      "credits": "Gazette de Lausanne, Archives Le Temps; © Le Temps",
+      "urheber": "Gazette de Lausanne",
+      "eventId": null,
+      "austragungId": "A004"
+    },
+    {
+      "id": "M027",
+      "url": "https://www.letempsarchives.ch/page/JDG_1957_08_26/6/article/7696790",
+      "titel": "Victoire de von Trips",
+      "legende": "Journal de Genève, S. 6: Rangliste und Zeiten, Strecke 6,25 km / 504 m, 15'000 Zuschauer, EM-Zwischenstand",
+      "datum": "1957-08-26",
+      "typ": "Text",
+      "credits": "Journal de Genève, Archives Le Temps; © Le Temps",
+      "urheber": "Journal de Genève",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M028",
+      "url": "https://www.letempsarchives.ch/page/GDL_1957_08_26/4/article/3003488",
+      "titel": "Bergrennen Tiefencastel–Lenzerheide 1957",
+      "legende": "Gazette de Lausanne, S. 4: Rennbericht EM-Lauf (noch nicht geöffnet)",
+      "datum": "1957-08-26",
+      "typ": "Text",
+      "credits": "Gazette de Lausanne, Archives Le Temps; © Le Temps",
+      "urheber": "Gazette de Lausanne",
+      "eventId": null,
+      "austragungId": "A001"
+    },
+    {
+      "id": "M029",
+      "url": "https://media.memobase.ch/memo/bbb-002-370889-1/viewer?auth=",
+      "titel": "Grand Prix Bern",
+      "legende": null,
+      "datum": "1954-08-22",
+      "typ": "Foto",
+      "credits": "Erben von Eugen Thierstein",
+      "urheber": "Thierstein, Eugen (1919-2010)",
+      "eventId": null,
+      "austragungId": "A005"
+    },
+    {
+      "id": "M030",
+      "url": "https://media.memobase.ch/memo/bbb-002-370888-1/viewer?auth=",
+      "titel": "Grand Prix Bern",
+      "legende": null,
+      "datum": "1954-08-22",
+      "typ": "Foto",
+      "credits": "Erben von Eugen Thierstein",
+      "urheber": "Thierstein, Eugen (1919-2010)",
+      "eventId": null,
+      "austragungId": "A005"
+    },
+    {
+      "id": "M031",
+      "url": "https://media.memobase.ch/memo/bbb-002-370869-1/viewer?auth=",
+      "titel": "Grand Prix Bern",
+      "legende": null,
+      "datum": "1954-08-22",
+      "typ": "Foto",
+      "credits": "Erben von Eugen Thierstein",
+      "urheber": "Thierstein, Eugen (1919-2010)",
+      "eventId": null,
+      "austragungId": "A005"
+    },
+    {
+      "id": "M032",
+      "url": "https://media.memobase.ch/memo/bbb-002-370887-1/viewer?auth=\"",
+      "titel": "Grand Prix Bern",
+      "legende": null,
+      "datum": "1954-08-22",
+      "typ": "Foto",
+      "credits": "Erben von Eugen Thierstein",
+      "urheber": "Thierstein, Eugen (1919-2010)",
+      "eventId": null,
+      "austragungId": "A005"
+    }
   ]
 }
