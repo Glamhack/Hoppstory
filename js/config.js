@@ -5,8 +5,11 @@ window.APP_CONFIG = {
   zoom: 8,
   minZoom: 7,
   maxZoom: 18,
-  // Panning is limited to Switzerland plus a margin.
-  bounds: [[45.6, 5.7], [48.0, 10.7]],
+  // Panning is limited to this box (Switzerland plus a margin). It must stay
+  // inside the area every base layer has tiles for, so the map never shows
+  // white edges (aerial imagery is the smallest: about 45.3–48.7 N, 4.7–11.5 E).
+  // minZoom is only a lower floor: map.js raises it so the view always fits in the box.
+  bounds: [[45.4, 5.0], [48.5, 11.5]],
 
   // swisstopo WMTS in Web Mercator (EPSG:3857). Free to use with attribution.
   // Other layers: replace the layer id, e.g. ch.swisstopo.pixelkarte-grau,
