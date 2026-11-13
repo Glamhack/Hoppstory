@@ -6,7 +6,11 @@ Plain HTML, CSS and JavaScript: no build step and no dependencies to install.
 
 ## Live app
 
-The app is deployed with GitHub Pages: **<https://glamhack.github.io/HoppStory/>**
+The app is deployed with GitHub Pages: **<https://glamhack.github.io/Hoppstory/>**
+
+<img src="docs/qr-code.svg" width="180" alt="QR code linking to https://glamhack.github.io/Hoppstory/">
+
+Scan the QR code to open the app on your phone.
 
 Open it on a phone or in Chrome/Edge to install it as an app. After a change is
 deployed, installed copies only update if `VERSION` in `sw.js` was bumped (see below).
