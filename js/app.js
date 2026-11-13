@@ -6,7 +6,7 @@
 
   // Events: one marker per distinct Austragung location.
   window.loadEvents(cfg.dataUrl)
-    .then((data) => addOverlay('Events', window.buildEventLayer(data)))
+    .then((data) => addOverlay('Events', window.buildEventLayer(data, { routingUrl: cfg.routingUrl })))
     .catch((err) => console.error('Could not load event data:', err));
 
   if ('serviceWorker' in navigator) {

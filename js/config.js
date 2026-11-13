@@ -33,6 +33,11 @@ window.APP_CONFIG = {
   // Exported data (Event / Austragung / Medien).
   dataUrl: 'data/data.json',
 
+  // Routes (Austragungen whose end differs from their start) follow the road network,
+  // using the free public OSRM demo server (car profile, OpenStreetMap data; light use only).
+  // Set to null to draw straight lines instead.
+  routingUrl: 'https://router.project-osrm.org/route/v1/driving',
+
   // Later: the Google Sheet with the Event / Austragung / Medien tabs.
   // Leave null until the data layer is built.
   sheetId: null,

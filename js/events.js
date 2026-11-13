@@ -1,6 +1,6 @@
 // Event layer: one marker per distinct location of each event's Austragungen.
 // If an Austragung ends somewhere else than it starts, it gets a start pin,
-// an end pin and a straight line between them.
+// an end pin and a line between them that follows the road (straight if routing fails).
 // Austragungen of the same event at the same start point share one marker,
 // whose popup lists all of them.
 (function () {
@@ -23,7 +23,33 @@
     return d ? String(d).slice(0, 4) : '';
   }
 
-  function popupHtml(event, group) {
+  // URL of a displayable image for a medium. Memobase links point to an HTML
+  // viewer; the same image is served as JPEG through its IIIF endpoint.
+  function imageSrc(url) {
+    const memo = String(url).match(/^(https:\/\/media\.memobase\.ch\/memo\/[^/?#]+)\/viewer/);
+    if (memo) return `${memo[1]}/iiif/full/600,/0/default.jpg`;
+    return url;
+  }
+
+  // Horizontally scrollable strip of photos; each opens the full image in a new tab.
+  // Images that fail to load (e.g. expired links) are removed from the strip.
+  function photosHtml(photos) {
+    if (!photos.length) return '';
+    const figs = photos.map((m) => {
+      const caption = m.legende || m.titel || '';
+      return `<figure class="popup-photo">
+          <a href="${esc(m.url)}" target="_blank" rel="noopener">
+            <img src="${esc(imageSrc(m.url))}" alt="${esc(caption)}" loading="lazy"
+                 onerror="var f=this.closest('figure'),s=f.parentNode;f.remove();if(!s.children.length)s.remove();">
+          </a>
+          ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
+          ${m.credits ? `<div class="popup-credits">${esc(m.credits)}</div>` : ''}
+        </figure>`;
+    }).join('');
+    return `<div class="popup-photos">${figs}</div>`;
+  }
+
+  function popupHtml(event, group, photos = []) {
     const items = group
       .slice()
       .sort((a, b) => String(a.datumStart).localeCompare(String(b.datumStart)))
@@ -35,6 +61,7 @@
         ${event && event.sportart ? `<div class="popup-sport">${esc(event.sportart)}</div>` : ''}
         <div class="popup-location">${esc(group[0].location)}</div>
         <ul>${items}</ul>
+        ${photosHtml(photos)}
       </div>`;
   }
 
@@ -96,7 +123,31 @@
     });
   }
 
-  window.buildEventLayer = function buildEventLayer(data) {
+  const POPUP_OPTS = { maxWidth: 280, minWidth: 220 };
+
+  // Road route between two points from an OSRM server, as [[lat, lng], ...].
+  // Identical start/end pairs share one request. Resolves to null on any failure.
+  const routeCache = new Map();
+  function fetchRoute(routingUrl, a, b) {
+    const coords = `${a[1].toFixed(6)},${a[0].toFixed(6)};${b[1].toFixed(6)},${b[0].toFixed(6)}`;
+    if (!routeCache.has(coords)) {
+      const url = `${routingUrl}/${coords}?overview=full&geometries=geojson`;
+      routeCache.set(coords, fetch(url)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((json) => {
+          const line = json && json.code === 'Ok' && json.routes[0] && json.routes[0].geometry.coordinates;
+          return line && line.length > 1 ? line.map(([lng, lat]) => [lat, lng]) : null;
+        })
+        .catch((err) => {
+          console.warn('Routing failed, keeping straight line:', err);
+          return null;
+        }));
+    }
+    return routeCache.get(coords);
+  }
+
+  // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
+  window.buildEventLayer = function buildEventLayer(data, options = {}) {
     const eventsById = new Map((data.events || []).map((e) => [e.id, e]));
     const colorByEvent = new Map();
     function colorFor(eventId) {
@@ -106,6 +157,17 @@
       return colorByEvent.get(eventId);
     }
     (data.events || []).forEach((e) => colorFor(e.id));
+
+    // Photos per Austragung and per event (medien with typ "Foto" and a URL).
+    const photosByAustragung = new Map();
+    const photosByEvent = new Map();
+    (data.medien || []).forEach((m) => {
+      if (m.typ !== 'Foto' || !m.url) return;
+      const [map, id] = m.austragungId ? [photosByAustragung, m.austragungId] : [photosByEvent, m.eventId];
+      if (!id) return;
+      if (!map.has(id)) map.set(id, []);
+      map.get(id).push(m);
+    });
 
     // Group Austragungen by event + start point (+ end point if it is a route).
     const groups = new Map();
@@ -122,19 +184,30 @@
       const event = eventsById.get(items[0].eventId);
       const color = colorFor(items[0].eventId);
       const title = event ? event.name : items[0].name;
-      const html = popupHtml(event, items);
+      const photos = [
+        ...items.flatMap((it) => photosByAustragung.get(it.id) || []),
+        ...(photosByEvent.get(items[0].eventId) || []),
+      ];
+      const html = popupHtml(event, items, photos);
       const a = [start.lat, start.lng];
 
       if (!end) {
-        layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html));
+        layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html, POPUP_OPTS));
         return;
       }
-      // Route: start pin, end pin and a straight line between them, all opening the same popup.
+      // Route: start pin, end pin and a line between them, all opening the same popup.
+      // The line starts out straight and follows the road once the route has loaded.
       const b = [end.lat, end.lng];
+      const line = L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' });
+      if (options.routingUrl) {
+        fetchRoute(options.routingUrl, a, b).then((path) => {
+          if (path) line.setLatLngs([a, ...path, b]);
+        });
+      }
       layers.push(
-        L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' }).bindPopup(html),
-        L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html),
-        L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html),
+        line.bindPopup(html, POPUP_OPTS),
+        L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html, POPUP_OPTS),
+        L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html, POPUP_OPTS),
       );
     });
     return L.featureGroup(layers);
