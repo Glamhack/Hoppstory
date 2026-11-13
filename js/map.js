@@ -2,9 +2,10 @@
 // Returns the map plus an empty overlay group that data layers can fill later.
 window.createMap = function createMap(elementId, cfg) {
   const bounds = L.latLngBounds(cfg.bounds);
+  const start = L.latLngBounds(cfg.startBounds);
   const map = L.map(elementId, {
-    center: cfg.center,
-    zoom: cfg.zoom,
+    center: start.getCenter(),
+    zoom: cfg.minZoom,
     minZoom: cfg.minZoom,
     maxZoom: cfg.maxZoom,
     maxBounds: bounds,
@@ -24,6 +25,10 @@ window.createMap = function createMap(elementId, cfg) {
   }
   updateMinZoom();
   map.on('resize', updateMinZoom);
+
+  // Start centred on Switzerland, zoomed to fit it (never below the minimum zoom).
+  const startZoom = Math.max(map.getBoundsZoom(start, false, L.point(20, 20)), map.getMinZoom());
+  map.setView(start.getCenter(), startZoom, { animate: false });
 
   const baseLayers = {};
   Object.entries(cfg.baseLayers).forEach(([name, def], i) => {
