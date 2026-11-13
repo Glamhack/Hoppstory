@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="41 48 430 430">
-  <!-- Hopp!Story logo: map pin with a medal -->
+  <!-- Hopp!story logo: map pin with a medal -->
   <path d="M256 470C256 470 106 310 106 206A150 150 0 1 1 406 206C406 310 256 470 256 470Z" fill="#d52b1e"/>
   <path d="M206 112L240 186H272L306 112H274L256 150L238 112Z" fill="#fff"/>
   <circle cx="256" cy="236" r="62" fill="#fff"/>

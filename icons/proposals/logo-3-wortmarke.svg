@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200">
-  <!-- Proposal 3: wordmark – the "!" in Hopp!Story is a map pin -->
+  <!-- Proposal 3: wordmark – the "!" in Hopp!story is a map pin -->
   <g font-family="'Segoe UI', Inter, Arial, sans-serif" font-weight="800" font-size="120" fill="#1a1a1a">
     <text x="16" y="140" textLength="236" lengthAdjust="spacingAndGlyphs">Hopp</text>
-    <text x="318" y="140" textLength="306" lengthAdjust="spacingAndGlyphs">Story</text>
+    <text x="318" y="140" textLength="306" lengthAdjust="spacingAndGlyphs">story</text>
   </g>
   <path d="M285 118C285 118 259 86 259 64A26 26 0 1 1 311 64C311 86 285 118 285 118Z" fill="#d52b1e"/>
   <circle cx="285" cy="64" r="10" fill="#fff"/>

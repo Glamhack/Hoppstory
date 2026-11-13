@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="41 48 430 430">
-  <!-- Hopp!Story logo, white pin for use on the red app bar -->
+  <!-- Hopp!story logo, white pin for use on the red app bar -->
   <path d="M256 470C256 470 106 310 106 206A150 150 0 1 1 406 206C406 310 256 470 256 470Z" fill="#fff"/>
   <path d="M206 112L240 186H272L306 112H274L256 150L238 112Z" fill="#d52b1e"/>
   <circle cx="256" cy="236" r="62" fill="#d52b1e"/>

@@ -1,4 +1,4 @@
-# Hopp!Story (GLAMhack 2026)
+# Hopp!story (GLAMhack 2026)
 
 A small Progressive Web App that shows historical sports events on a map of Switzerland
 using swisstopo base maps.

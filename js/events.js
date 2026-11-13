@@ -38,10 +38,19 @@
       </div>`;
   }
 
-  // Ten distinct colours (Tableau 10); repeats after 10 events.
+  // Six event colours, chosen to sit well with the app:
+  // - no red (reserved for the Hopp!story header/logo) and no gray (vanishes on the gray map)
+  // - dark enough that the white pin symbols stay readable (>= 3.2:1 against white)
+  // - every pair stays distinguishable with red-green colour blindness (OKLab ΔE >= 10)
+  //   and >= 3:1 against the gray map; ordered so neighbouring slots differ most.
+  // Colours repeat after six events; the popup always names the event.
   const PALETTE = [
-    '#1f77b4', '#d62728', '#2ca02c', '#9467bd', '#ff7f0e',
-    '#17becf', '#e377c2', '#8c564b', '#bcbd22', '#7f7f7f',
+    '#1251b4', // blue
+    '#b07932', // ochre
+    '#0d9282', // teal
+    '#902275', // plum
+    '#436416', // olive
+    '#956ed2', // lavender
   ];
 
   // White symbols drawn inside the pin head (head centre is 12.5/12.5).
