@@ -14,6 +14,8 @@ window.createMap = function createMap(elementId, cfg) {
     zoomSnap: 0.25,
     // No pinch "overshoot" past the minimum zoom, which would flash empty edges.
     bounceAtZoomLimits: false,
+    // Added below in the bottom-left corner, out of the way of popups.
+    zoomControl: false,
   });
 
   // The view must never be larger than the area that has tiles, otherwise
@@ -85,8 +87,11 @@ window.createMap = function createMap(elementId, cfg) {
 
   // Overlays added later (e.g. events, routes from Start/End Lat/Lon) go here.
   const overlays = {};
-  const layerControl = L.control.layers(baseLayers, overlays, { collapsed: true }).addTo(map);
-  L.control.scale({ imperial: false }).addTo(map);
+  // All controls sit bottom left. In a bottom corner each newly added control is
+  // placed above the previous ones, so from the bottom up: scale, layers, zoom.
+  L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
+  const layerControl = L.control.layers(baseLayers, overlays, { collapsed: true, position: 'bottomleft' }).addTo(map);
+  L.control.zoom({ position: 'bottomleft', zoomInTitle: 'Hineinzoomen', zoomOutTitle: 'Herauszoomen' }).addTo(map);
 
   // Usage later: addOverlay('Events', L.layerGroup([...markers]))
   function addOverlay(name, layer, visible = true) {

@@ -1,6 +1,6 @@
 // Service worker: caches the app shell, and map tiles as you view them.
 // Bump VERSION when you change any app file so clients pick up the new shell.
-const VERSION = 'v14';
+const VERSION = 'v21';
 const SHELL_CACHE = `shell-${VERSION}`;
 const TILE_CACHE = 'tiles-v1';
 const ROUTE_CACHE = 'routes-v1';
@@ -9,11 +9,15 @@ const MAX_TILES = 2000;
 const SHELL = [
   './',
   'index.html',
+  'event.html',
+  'austragung.html',
   'manifest.webmanifest',
   'css/style.css',
   'js/config.js',
   'js/map.js',
   'js/events.js',
+  'js/event-page.js',
+  'js/austragung-page.js',
   'data/data.json',
   'js/app.js',
   'vendor/leaflet/leaflet.js',
@@ -93,7 +97,10 @@ self.addEventListener('fetch', (event) => {
           caches.open(SHELL_CACHE).then((c) => c.put(request, copy));
           return res;
         })
-        .catch(() => caches.match(request).then((r) => r || caches.match('index.html')))
+        // Pages with a query (event.html?id=…) fall back to the cached page without it.
+        .catch(() => caches.match(request)
+          .then((r) => r || caches.match(request, { ignoreSearch: true }))
+          .then((r) => r || caches.match('index.html')))
     );
   }
 });

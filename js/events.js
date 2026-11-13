@@ -138,20 +138,33 @@
       <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/>
     </svg>`;
 
-  // Popup layout: coloured header (event name + sport), location, a list of the
-  // Austragungen with a year badge each (oldest first), then the photo carousel.
-  function popupHtml(event, group, photos, color) {
+  // Description text -> paragraphs (split at line breaks).
+  function paragraphsHtml(text) {
+    return String(text ?? '').split(/\r?\n/).map((p) => p.trim()).filter(Boolean)
+      .map((p) => `<p>${esc(p)}</p>`).join('');
+  }
+
+  // Event card, used for the map popups and the event page: coloured header
+  // (event name + sport), location(s), the photo carousel, then a list of the
+  // Austragungen with a year badge each (oldest first).
+  // opts.link: URL of the event page, shown as a link at the bottom (popups).
+  // opts.description: true to add the event description at the bottom (event page).
+  function eventHtml(event, group, photos, color, opts = {}) {
+    const locations = [...new Set(group.map((a) => a.location).filter(Boolean))];
     const items = group
       .slice()
       .sort((a, b) => String(a.datumStart ?? '9999').localeCompare(String(b.datumStart ?? '9999')))
       .map((a) => {
         const date = dateText(a.datumStart, a.datumEnde);
         return `<li>
-            <span class="popup-year">${esc(year(a.datumStart) || '–')}</span>
-            <span class="popup-edition">
-              <span class="popup-edition-name">${esc(a.name)}</span>
-              ${date ? `<span class="popup-edition-date">${esc(date)}</span>` : ''}
-            </span>
+            <a class="popup-edition-link" href="${esc(austragungPageUrl(a.id))}">
+              <span class="popup-year">${esc(year(a.datumStart) || '–')}</span>
+              <span class="popup-edition">
+                <span class="popup-edition-name">${esc(a.name)}</span>
+                ${date ? `<span class="popup-edition-date">${esc(date)}</span>` : ''}
+              </span>
+              <span class="popup-edition-chevron" aria-hidden="true">&#8250;</span>
+            </a>
           </li>`;
       })
       .join('');
@@ -162,10 +175,65 @@
           ${event && event.sportart ? `<div class="popup-sport">${esc(event.sportart)}</div>` : ''}
         </header>
         <div class="popup-body">
-          ${group[0].location ? `<div class="popup-location">${LOCATION_ICON}${esc(group[0].location)}</div>` : ''}
+          ${locations.length ? `<div class="popup-location">${LOCATION_ICON}${esc(locations.join(' · '))}</div>` : ''}
+          ${photosHtml(photos)}
           <div class="popup-heading">Austragungen</div>
           <ul class="popup-editions">${items}</ul>
+          ${opts.description && event && event.beschreibung ? `
+            <div class="popup-heading">Beschreibung</div>
+            <div class="popup-description">${paragraphsHtml(event.beschreibung)}</div>` : ''}
+          ${opts.link ? `<a class="popup-more" href="${esc(opts.link)}">Mehr zum Event &rarr;</a>` : ''}
+        </div>
+      </div>`;
+  }
+
+  // URLs of the event and Austragung pages.
+  function eventPageUrl(eventId) {
+    return `event.html?id=${encodeURIComponent(eventId)}`;
+  }
+  function austragungPageUrl(austragungId) {
+    return `austragung.html?id=${encodeURIComponent(austragungId)}`;
+  }
+
+  // One date for the Austragung page: "29. Juli 1923", or just "1957" when only
+  // the year is known, or "unbekannt".
+  function singleDate(s) {
+    const d = fullDate(s);
+    if (d) return DAY_FMT.format(d);
+    return year(s) || 'unbekannt';
+  }
+
+  // Rangliste: free text from the sheet (events are not uniform), shown as written,
+  // one paragraph per line; empty lines are dropped.
+  function rankingHtml(text) {
+    const html = paragraphsHtml(text);
+    return html
+      ? `<div class="ranking-text">${html}</div>`
+      : '<p class="page-empty">Für diese Austragung ist keine Rangliste erfasst.</p>';
+  }
+
+  // Austragung page: header in the event colour (Austragung name, link to its
+  // event), location, exact start and end date, its photos, and the Rangliste.
+  function austragungHtml(a, event, photos, color) {
+    return `
+      <div class="event-popup" style="--event-color: ${color}">
+        <header class="popup-header">
+          <div class="popup-title">${esc(a.name)}</div>
+          <div class="popup-sport">
+            ${event ? `<a href="${esc(eventPageUrl(event.id))}">${esc(event.name)}</a>` : 'Unbekanntes Event'}
+            ${event && event.sportart ? ` · ${esc(event.sportart)}` : ''}
+          </div>
+        </header>
+        <div class="popup-body">
+          <dl class="facts">
+            <div><dt>Ort</dt><dd>${esc(a.location || 'unbekannt')}</dd></div>
+            <div><dt>Startdatum</dt><dd>${esc(singleDate(a.datumStart))}</dd></div>
+            <div><dt>Enddatum</dt><dd>${esc(singleDate(a.datumEnde))}</dd></div>
+          </dl>
           ${photosHtml(photos)}
+          <div class="popup-heading">Rangliste</div>
+          ${rankingHtml(a.rangliste)}
+          ${event ? `<a class="popup-more" href="${esc(eventPageUrl(event.id))}">Alle Austragungen von ${esc(event.name)} &rarr;</a>` : ''}
         </div>
       </div>`;
   }
@@ -252,8 +320,9 @@
     return routeCache.get(coords);
   }
 
-  // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
-  window.buildEventLayer = function buildEventLayer(data, options = {}) {
+  // Prepares the exported data for display: event lookup, event colours,
+  // Austragungen linked to their event, and photos. Shared by map and event page.
+  function prepare(data) {
     const eventsById = new Map((data.events || []).map((e) => [e.id, e]));
     const colorByEvent = new Map();
     function colorFor(eventId) {
@@ -274,6 +343,13 @@
       if (!map.has(id)) map.set(id, []);
       map.get(id).push(m);
     });
+    // Photos of these Austragungen plus the photos of the event as a whole.
+    function photosFor(items, eventId) {
+      return [
+        ...items.flatMap((it) => photosByAustragung.get(it.id) || []),
+        ...(photosByEvent.get(eventId) || []),
+      ];
+    }
 
     // Link each Austragung to its event. If the export left eventId empty or it
     // points nowhere, fall back to matching by name (and say so in the console).
@@ -284,6 +360,16 @@
         guess ? `matched to event ${guess.id} "${guess.name}" by name.` : 'no event matched by name.');
       return guess ? { ...a, eventId: guess.id } : a;
     });
+
+    return { eventsById, colorFor, photosFor, austragungen };
+  }
+
+  // For the event and Austragung pages (js/event-page.js, js/austragung-page.js).
+  window.HoppEvents = { prepare, eventHtml, austragungHtml };
+
+  // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
+  window.buildEventLayer = function buildEventLayer(data, options = {}) {
+    const { eventsById, colorFor, photosFor, austragungen } = prepare(data);
 
     // Group Austragungen by event + start point (+ end point if it is a route).
     const groups = new Map();
@@ -300,11 +386,8 @@
       const event = eventsById.get(items[0].eventId);
       const color = colorFor(items[0].eventId);
       const title = event ? event.name : items[0].name;
-      const photos = [
-        ...items.flatMap((it) => photosByAustragung.get(it.id) || []),
-        ...(photosByEvent.get(items[0].eventId) || []),
-      ];
-      const html = popupHtml(event, items, photos, color);
+      const photos = photosFor(items, items[0].eventId);
+      const html = eventHtml(event, items, photos, color, { link: event ? eventPageUrl(event.id) : null });
       const a = [start.lat, start.lng];
 
       if (!end) {

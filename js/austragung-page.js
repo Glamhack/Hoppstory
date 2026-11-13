@@ -1,0 +1,44 @@
+// Austragung page (austragung.html?id=A001): name, event, location, exact start
+// and end date, the photos of this Austragung, and the Rangliste (winners).
+(function () {
+  const cfg = window.APP_CONFIG;
+  const root = document.getElementById('austragung');
+  const id = new URLSearchParams(location.search).get('id');
+
+  function message(text) {
+    root.innerHTML = '';
+    const p = document.createElement('p');
+    p.className = 'page-message';
+    p.textContent = text;
+    const back = document.createElement('a');
+    back.href = 'index.html';
+    back.textContent = 'Zurück zur Karte';
+    root.append(p, back);
+  }
+
+  window.loadEvents(cfg.dataUrl)
+    .then((data) => {
+      const { prepare, austragungHtml } = window.HoppEvents;
+      const { eventsById, colorFor, photosFor, austragungen } = prepare(data);
+      const a = austragungen.find((x) => x.id === id);
+      if (!a) {
+        message('Diese Austragung wurde nicht gefunden.');
+        return;
+      }
+      const event = eventsById.get(a.eventId) || null;
+      // Only this Austragung's own photos (not the event-wide ones).
+      root.innerHTML = austragungHtml(a, event, photosFor([a], null), colorFor(a.eventId));
+      document.title = `${a.name} – Hopp!story`;
+    })
+    .catch((err) => {
+      console.error('Could not load event data:', err);
+      message('Die Daten konnten nicht geladen werden.');
+    });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch((err) =>
+        console.warn('Service worker registration failed:', err));
+    });
+  }
+})();

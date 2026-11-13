@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Proposal 6: "Hopp!-Pin" – map pin carrying the cheering "!" from Hopp!story -->
-  <ellipse cx="256" cy="478" rx="70" ry="14" fill="#000" opacity=".15"/>
-  <path d="M256 470C256 470 106 310 106 206A150 150 0 1 1 406 206C406 310 256 470 256 470Z" fill="#d52b1e"/>
-  <rect x="228" y="96" width="56" height="140" rx="28" fill="#fff"/>
-  <circle cx="256" cy="282" r="30" fill="#fff"/>
-</svg>
