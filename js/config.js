@@ -11,12 +11,13 @@ window.APP_CONFIG = {
   // swisstopo WMTS in Web Mercator (EPSG:3857). Free to use with attribution.
   // Other layers: replace the layer id, e.g. ch.swisstopo.pixelkarte-grau,
   // ch.swisstopo.swissimage (use format "jpeg").
+  // The first entry is the default base layer.
   baseLayers: {
-    'Landeskarte farbig': {
-      url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg',
-    },
     'Landeskarte grau': {
       url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-grau/default/current/3857/{z}/{x}/{y}.jpeg',
+    },
+    'Landeskarte farbig': {
+      url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg',
     },
     'Luftbild': {
       url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}/{x}/{y}.jpeg',

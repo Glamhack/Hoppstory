@@ -23,6 +23,7 @@ const SHELL = [
   'vendor/leaflet/images/marker-icon-2x.png',
   'vendor/leaflet/images/marker-shadow.png',
   'icons/icon.svg',
+  'icons/logo-white.svg',
   'icons/icon-192.png',
   'icons/icon-512.png',
 ];
