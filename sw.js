@@ -1,6 +1,6 @@
 // Service worker: caches the app shell, and map tiles as you view them.
 // Bump VERSION when you change any app file so clients pick up the new shell.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL_CACHE = `shell-${VERSION}`;
 const TILE_CACHE = 'tiles-v1';
 const MAX_TILES = 2000;
@@ -21,6 +21,7 @@ const SHELL = [
   'vendor/leaflet/images/marker-icon-2x.png',
   'vendor/leaflet/images/marker-shadow.png',
   'icons/icon.svg',
+  'icons/logo-white.svg',
   'icons/icon-192.png',
   'icons/icon-512.png',
 ];
