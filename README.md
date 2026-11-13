@@ -1,7 +1,15 @@
-# Swiss Sport Heritage (GLAMhack 2026)
+# Hopp!Story (GLAMhack 2026)
 
-A small Progressive Web App that shows a map of Switzerland using swisstopo base maps.
+A small Progressive Web App that shows historical sports events on a map of Switzerland
+using swisstopo base maps.
 Plain HTML, CSS and JavaScript: no build step and no dependencies to install.
+
+## Live app
+
+The app is deployed with GitHub Pages: **<https://glamhack.github.io/HoppStory/>**
+
+Open it on a phone or in Chrome/Edge to install it as an app. After a change is
+deployed, installed copies only update if `VERSION` in `sw.js` was bumped (see below).
 
 ## Run it locally
 
