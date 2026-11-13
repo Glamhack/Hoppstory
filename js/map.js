@@ -30,6 +30,49 @@ window.createMap = function createMap(elementId, cfg) {
   const startZoom = Math.max(map.getBoundsZoom(start, false, L.point(20, 20)), map.getMinZoom());
   map.setView(start.getCenter(), startZoom, { animate: false });
 
+  // Make an opened popup fully visible. Leaflet's own autoPan cannot pan past
+  // maxBounds, so near the edges (or when zoomed out) a popup would end up under
+  // the header. Instead: find the lowest zoom (current zoom first) at which the
+  // map can be moved so the whole popup is on screen without leaving the bounds,
+  // and go there. A popup taller than the map is aligned with its top visible.
+  const POPUP_PAD = 12; // px kept free around the popup
+  function revealPopup(popup) {
+    const el = popup.getElement();
+    if (!el || !map.hasLayer(popup)) return;
+    const size = map.getSize();
+    const mapRect = map.getContainer().getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    const p = map.latLngToContainerPoint(popup.getLatLng());
+    // Popup extent around its anchor point, in pixels (does not change with zoom).
+    const up = p.y - (r.top - mapRect.top);
+    const down = Math.max(0, (r.bottom - mapRect.top) - p.y);
+    const left = p.x - (r.left - mapRect.left);
+    const right = (r.right - mapRect.left) - p.x;
+    const fitsHeight = up + down + 2 * POPUP_PAD <= size.y;
+    const half = size.divideBy(2);
+    const z0 = map.getZoom();
+    const step = map.options.zoomSnap || 1;
+
+    for (let z = z0; z <= map.getMaxZoom() + 1e-9; z += step) {
+      const a = map.project(popup.getLatLng(), z);
+      const nw = map.project(bounds.getNorthWest(), z);
+      const se = map.project(bounds.getSouthEast(), z);
+      // Map centres (projected) that keep the popup on screen AND the view inside the bounds.
+      const x0 = Math.max(a.x + right + POPUP_PAD - half.x, nw.x + half.x);
+      const x1 = Math.min(a.x - left - POPUP_PAD + half.x, se.x - half.x);
+      const y0 = Math.max(fitsHeight ? a.y + down + POPUP_PAD - half.y : -Infinity, nw.y + half.y);
+      const y1 = Math.min(a.y - up - POPUP_PAD + half.y, se.y - half.y);
+      if (x0 > x1 || y0 > y1) continue; // not possible at this zoom: try closer in
+      const cur = map.project(map.getCenter(), z);
+      const c = L.point(Math.min(Math.max(cur.x, x0), x1), Math.min(Math.max(cur.y, y0), y1));
+      if (z === z0 && c.distanceTo(cur) < 1) return; // already fully visible
+      map.setView(map.unproject(c, z), z);
+      return;
+    }
+  }
+  // Wait one frame so the popup has its final size before measuring.
+  map.on('popupopen', (e) => requestAnimationFrame(() => revealPopup(e.popup)));
+
   const baseLayers = {};
   Object.entries(cfg.baseLayers).forEach(([name, def], i) => {
     baseLayers[name] = L.tileLayer(def.url, {

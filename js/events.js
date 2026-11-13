@@ -19,6 +19,25 @@
     return !!p && typeof p.lat === 'number' && typeof p.lng === 'number';
   }
 
+  // Lower-case words of a name without accents, digits or punctuation:
+  // "Grand Prix, Bern 1954" -> ["grand", "prix", "bern"].
+  function nameWords(s) {
+    return String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .split(/[^a-z]+/).filter((w) => w.length > 1);
+  }
+
+  // Fallback when an Austragung has no (or an unknown) eventId: the event whose
+  // name words all appear in the Austragung's name; the most specific match wins.
+  function guessEvent(austragung, events) {
+    const words = new Set(nameWords(austragung.name));
+    let best = null;
+    events.forEach((e) => {
+      const ew = nameWords(e.name);
+      if (ew.length && ew.every((w) => words.has(w)) && (!best || ew.length > best.n)) best = { e, n: ew.length };
+    });
+    return best ? best.e : null;
+  }
+
   function year(d) {
     return d ? String(d).slice(0, 4) : '';
   }
@@ -31,37 +50,123 @@
     return url;
   }
 
-  // Horizontally scrollable strip of photos; each opens the full image in a new tab.
-  // Images that fail to load (e.g. expired links) are removed from the strip.
+  // Photo carousel: one photo at a time, with previous/next buttons, a counter and
+  // swipe on touch screens. Each photo opens the full image in a new tab.
+  // Images that fail to load (e.g. expired links) are dropped from the carousel.
   function photosHtml(photos) {
     if (!photos.length) return '';
-    const figs = photos.map((m) => {
+    const figs = photos.map((m, i) => {
       const caption = m.legende || m.titel || '';
-      return `<figure class="popup-photo">
+      return `<figure class="popup-photo"${i ? ' hidden' : ''}>
           <a href="${esc(m.url)}" target="_blank" rel="noopener">
-            <img src="${esc(imageSrc(m.url))}" alt="${esc(caption)}" loading="lazy"
-                 onerror="var f=this.closest('figure'),s=f.parentNode;f.remove();if(!s.children.length)s.remove();">
+            <img src="${esc(imageSrc(m.url))}" alt="${esc(caption)}" loading="lazy" onerror="hoppPhotoFailed(this)">
           </a>
           ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
           ${m.credits ? `<div class="popup-credits">${esc(m.credits)}</div>` : ''}
         </figure>`;
     }).join('');
-    return `<div class="popup-photos">${figs}</div>`;
+    const nav = photos.length > 1 ? '' : ' hidden';
+    return `<div class="carousel" data-index="0">
+        <div class="carousel-track">${figs}</div>
+        <div class="carousel-nav"${nav}>
+          <button type="button" class="carousel-btn" data-step="-1" aria-label="Vorheriges Foto">&#8249;</button>
+          <span class="carousel-count">1 / ${photos.length}</span>
+          <button type="button" class="carousel-btn" data-step="1" aria-label="Nächstes Foto">&#8250;</button>
+        </div>
+      </div>`;
   }
 
-  function popupHtml(event, group, photos = []) {
+  // Show photo number `index` (wrapping around) and update the counter.
+  function showPhoto(carousel, index) {
+    const figs = carousel.querySelectorAll('.popup-photo');
+    if (!figs.length) { carousel.remove(); return; }
+    const i = ((index % figs.length) + figs.length) % figs.length;
+    figs.forEach((f, k) => { f.hidden = k !== i; });
+    carousel.dataset.index = i;
+    carousel.querySelector('.carousel-count').textContent = `${i + 1} / ${figs.length}`;
+    carousel.querySelector('.carousel-nav').hidden = figs.length < 2;
+  }
+
+  // Called by a photo that failed to load: drop it and show the next one.
+  window.hoppPhotoFailed = function (img) {
+    const fig = img.closest('.popup-photo');
+    const carousel = fig && fig.closest('.carousel');
+    if (!carousel) return;
+    const pos = [...carousel.querySelectorAll('.popup-photo')].indexOf(fig);
+    let index = +carousel.dataset.index;
+    fig.remove();
+    if (pos < index) index -= 1; // keep showing the same photo; if the shown one failed, the next moves up
+    showPhoto(carousel, index);
+  };
+
+  // Buttons and swipes, handled once for all popups. Capture phase, because
+  // Leaflet stops clicks inside popups from bubbling up to the document.
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('.carousel-btn');
+    if (!btn) return;
+    const carousel = btn.closest('.carousel');
+    showPhoto(carousel, +carousel.dataset.index + +btn.dataset.step);
+  }, true);
+  let touchX = null;
+  document.addEventListener('touchstart', (e) => {
+    touchX = e.target.closest && e.target.closest('.carousel') ? e.touches[0].clientX : null;
+  }, { capture: true, passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    const carousel = e.target.closest && e.target.closest('.carousel');
+    if (carousel && Math.abs(dx) > 40) showPhoto(carousel, +carousel.dataset.index + (dx < 0 ? 1 : -1));
+  }, { capture: true, passive: true });
+
+  // "1950-06-03" + "1950-06-04" -> "3.–4. Juni 1950". Dates with only a year
+  // (or none) give '' because the year is already shown in the badge.
+  const DAY_FMT = new Intl.DateTimeFormat('de-CH', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  function fullDate(s) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s ?? ''));
+    return m ? new Date(Date.UTC(+m[1], m[2] - 1, +m[3])) : null;
+  }
+  function dateText(start, end) {
+    const a = fullDate(start);
+    if (!a) return '';
+    const b = fullDate(end);
+    if (!b || b <= a) return DAY_FMT.format(a);
+    return DAY_FMT.formatRange ? DAY_FMT.formatRange(a, b) : `${DAY_FMT.format(a)} – ${DAY_FMT.format(b)}`;
+  }
+
+  const LOCATION_ICON = `<svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/>
+    </svg>`;
+
+  // Popup layout: coloured header (event name + sport), location, a list of the
+  // Austragungen with a year badge each (oldest first), then the photo carousel.
+  function popupHtml(event, group, photos, color) {
     const items = group
       .slice()
-      .sort((a, b) => String(a.datumStart).localeCompare(String(b.datumStart)))
-      .map((a) => `<li>${esc(a.name)}${a.datumStart ? ` <span class="popup-date">(${esc(year(a.datumStart))})</span>` : ''}</li>`)
+      .sort((a, b) => String(a.datumStart ?? '9999').localeCompare(String(b.datumStart ?? '9999')))
+      .map((a) => {
+        const date = dateText(a.datumStart, a.datumEnde);
+        return `<li>
+            <span class="popup-year">${esc(year(a.datumStart) || '–')}</span>
+            <span class="popup-edition">
+              <span class="popup-edition-name">${esc(a.name)}</span>
+              ${date ? `<span class="popup-edition-date">${esc(date)}</span>` : ''}
+            </span>
+          </li>`;
+      })
       .join('');
     return `
-      <div class="event-popup">
-        <strong>${esc(event ? event.name : 'Unbekanntes Event')}</strong>
-        ${event && event.sportart ? `<div class="popup-sport">${esc(event.sportart)}</div>` : ''}
-        <div class="popup-location">${esc(group[0].location)}</div>
-        <ul>${items}</ul>
-        ${photosHtml(photos)}
+      <div class="event-popup" style="--event-color: ${color}">
+        <header class="popup-header">
+          <div class="popup-title">${esc(event ? event.name : 'Unbekanntes Event')}</div>
+          ${event && event.sportart ? `<div class="popup-sport">${esc(event.sportart)}</div>` : ''}
+        </header>
+        <div class="popup-body">
+          ${group[0].location ? `<div class="popup-location">${LOCATION_ICON}${esc(group[0].location)}</div>` : ''}
+          <div class="popup-heading">Austragungen</div>
+          <ul class="popup-editions">${items}</ul>
+          ${photosHtml(photos)}
+        </div>
       </div>`;
   }
 
@@ -123,7 +228,8 @@
     });
   }
 
-  const POPUP_OPTS = { maxWidth: 280, minWidth: 220 };
+  // autoPan off: map.js moves (and if needed zooms) the map so the whole popup is visible.
+  const POPUP_OPTS = { maxWidth: 290, minWidth: 240, className: 'event-popup-wrap', autoPan: false };
 
   // Road route between two points from an OSRM server, as [[lat, lng], ...].
   // Identical start/end pairs share one request. Resolves to null on any failure.
@@ -169,9 +275,19 @@
       map.get(id).push(m);
     });
 
+    // Link each Austragung to its event. If the export left eventId empty or it
+    // points nowhere, fall back to matching by name (and say so in the console).
+    const austragungen = (data.austragungen || []).map((a) => {
+      if (eventsById.has(a.eventId)) return a;
+      const guess = guessEvent(a, data.events || []);
+      console.warn(`Austragung ${a.id} "${a.name}" has eventId ${JSON.stringify(a.eventId)};`,
+        guess ? `matched to event ${guess.id} "${guess.name}" by name.` : 'no event matched by name.');
+      return guess ? { ...a, eventId: guess.id } : a;
+    });
+
     // Group Austragungen by event + start point (+ end point if it is a route).
     const groups = new Map();
-    (data.austragungen || []).forEach((a) => {
+    austragungen.forEach((a) => {
       if (!isPoint(a.start)) return;
       const end = isPoint(a.ende) && pointKey(a.ende) !== pointKey(a.start) ? a.ende : null;
       const key = `${a.eventId}|${pointKey(a.start)}|${end ? pointKey(end) : ''}`;
@@ -188,7 +304,7 @@
         ...items.flatMap((it) => photosByAustragung.get(it.id) || []),
         ...(photosByEvent.get(items[0].eventId) || []),
       ];
-      const html = popupHtml(event, items, photos);
+      const html = popupHtml(event, items, photos, color);
       const a = [start.lat, start.lng];
 
       if (!end) {

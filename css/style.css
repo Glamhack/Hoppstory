@@ -20,21 +20,69 @@ body { display: flex; flex-direction: column; }
 #map { flex: 1; }
 
 /* Event popups */
-.event-popup strong { display: block; font-size: 1.05em; margin-bottom: 2px; }
-.event-popup .popup-sport { color: #555; font-size: 0.9em; }
-.event-popup .popup-location { margin-top: 4px; }
-.event-popup ul { margin: 6px 0 0; padding-left: 18px; }
-.event-popup .popup-date { color: #777; }
-.event-popup .popup-photos {
-  display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory;
-  margin-top: 8px; padding-bottom: 4px;
+/* Leaflet's popup frame: no inner padding, so the coloured header runs edge to edge */
+.event-popup-wrap .leaflet-popup-content-wrapper { padding: 0; overflow: hidden; border-radius: 12px; }
+.event-popup-wrap .leaflet-popup-content { margin: 0; line-height: 1.4; }
+.event-popup-wrap a.leaflet-popup-close-button { color: #fff; opacity: .85; top: 6px; right: 6px; }
+.event-popup-wrap a.leaflet-popup-close-button:hover { color: #fff; opacity: 1; }
+
+.event-popup { --event-color: #555; font-size: 13px; color: #222; }
+.event-popup .popup-header {
+  background: var(--event-color); color: #fff;
+  padding: 12px 34px 10px 14px;
 }
-.event-popup .popup-photo { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
+.event-popup .popup-title { font-size: 15px; font-weight: 700; line-height: 1.25; }
+.event-popup .popup-sport {
+  margin-top: 3px; font-size: 11px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; opacity: .9;
+}
+.event-popup .popup-body { padding: 10px 14px 12px; }
+.event-popup .popup-location {
+  display: flex; align-items: center; gap: 5px; color: #555;
+}
+.event-popup .popup-location svg { flex: none; color: var(--event-color); }
+.event-popup .popup-heading {
+  margin: 12px 0 6px; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: #888;
+}
+/* Austragungen: a year badge next to the name, rows separated by hairlines */
+.event-popup .popup-editions { list-style: none; margin: 0; padding: 0; }
+.event-popup .popup-editions li {
+  display: flex; align-items: flex-start; gap: 10px; padding: 6px 0;
+  border-top: 1px solid #eee;
+}
+.event-popup .popup-editions li:first-child { border-top: 0; padding-top: 0; }
+.event-popup .popup-year {
+  flex: none; min-width: 44px; padding: 2px 6px; border-radius: 10px; text-align: center;
+  font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--event-color) 14%, #fff);
+  color: color-mix(in srgb, var(--event-color) 75%, #000);
+}
+.event-popup .popup-edition { display: flex; flex-direction: column; min-width: 0; }
+.event-popup .popup-edition-name { font-weight: 500; }
+.event-popup .popup-edition-date { color: #777; font-size: 12px; }
+/* Photo carousel: one photo at a time */
+.event-popup .carousel { margin-top: 12px; }
+.event-popup .popup-photo { margin: 0; }
+.event-popup .popup-photo[hidden] { display: none; }
+.event-popup .carousel-nav {
+  display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 6px;
+}
+.event-popup .carousel-nav[hidden] { display: none; }
+.event-popup .carousel-btn {
+  width: 30px; height: 30px; padding: 0; border: 0; border-radius: 50%;
+  background: color-mix(in srgb, var(--event-color) 14%, #fff);
+  color: color-mix(in srgb, var(--event-color) 75%, #000);
+  font-size: 20px; line-height: 28px; cursor: pointer;
+}
+.event-popup .carousel-btn:hover { background: color-mix(in srgb, var(--event-color) 24%, #fff); }
+.event-popup .carousel-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.event-popup .carousel-count { color: #777; font-size: 0.85em; min-width: 3.5em; text-align: center; }
 .event-popup .popup-photo img {
   display: block; width: 100%; height: 160px; object-fit: cover;
-  border-radius: 4px; background: #eee;
+  border-radius: 8px; background: #eee;
 }
-.event-popup .popup-photo figcaption { font-size: 0.85em; margin-top: 4px; }
-.event-popup .popup-credits { color: #777; font-size: 0.75em; margin-top: 2px; }
+.event-popup .popup-photo figcaption { font-size: 12px; margin-top: 6px; }
+.event-popup .popup-credits { color: #888; font-size: 11px; margin-top: 2px; }
 .event-pin { background: none; border: none; }
 .event-pin svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
