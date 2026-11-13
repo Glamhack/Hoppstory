@@ -1,5 +1,5 @@
 {
-  "exportiert": "2026-11-13T16:42:54.719Z",
+  "exportiert": "2026-11-13T20:30:29.980Z",
   "events": [
     {
       "id": "E001",
@@ -18,6 +18,18 @@
       "name": "Grand-Prix Bern",
       "beschreibung": "Der Grand-Prix von Bern (historisch bekannt als Grosser Preis der Schweiz) war ein legendäres internationales Rundstreckenrennen für Automobile und Motorräder, das zwischen 1934 und 1954 auf der Bremgarten-Rundstrecke im Bremgartenwald bei Bern ausgetragen wurde. Im direkten Massenstart-Rennen kämpften die Fahrer auf dem 7,28 Kilometer langen, extrem schnellen und gefährlichen Naturstrassenkurs mit seinen langen Waldpassagen und tückischen Licht-Schatten-Wechseln um den Sieg. Ab 1950 zählte das Rennen offiziell zur neu geschaffenen Formel-1-Weltmeisterschaft (sowie zur Motorrad-WM) und zog über 100'000 Zuschauer sowie Legenden wie Rudolf Caracciola oder Juan Manuel Fangio an. Nach dem schweren Unfall in Le Mans 1955 und dem anschliessenden Rundstreckenverbot in der Schweiz wurde der Rennbetrieb eingestellt, doch vereinzelt erinnern heute noch Gedenkveranstaltungen wie das GP Suisse Memorial an diese Ära.",
       "sportart": "Automobil Rundstreckenrennen"
+    },
+    {
+      "id": "E004",
+      "name": "Autorennen Mitholz-Kandersteg",
+      "beschreibung": "Das Bergrennen Mitholz–Kandersteg war ein früheres Motorsport-Bergrennen. Historische Hinweise darauf finden sich beispielsweise in den Motorsportarchiven von 1953 und 1966.",
+      "sportart": "Automobil Bergrennen"
+    },
+    {
+      "id": "E005",
+      "name": "Formel-E",
+      "beschreibung": "Die Formel E ist die FIA-Rennserie für vollelektrische Formelwagen, die 2018 in Zürich und 2019 in Bern je einen E-Prix auf einem temporären Stadtkurs austrug.",
+      "sportart": "Elektroautomobil Rundstreckenrennen"
     }
   ],
   "austragungen": [
@@ -33,14 +45,14 @@
         "lat": 46.6962616294476,
         "lng": 9.558598309800137
       },
-      "datumStart": "1957",
-      "datumEnde": null,
-      "rangliste": "Lenzerheide (Switzerland)  (Aug. 25th)\r\n\r\n1st: W. von Trips (Porsche 1,680-c.c.)\r\n\r\n2nd: R. von Frankenberg (Porsche 1,585-c.c.)\r\n\r\n3rd: W. Daetwyler (Maserati 200S)\r\n\r\n4th: H. Herrmann (Borgward 1500RS)\r\n\r\n5th: P. Monteverdi (Ferrari 750S)\r\n\r\n6th: T. Sopwith (Cooper F2)",
+      "datumStart": "1957-08-25",
+      "datumEnde": "1957-08-25",
+      "rangliste": "Lenzerheide (Switzerland)  (Aug. 25th)\n1st: W. von Trips (Porsche 1,680-c.c.)\n2nd: R. von Frankenberg (Porsche 1,585-c.c.)\n3rd: W. Daetwyler (Maserati 200S)\n4th: H. Herrmann (Borgward 1500RS)\n5th: P. Monteverdi (Ferrari 750S)\n6th: T. Sopwith (Cooper F2)",
       "eventId": null
     },
     {
       "id": "A002",
-      "name": "11. Klausenrennen",
+      "name": "10. Klausenrennen 1934",
       "location": "Klausenpass",
       "start": {
         "lat": 46.91980336827304,
@@ -50,14 +62,14 @@
         "lat": 46.86978264811088,
         "lng": 8.858000506635708
       },
-      "datumStart": null,
-      "datumEnde": null,
-      "rangliste": null,
+      "datumStart": "1934-08-05",
+      "datumEnde": "1934-08-05",
+      "rangliste": "Automobil:\n1. Rudolf Caracciola (DE)\n2. Hans Stuck (DE)\n3 Whitney Straight (EN)\n\nMotorrad:\n1. E. Hänni (CH)\n2. B. Rosemeyer (DE)\n3. G. Cordey (CH)",
       "eventId": null
     },
     {
       "id": "A003",
-      "name": "Klausenrennen",
+      "name": "11. Klausenrennen 2013",
       "location": "Klausenpass",
       "start": {
         "lat": 46.91980336827304,
@@ -67,9 +79,9 @@
         "lat": 46.86978264811088,
         "lng": 8.858000506635708
       },
-      "datumStart": "1934",
-      "datumEnde": "1934",
-      "rangliste": null,
+      "datumStart": "2013-09-27",
+      "datumEnde": "2013-09-29",
+      "rangliste": "Automobil:\n1. Christian Traber (CH)\n2. Rainer Ott (D)\n3. Emilio Baldini (CH)\n\nMotorrad:\n1. Susan Jane Darbyshire (GB)\t\n2. Otto Ziegler (FL)\n3. Marco Blumer (CH)",
       "eventId": null
     },
     {
@@ -84,8 +96,8 @@
         "lat": 46.6962616294476,
         "lng": 9.558598309800137
       },
-      "datumStart": "1951",
-      "datumEnde": null,
+      "datumStart": "1951-08-26",
+      "datumEnde": "1951-08-26",
       "rangliste": null,
       "eventId": null
     },
@@ -103,7 +115,7 @@
       },
       "datumStart": "1923-07-29",
       "datumEnde": "1923-07-29",
-      "rangliste": "2. Platz: Walter Kaufmann (Rennfahrer)",
+      "rangliste": "1. H. Rützler (AT)\n2. G. Masetti (IT)\n3 J. Merz (CH)",
       "eventId": null
     },
     {
@@ -138,6 +150,84 @@
       "datumStart": "1950-06-03",
       "datumEnde": "1950-06-04",
       "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A008",
+      "name": "6. Klausenrennen 1930",
+      "location": "Klausenpass",
+      "start": {
+        "lat": 46.91980336827304,
+        "lng": 8.993024055507899
+      },
+      "ende": {
+        "lat": 46.86978264811088,
+        "lng": 8.858000506635708
+      },
+      "datumStart": "1930-08-09",
+      "datumEnde": "1930-08-10",
+      "rangliste": "Automobil:\n1. L Chiron (FR)\n2. H. Stuck (DE)\n3. Bouriat (FR)\n\nMotrrad:\n1 T.F. Bullus (EN)\n2 C. Cérésole (CH)\n3 J. Zuber (CH)",
+      "eventId": null
+    },
+    {
+      "id": "A009",
+      "name": "Autorennen Mitholz-Kandersteg 1961",
+      "location": "Mitholz-Kandersteg",
+      "start": null,
+      "ende": null,
+      "datumStart": "1961-05-07",
+      "datumEnde": "1961-05-07",
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A010",
+      "name": "Formel-E Zürich",
+      "location": "Zürich",
+      "start": {
+        "lat": 47.36185959582186,
+        "lng": 8.535337901965331
+      },
+      "ende": {
+        "lat": 47.36185959582186,
+        "lng": 8.535337901965331
+      },
+      "datumStart": "2018-06-10",
+      "datumEnde": "2018-06-10",
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A011",
+      "name": "Formel-E Bern",
+      "location": "Bern",
+      "start": null,
+      "ende": null,
+      "datumStart": null,
+      "datumEnde": null,
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A012",
+      "name": "Autorennen Mitholz-Kandersteg 1958",
+      "location": "Mitholz-Kandersteg",
+      "start": null,
+      "ende": null,
+      "datumStart": null,
+      "datumEnde": null,
+      "rangliste": "1. Erwin Sommerhaider",
+      "eventId": null
+    },
+    {
+      "id": "A013",
+      "name": "Autorennen Mitholz-Kandersteg 1962",
+      "location": "Mitholz-Kandersteg",
+      "start": null,
+      "ende": null,
+      "datumStart": null,
+      "datumEnde": null,
+      "rangliste": "1. Charles Vögele",
       "eventId": null
     }
   ],
@@ -416,11 +506,11 @@
       "credits": null,
       "urheber": "Abächerli, Carl",
       "eventId": null,
-      "austragungId": null
+      "austragungId": "A008"
     },
     {
       "id": "M023",
-      "url": "https://nb-posters.primo.exlibrisgroup.com/discovery/delivery/41SNL_53_INST:posters/991000002989703978?lang=fr#1335628400003978",
+      "url": null,
       "titel": "Grand Prix, Bern, 21.-22. August 1954",
       "legende": "Wortlaut des Plakates: Grand Prix Bern // 21./22. August 1954 P.O: monogramme inconnu",
       "datum": "1954",
@@ -428,7 +518,7 @@
       "credits": null,
       "urheber": null,
       "eventId": null,
-      "austragungId": null
+      "austragungId": "A005"
     },
     {
       "id": "M024",
@@ -440,7 +530,7 @@
       "credits": null,
       "urheber": null,
       "eventId": null,
-      "austragungId": null
+      "austragungId": "A006"
     },
     {
       "id": "M026",
@@ -525,6 +615,150 @@
       "urheber": "Thierstein, Eugen (1919-2010)",
       "eventId": null,
       "austragungId": "A005"
+    },
+    {
+      "id": "M033",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c3f622c8-c843-4e65-860d-c2b100ea3ee4?sv=2026-06-06&spr=https&se=2026-11-13T22%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0010-Screen.jpg&rsct=image%2Fjpeg&sig=fRDpuQmh3RFtuTmUsqCweaaODwJP33bnC%2FNsvE4SVGw%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0010",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": null
+    },
+    {
+      "id": "M034",
+      "url": "https://memobase.ch/de/object/bar-001-SFW_0436-7",
+      "titel": "Berner Grand Prix",
+      "legende": null,
+      "datum": "1950-06-09",
+      "typ": "Video",
+      "credits": "Schweizer Filmwochenschau (SFW), Berner Grand Prix (0436-7), Schweizer Filmwochenschau, Schweizer Filmwochenschau vom 09.06.1950",
+      "urheber": null,
+      "eventId": null,
+      "austragungId": "A006"
+    },
+    {
+      "id": "M035",
+      "url": "https://memobase.ch/de/object/bar-001-SFW_0635-6",
+      "titel": "Berner Grand-Prix",
+      "legende": null,
+      "datum": "1954-08-27",
+      "typ": "Video",
+      "credits": "Schweizer Filmwochenschau (SFW), Berner Grand-Prix (0635-6), Schweizer Filmwochenschau, Schweizer Filmwochenschau vom 27.08.1954",
+      "urheber": null,
+      "eventId": null,
+      "austragungId": "A005"
+    },
+    {
+      "id": "M036",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4f57515e-dc59-459c-bf3d-627ff0db7020?sv=2026-06-06&spr=https&se=2026-11-13T22%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0001-Screen.jpg&rsct=image%2Fjpeg&sig=F8Bk9L1IfVCpGkKJf9ki649l15RqeA9FNI08BhaFzwQ%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0001",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M037",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/d311a7c0-ef18-4c74-9a39-7eafbc9fb17e?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0002-Screen.jpg&rsct=image%2Fjpeg&sig=14kuSPlfWuWkIuJ2JOs9020dRBQ5oejNduQlZnGDeV0%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0002",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M038",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4dbf7e3b-4a3c-4ec1-b881-41d2eb6296b8?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0003-Screen.jpg&rsct=image%2Fjpeg&sig=8OyT%2By%2FMqcmfMgqL5ZGAEBLw4fFtKdyV%2Bexn%2BS688dM%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0003",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M039",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/06c66d38-af63-49c5-aa94-eab163cc5d06?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0004-Screen.jpg&rsct=image%2Fjpeg&sig=yFVzr6D77j9TxMl%2BIsJN0s5RIIj81cbTEX6LfXq%2B5HY%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0004",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M040",
+      "url": "https://commons.wikimedia.org/wiki/File:Zurich_E-Prix_Kurve_Mythenquai.jpg",
+      "titel": "Zurich E-Prix Kurve Mythenquai",
+      "legende": "Spitzkehre am Mythenquai vor der Start-Ziel-Geraden, Tag vor dem Rennen",
+      "datum": "2018-06-09",
+      "typ": "Foto",
+      "credits": "Wikimedia Commons; CC BY 4.0",
+      "urheber": "Albinfo",
+      "eventId": null,
+      "austragungId": "A010"
+    },
+    {
+      "id": "M041",
+      "url": "https://commons.wikimedia.org/wiki/File:Zurich_E-Prix_Dreik%C3%B6nigsstrasse.jpg",
+      "titel": "Zurich E-Prix Dreikönigstrasse",
+      "legende": "Testfahrt auf der Dreikönigstrasse, Tag vor dem Rennen",
+      "datum": "2018-06-09",
+      "typ": "Foto",
+      "credits": "Wikimedia Commons; CC BY 4.0",
+      "urheber": "Albinfo",
+      "eventId": null,
+      "austragungId": "A010"
+    },
+    {
+      "id": "M042",
+      "url": "https://commons.wikimedia.org/wiki/File:Zurich_e-Prix_Mythenquai_Hairpin.jpg",
+      "titel": "Zurich e-Prix Mythenquai Hairpin",
+      "legende": "Blick von der Haupttribüne auf die Spitzkehre am Mythenquai, Renntag",
+      "datum": "2018-06-10",
+      "typ": "Foto",
+      "credits": "Wikimedia Commons; CC BY-SA 4.0",
+      "urheber": "Wild8oar",
+      "eventId": null,
+      "austragungId": "A010"
+    },
+    {
+      "id": "M043",
+      "url": "https://memobase.ch/de/object/srf-030-033aa2fb-0f4d-4e49-a901-f956259be6d9_05",
+      "titel": "Formel E-Rennen",
+      "legende": "10vor10: erstes Rundstreckenrennen in einer Schweizer Stadt seit 64 Jahren",
+      "datum": "2018-06-07",
+      "typ": "Video",
+      "credits": "Schweizer Radio und Fernsehen (SRF); Weiternutzung nur mit Genehmigung SRF",
+      "urheber": "SRF",
+      "eventId": null,
+      "austragungId": "A010"
+    },
+    {
+      "id": "M044",
+      "url": "https://memobase.ch/de/object/srf-999-cadaa21f-8955-4483-9f92-bdd90e69618e_03",
+      "titel": "Formel E E-Prix Bern",
+      "legende": "Sport aktuell: Sieg Vergne, 3. Buemi, Interviews Buemi und Evans",
+      "datum": "2019-06-22",
+      "typ": "Video",
+      "credits": "Schweizer Radio und Fernsehen (SRF); Weiternutzung nur mit Genehmigung SRF",
+      "urheber": "SRF",
+      "eventId": null,
+      "austragungId": "A011"
     }
   ]
 }
