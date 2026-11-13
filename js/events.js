@@ -1,6 +1,6 @@
 // Event layer: one marker per distinct location of each event's Austragungen.
 // If an Austragung ends somewhere else than it starts, it gets a start pin,
-// an end pin and a straight line between them.
+// an end pin and a line between them that follows the road (straight if routing fails).
 // Austragungen of the same event at the same start point share one marker,
 // whose popup lists all of them.
 (function () {
@@ -116,7 +116,29 @@
 
   const POPUP_OPTS = { maxWidth: 280, minWidth: 220 };
 
-  window.buildEventLayer = function buildEventLayer(data) {
+  // Road route between two points from an OSRM server, as [[lat, lng], ...].
+  // Identical start/end pairs share one request. Resolves to null on any failure.
+  const routeCache = new Map();
+  function fetchRoute(routingUrl, a, b) {
+    const coords = `${a[1].toFixed(6)},${a[0].toFixed(6)};${b[1].toFixed(6)},${b[0].toFixed(6)}`;
+    if (!routeCache.has(coords)) {
+      const url = `${routingUrl}/${coords}?overview=full&geometries=geojson`;
+      routeCache.set(coords, fetch(url)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((json) => {
+          const line = json && json.code === 'Ok' && json.routes[0] && json.routes[0].geometry.coordinates;
+          return line && line.length > 1 ? line.map(([lng, lat]) => [lat, lng]) : null;
+        })
+        .catch((err) => {
+          console.warn('Routing failed, keeping straight line:', err);
+          return null;
+        }));
+    }
+    return routeCache.get(coords);
+  }
+
+  // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
+  window.buildEventLayer = function buildEventLayer(data, options = {}) {
     const eventsById = new Map((data.events || []).map((e) => [e.id, e]));
     const colorByEvent = new Map();
     function colorFor(eventId) {
@@ -164,10 +186,17 @@
         layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html, POPUP_OPTS));
         return;
       }
-      // Route: start pin, end pin and a straight line between them, all opening the same popup.
+      // Route: start pin, end pin and a line between them, all opening the same popup.
+      // The line starts out straight and follows the road once the route has loaded.
       const b = [end.lat, end.lng];
+      const line = L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' });
+      if (options.routingUrl) {
+        fetchRoute(options.routingUrl, a, b).then((path) => {
+          if (path) line.setLatLngs([a, ...path, b]);
+        });
+      }
       layers.push(
-        L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' }).bindPopup(html, POPUP_OPTS),
+        line.bindPopup(html, POPUP_OPTS),
         L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html, POPUP_OPTS),
         L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html, POPUP_OPTS),
       );

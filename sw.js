@@ -1,8 +1,9 @@
 // Service worker: caches the app shell, and map tiles as you view them.
 // Bump VERSION when you change any app file so clients pick up the new shell.
-const VERSION = 'v7';
+const VERSION = 'v8';
 const SHELL_CACHE = `shell-${VERSION}`;
 const TILE_CACHE = 'tiles-v1';
+const ROUTE_CACHE = 'routes-v1';
 const MAX_TILES = 2000;
 
 const SHELL = [
@@ -62,6 +63,20 @@ self.addEventListener('fetch', (event) => {
         if (res.ok || res.type === 'opaque') {
           cache.put(request, res.clone()).then(trimTiles);
         }
+        return res;
+      })
+    );
+    return;
+  }
+
+  // Road routes (OSRM): cache first, so routes already seen also work offline.
+  if (url.hostname === 'router.project-osrm.org') {
+    event.respondWith(
+      caches.open(ROUTE_CACHE).then(async (cache) => {
+        const hit = await cache.match(request);
+        if (hit) return hit;
+        const res = await fetch(request);
+        if (res.ok) cache.put(request, res.clone());
         return res;
       })
     );
