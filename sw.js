@@ -12,6 +12,8 @@ const SHELL = [
   'css/style.css',
   'js/config.js',
   'js/map.js',
+  'js/events.js',
+  'data/data.json',
   'js/app.js',
   'vendor/leaflet/leaflet.js',
   'vendor/leaflet/leaflet.css',
