@@ -1,6 +1,6 @@
 // Service worker: caches the app shell, and map tiles as you view them.
 // Bump VERSION when you change any app file so clients pick up the new shell.
-const VERSION = 'v1';
+const VERSION = 'v3';
 const SHELL_CACHE = `shell-${VERSION}`;
 const TILE_CACHE = 'tiles-v1';
 const MAX_TILES = 2000;
@@ -12,6 +12,8 @@ const SHELL = [
   'css/style.css',
   'js/config.js',
   'js/map.js',
+  'js/events.js',
+  'data/data.json',
   'js/app.js',
   'vendor/leaflet/leaflet.js',
   'vendor/leaflet/leaflet.css',

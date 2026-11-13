@@ -4,7 +4,10 @@
   const { map, addOverlay } = window.createMap('map', cfg);
   window.app = { map, addOverlay }; // handy in the browser console
 
-  // Data layers (Google Sheet: Event / Austragung / Medien) will be wired up here.
+  // Events: one marker per distinct Austragung location.
+  window.loadEvents(cfg.dataUrl)
+    .then((data) => addOverlay('Events', window.buildEventLayer(data)))
+    .catch((err) => console.error('Could not load event data:', err));
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

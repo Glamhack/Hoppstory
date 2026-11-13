@@ -1,0 +1,23 @@
+{
+  "exportiert": "2026-11-13T14:50:00.000Z",
+  "events": [
+    { "id": "E001", "name": "Rallye International du Valais", "beschreibung": "Testdaten: Rallye im Wallis.", "sportart": "Motorsport (Rallye)" },
+    { "id": "E002", "name": "Grosser Preis der Schweiz (Bremgarten)", "beschreibung": "Testdaten: Rundstreckenrennen im Bremgartenwald bei Bern.", "sportart": "Motorsport (Rundstrecke)" },
+    { "id": "E003", "name": "Engadin Skimarathon", "beschreibung": "Testdaten: Langlaufrennen im Oberengadin.", "sportart": "Langlauf" }
+  ],
+  "austragungen": [
+    { "id": "A001", "name": "Rallye du Valais 1990", "eventId": "E001", "location": "Sion", "start": { "lat": 46.2331, "lng": 7.3606 }, "ende": { "lat": 46.1024, "lng": 7.0727 }, "datumStart": "1990-10-18", "datumEnde": "1990-10-20", "rangliste": "Testdaten: 1. Fahrer A, 2. Fahrer B, 3. Fahrer C" },
+    { "id": "A002", "name": "Rallye du Valais 2010", "eventId": "E001", "location": "Crans-Montana", "start": { "lat": 46.3108, "lng": 7.48 }, "ende": { "lat": 46.292, "lng": 7.5323 }, "datumStart": "2010-10-28", "datumEnde": "2010-10-30", "rangliste": "Testdaten: 1. Fahrer D, 2. Fahrer E" },
+    { "id": "A003", "name": "GP Bremgarten 1950", "eventId": "E002", "location": "Bremgarten, Bern", "start": { "lat": 46.9655, "lng": 7.4105 }, "ende": { "lat": 46.9655, "lng": 7.4105 }, "datumStart": "1950-06-04", "datumEnde": "1950-06-04", "rangliste": "Testdaten: 1. Fahrer F, 2. Fahrer G" },
+    { "id": "A004", "name": "GP Bremgarten 1954", "eventId": "E002", "location": "Bremgarten, Bern", "start": { "lat": 46.9655, "lng": 7.4105 }, "ende": null, "datumStart": "1954-08-22", "datumEnde": null, "rangliste": null },
+    { "id": "A005", "name": "Engadin Skimarathon 2020", "eventId": "E003", "location": "Maloja – S-chanf", "start": { "lat": 46.404, "lng": 9.695 }, "ende": { "lat": 46.612, "lng": 9.987 }, "datumStart": "2020-03-08", "datumEnde": "2020-03-08", "rangliste": "Testdaten: 1. Läuferin H, 2. Läufer I" }
+  ],
+  "medien": [
+    { "id": "M001", "url": "https://picsum.photos/seed/glam1/800/600", "legende": "Testbild: Start in Sion", "typ": "Foto", "credits": "Platzhalter (picsum.photos)", "eventId": "E001", "austragungId": "A001" },
+    { "id": "M002", "url": "https://picsum.photos/seed/glam2/800/600", "legende": "Testbild: Sonderprüfung", "typ": "Foto", "credits": "Platzhalter (picsum.photos)", "eventId": "E001", "austragungId": "A002" },
+    { "id": "M003", "url": "https://picsum.photos/seed/glam3/800/600", "legende": "Testbild: Boxengasse", "typ": "Foto", "credits": "Platzhalter (picsum.photos)", "eventId": "E002", "austragungId": "A003" },
+    { "id": "M004", "url": "https://example.org/test-interview.mp3", "legende": "Test-Audio: Interview (Platzhalter-URL)", "typ": "Audio", "credits": "Platzhalter", "eventId": "E002", "austragungId": null },
+    { "id": "M005", "url": "https://example.org/test-video.mp4", "legende": "Test-Video: Zieleinlauf (Platzhalter-URL)", "typ": "Video", "credits": "Platzhalter", "eventId": "E003", "austragungId": "A005" },
+    { "id": "M006", "url": "https://example.org/test-artikel.html", "legende": "Test-Text: Zeitungsartikel (Platzhalter-URL)", "typ": "Text", "credits": "Platzhalter", "eventId": "E003", "austragungId": null }
+  ]
+}

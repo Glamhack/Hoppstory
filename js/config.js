@@ -24,6 +24,9 @@ window.APP_CONFIG = {
   },
   attribution: '&copy; <a href="https://www.swisstopo.admin.ch/" target="_blank" rel="noopener">swisstopo</a>',
 
+  // Exported data (Event / Austragung / Medien).
+  dataUrl: 'data/data.json',
+
   // Later: the Google Sheet with the Event / Austragung / Medien tabs.
   // Leave null until the data layer is built.
   sheetId: null,
