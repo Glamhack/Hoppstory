@@ -57,7 +57,52 @@
       ]
     }
   ],
-  "medien": [],
+  "medien": [
+    {
+      "id": "M901",
+      "eventId": "E902",
+      "austragungId": "A902",
+      "datum": "2026-04-01",
+      "typ": "Foto",
+      "url": "https://www.slashfilm.com/img/gallery/creating-the-podracing-scene-for-star-wars-the-phantom-menace-was-a-long-collaborative-process/intro-1672257966.webp",
+      "legende": "Ein junger Gastfahrer beim Warm-up. Die Rennleitung bestätigt: Er hat eine Startlizenz für Chiasso, aber keine für Tatooine.",
+      "credits": "Szene aus «Star Wars: Episode I – Die dunkle Bedrohung» (Lucasfilm), via /Film",
+      "urheber": "Lucasfilm"
+    },
+    {
+      "id": "M902",
+      "eventId": "E902",
+      "austragungId": "A902",
+      "datum": "2026-04-01",
+      "typ": "Foto",
+      "url": "https://lumiere-a.akamaihd.net/v1/images/databank_boontaeveclassicpodracerpilots_01_169_e6dc291f.jpeg?region=0%2C0%2C1560%2C878",
+      "legende": "Startaufstellung in Chiasso: Die Pilot:innen warten auf das Signal des Zollbeamten.",
+      "credits": "Star Wars Databank (Lucasfilm)",
+      "urheber": "Lucasfilm"
+    },
+    {
+      "id": "M903",
+      "eventId": "E902",
+      "austragungId": "A902",
+      "datum": "2026-04-01",
+      "typ": "Foto",
+      "url": "https://www.belloflostsouls.net/wp-content/uploads/2021/12/tie-fo-flight.jpg",
+      "legende": "Rennmitte über dem Gotthard: Blip-7 setzt sich ab, Zorg sucht noch einen Parkplatz für den Toblerone-Stopp.",
+      "credits": "Star Wars (Lucasfilm), via Bell of Lost Souls",
+      "urheber": "Lucasfilm"
+    },
+    {
+      "id": "M904",
+      "eventId": "E901",
+      "austragungId": "A901",
+      "datum": "2026-11-14",
+      "typ": "Foto",
+      "url": "https://designyoutrust.com/wp-content/uploads/2019/03/1-44.jpg",
+      "legende": "Live aus dem campo: Hier entstehen Bleeding-Edge-Anwendungen mit KI. Neuste Hardware, volle Konzentration, der Kaffee steht bereit.",
+      "credits": "via Design You Trust",
+      "urheber": null
+    }
+  ],
   "personen": [
     {
       "id": "P901",
