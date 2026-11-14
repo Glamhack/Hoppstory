@@ -6,7 +6,8 @@
 // - tap the axis to select that decade
 // - drag a handle to change the start or end year (by single years)
 // - drag the block itself to move the whole range
-// - the chip on the right shows the selection; tapping it clears it again
+// - tapping the block (without dragging) or pressing Escape on a handle
+//   clears the selection again
 //
 // createTimeline(element, { minYear, maxYear, items: [{ year, color }], onChange(from, to, all) })
 window.createTimeline = function createTimeline(root, opts) {
@@ -51,19 +52,17 @@ window.createTimeline = function createTimeline(root, opts) {
       <div class="tl-axis"></div>
       ${ticks.join('')}
       <div class="tl-ghost" hidden></div>
-      <div class="tl-range" hidden>
+      <div class="tl-range" hidden title="Antippen, um die Auswahl aufzuheben">
         <span class="tl-handle tl-handle-from" role="slider" tabindex="0" aria-label="Startjahr"></span>
         <span class="tl-handle tl-handle-to" role="slider" tabindex="0" aria-label="Endjahr"></span>
       </div>
       ${labels.join('')}
       ${dots}
-    </div>
-    <button type="button" class="tl-reset"></button>`;
+    </div>`;
 
   const track = root.querySelector('.tl-track');
   const range = root.querySelector('.tl-range');
   const ghost = root.querySelector('.tl-ghost');
-  const reset = root.querySelector('.tl-reset');
   const handleFrom = root.querySelector('.tl-handle-from');
   const handleTo = root.querySelector('.tl-handle-to');
   const dotEls = [...root.querySelectorAll('.tl-dots')];
@@ -83,12 +82,6 @@ window.createTimeline = function createTimeline(root, opts) {
     });
     const a = first + from;
     const b = first + to;
-    reset.disabled = !selected;
-    reset.innerHTML = selected
-      ? `${a === b ? a : `${a}–${b}`}<span aria-hidden="true">&times;</span>`
-      : 'Alle Jahre';
-    reset.title = selected ? 'Auswahl aufheben, alle Jahre zeigen' : 'Zeitstrahl antippen, um nach Jahren zu filtern';
-    reset.setAttribute('aria-label', selected ? `Zeitraum ${a} bis ${b}, aufheben` : 'Alle Jahre');
     handleFrom.setAttribute('aria-valuenow', a);
     handleFrom.setAttribute('aria-valuemin', first);
     handleFrom.setAttribute('aria-valuemax', b);
@@ -180,9 +173,12 @@ window.createTimeline = function createTimeline(root, opts) {
   track.addEventListener('pointerleave', () => { ghost.hidden = true; });
 
   track.addEventListener('pointerup', (e) => {
-    if (drag && drag.mode === 'tap' && Math.abs(e.clientX - drag.startX) < 8) {
+    const still = drag && Math.abs(e.clientX - drag.startX) < 8;
+    if (still && drag.mode === 'tap') {
       const [a, b] = decadeOf(drag.i);
       set(a, b);
+    } else if (still && drag.mode === 'move') {
+      clear(); // tap on the block
     }
     drag = null;
     range.classList.remove('is-dragging');
@@ -193,6 +189,9 @@ window.createTimeline = function createTimeline(root, opts) {
   });
 
   // Keyboard on the handles: arrows move by a year, Page Up/Down by ten.
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && selected) clear();
+  });
   function keyStep(e) {
     return { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -10, PageUp: 10 }[e.key] || 0;
   }
@@ -208,8 +207,6 @@ window.createTimeline = function createTimeline(root, opts) {
     e.preventDefault();
     set(from, Math.max(to + s, from));
   });
-
-  reset.addEventListener('click', clear);
 
   render();
   layoutLabels();

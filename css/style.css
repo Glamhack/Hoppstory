@@ -192,9 +192,9 @@ body.page { background: #fff; }
    decade ticks and labels, a dot per Austragung, and the selected range as a
    slate block with a handle on each end (see js/timeline.js). */
 .timeline {
-  flex: none; display: flex; align-items: center; gap: 18px;
+  flex: none; display: flex; align-items: center;
   height: calc(52px + env(safe-area-inset-bottom));
-  padding: 0 10px env(safe-area-inset-bottom) 22px;
+  padding: 0 22px env(safe-area-inset-bottom);
   background: #f7f6f3; border-top: 1px solid #dcdad5;
   box-shadow: 0 -2px 8px rgba(0,0,0,.12);
   position: relative; z-index: 1000;
@@ -247,13 +247,3 @@ body.page { background: #fff; }
 .tl-handle-to { right: -8px; border-radius: 0 3px 3px 0; }
 .tl-handle-to::after { left: 2px; border-left-color: #fff; border-right-width: 0; }
 .tl-handle:focus-visible { outline: 2px solid #222; outline-offset: 1px; }
-/* Selection chip on the right: "1950–1961 ×", or "Alle Jahre" when nothing is selected */
-.tl-reset {
-  flex: none; display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px 0 12px;
-  border: 0; border-radius: 999px; background: var(--accent); color: #fff;
-  font: inherit; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums;
-  white-space: nowrap; cursor: pointer;
-}
-.tl-reset span { font-size: 17px; line-height: 1; opacity: .85; }
-.tl-reset:not(:disabled):hover { background: var(--accent-dark); }
-.tl-reset:disabled { background: none; color: #9a968f; font-weight: 500; cursor: default; padding: 0 4px; }
