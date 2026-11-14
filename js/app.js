@@ -33,10 +33,13 @@
         }, 450);
       }
 
-      window.createTimeline(document.getElementById('timeline'), {
-        // From the decade of the oldest Austragung up to this year.
-        minYear: Math.floor(Math.min(...years, new Date().getFullYear()) / 10) * 10,
-        maxYear: Math.max(...years, new Date().getFullYear()),
+      // From the decade of the oldest Austragung up to this year.
+      const minYear = Math.floor(Math.min(...years, new Date().getFullYear()) / 10) * 10;
+      const maxYear = Math.max(...years, new Date().getFullYear());
+      const timelineEl = document.getElementById('timeline');
+      window.createTimeline(timelineEl, {
+        minYear,
+        maxYear,
         items: layer.years,
         // Undated Austragungen only show while every year is selected.
         onChange: (from, to, all) => {
@@ -49,6 +52,12 @@
         },
       });
       map.invalidateSize(); // the timeline took some height from the map
+
+      // Milestones (e.g. the circuit-racing ban) as markers on the timeline.
+      fetch(cfg.milestonesUrl)
+        .then((res) => (res.ok ? res.json() : Promise.reject(new Error(res.status))))
+        .then((ms) => window.addMilestones(timelineEl, ms, { minYear, maxYear }))
+        .catch((err) => console.warn('Could not load milestones:', err));
     })
     .catch((err) => console.error('Could not load event data:', err));
 

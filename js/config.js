@@ -35,6 +35,8 @@ window.APP_CONFIG = {
 
   // Exported data (Event / Austragung / Medien).
   dataUrl: 'data/data.json',
+  // Milestones shown on the timeline (racing ban 1955–2026).
+  milestonesUrl: 'data/meilensteine.json',
 
   // Routes (Austragungen whose end differs from their start) follow the road network,
   // using the free public OSRM demo server (car profile, OpenStreetMap data; light use only).
