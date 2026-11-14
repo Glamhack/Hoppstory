@@ -1,55 +1,55 @@
 {
   "quelle": "Data.xlsx",
-  "exportiert": "2026-11-14T13:29:18Z",
+  "exportiert": "2026-11-14T14:28:54Z",
   "events": [
     {
       "id": "E001",
-      "name": "Bergrennen Tiefencastel-Lenzerheide",
-      "beschreibung": "Das Bergrennen Tiefencastel–Lenzerheide war ein klassisches Automobil-Bergrennen (Hillclimb) im Schweizer Kanton Graubünden, das 1951 und 1957 auf einer abgesperrten öffentlichen Bergstrasse ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer einzeln nacheinander gegen die Stoppuhr, um die 6,25 Kilometer lange und kurvenreiche Strecke mit über 500 Höhenmetern so schnell wie möglich zu bewältigen. Während die erste Austragung 1951 ein nationales Rennen zur Wiederbelebung des Schweizer Motorsports nach dem Krieg war, zählte das zweite Rennen 1957 bereits als hochkarätiger Lauf zur offiziellen Europa-Bergmeisterschaft. Heute lebt die Tradition durch die Lenzerheide Motor Classics weiter, allerdings als reine Demonstrationsfahrt ohne Zeitnahme auf einem kürzeren Rundkurs.",
+      "name": "Bergrennen Tiefencastel–Lenzerheide",
+      "beschreibung": "Das Bergrennen Tiefencastel–Lenzerheide war ein Automobil-Bergrennen im Kanton Graubünden, das zweimal – am 26. August 1951 und am 25. August 1957 – auf der abgesperrten Strasse von Tiefencastel über Lantsch bis zur Kirche St. Cassian auf der Lenzerheide ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer nacheinander gegen die Stoppuhr auf der rund 6,25 Kilometer langen, kurvenreichen Strecke mit über 500 Höhenmetern. Die Erstaustragung 1951, organisiert von der Graubündner Sektion des Automobil Clubs der Schweiz (ACS), war ein nationales Rennen mit Klassen vom Serien-Tourenwagen bis zum Rennwagen und Schweizer Grössen wie Emmanuel de Graffenried, Rudolf Fischer und Willy Peter Daetwyler am Start; Tagessieger wurde Albert «Bätsch» Scherrer auf Jaguar XK 120. 1957 zählte das Rennen zur ersten FIA-Europa-Bergmeisterschaft und wurde von Wolfgang von Trips auf einem Werks-Porsche vor Richard von Frankenberg (Porsche) und Willy Daetwyler (Maserati 200S) gewonnen. Weil die Veranstaltung finanziell wenig erfolgreich war, blieb es bei diesen zwei Austragungen. Heute lebt die Tradition in den seit 2011 stattfindenden Lenzerheide Motor Classics weiter, die jedoch nicht am Berg, sondern auf einem kurzen Rundkurs im Ort gefahren werden; 2026 wurde mit «75 Jahre Motorsport Lenzerheide» an die Erstaustragung erinnert.",
       "sportart": "Automobil Bergrennen"
     },
     {
       "id": "E002",
       "name": "Klausenrennen",
-      "beschreibung": "Das Klausenrennen war ein legendäres internationales Bergrennen für Automobile und Motorräder, das zwischen 1922 und 1934 zehnmal auf der unbefestigten Klausenpassstrasse ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer einzeln gegen die Stoppuhr, um die gefährliche, 21,5 Kilometer lange Strecke von Linthal (GL) über 136 Kurven und rund 1'240 Höhenmeter hinauf bis zur Passhöhe (UR) zu bewältigen. Der Wettbewerb galt als das bekannteste und härteste Bergrennen Europas sowie als «Grosser Bergpreis der Schweiz», der Weltstars und Werksteams wie die berühmten Silberpfeile anzog. Heute lebt der Mythos durch regelmässige Oldtimer-Gedenkfahrten wie das geplante Klausenrennen Revival weiter.",
+      "beschreibung": "Das Klausenrennen war ein internationales Bergrennen für Automobile und Motorräder, das zwischen 1922 und 1934 zehnmal auf der damals unbefestigten Klausenpassstrasse zwischen den Kantonen Glarus und Uri ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer nacheinander gegen die Stoppuhr auf der 21,5 Kilometer langen Strecke von Linthal (GL) über 136 Kurven und rund 1'240 Höhenmeter bis zur Passhöhe (UR), auf Schotter, Geröll und Pflastersteinen. Als «Grosser Bergpreis der Schweiz» galt das Rennen als das bekannteste und härteste Bergrennen Europas, zog bis zu rund 20'000 Zuschauer an und lockte Werksteams und Spitzenfahrer wie Rudolf Caracciola, dessen Bestzeit erst 1998 unterboten wurde. Nach 1934 wurde das Rennen nicht mehr durchgeführt. Seit 1993 erinnern Oldtimer-Veranstaltungen auf der Originalstrecke an den «Mythos Klausen»: Memorial-Rennen fanden 1993, 1998, 2002, 2006 und 2013 statt, 2022 folgte zum 100-Jahr-Jubiläum eine Showfahrt. Als nächste Austragung ist das Klausenrennen Revival vom 24. bis 26. September 2027 geplant (ursprünglich für 2026 vorgesehen), mit Gleichmässigkeits-, Wettbewerbs- und Demonstrationsklassen.",
       "sportart": "Automobil Bergrennen"
     },
     {
       "id": "E003",
-      "name": "Grand-Prix Bern",
-      "beschreibung": "Der Grand-Prix von Bern (historisch bekannt als Grosser Preis der Schweiz) war ein legendäres internationales Rundstreckenrennen für Automobile und Motorräder, das zwischen 1934 und 1954 auf der Bremgarten-Rundstrecke im Bremgartenwald bei Bern ausgetragen wurde. Im direkten Massenstart-Rennen kämpften die Fahrer auf dem 7,28 Kilometer langen, extrem schnellen und gefährlichen Naturstrassenkurs mit seinen langen Waldpassagen und tückischen Licht-Schatten-Wechseln um den Sieg. Ab 1950 zählte das Rennen offiziell zur neu geschaffenen Formel-1-Weltmeisterschaft (sowie zur Motorrad-WM) und zog über 100'000 Zuschauer sowie Legenden wie Rudolf Caracciola oder Juan Manuel Fangio an. Nach dem schweren Unfall in Le Mans 1955 und dem anschliessenden Rundstreckenverbot in der Schweiz wurde der Rennbetrieb eingestellt, doch vereinzelt erinnern heute noch Gedenkveranstaltungen wie das GP Suisse Memorial an diese Ära.",
+      "name": "Grand Prix Bern",
+      "beschreibung": "Der Grand Prix von Bern (offiziell Grosser Preis der Schweiz) war ein internationales Rundstreckenrennen für Automobile und Motorräder, das von 1934 bis 1939 und von 1947 bis 1954 auf der Bremgarten-Rundstrecke im Bremgartenwald im Norden von Bern ausgetragen wurde. Im Massenstart-Rennen kämpften die Fahrer auf dem 7,28 Kilometer langen, extrem schnellen Naturstrassenkurs ohne echte Gerade, mit langen Waldpassagen und tückischen Licht-Schatten-Wechseln, um den Sieg. Das Rennen war der grösste Sportanlass der Schweiz, zählte vor dem Krieg zur Europameisterschaft und ab 1950 zur neu geschaffenen Formel-1-Weltmeisterschaft (sowie zur Motorrad-WM) und zog regelmässig über 100'000 Zuschauer an. Zu den Siegern gehörten Hans Stuck (1934), Rudolf Caracciola (1935, 1937, 1938), Bernd Rosemeyer (1936), Giuseppe Farina (1950) und Juan Manuel Fangio (1951, 1954); die Strecke forderte aber auch mehrere Todesopfer, darunter 1948 Achille Varzi und Omobono Tenni. Nach der Katastrophe von Le Mans 1955 erliess die Schweiz ein Verbot für Rundstreckenrennen, womit der Rennbetrieb endete. Heute erinnern Gedenkanlässe mit historischen Fahrzeugen und Ausstellungen, etwa im Bernischen Historischen Museum, an diese Ära.",
       "sportart": "Automobil Rundstreckenrennen"
     },
     {
       "id": "E004",
-      "name": "Autorennen Mitholz-Kandersteg",
-      "beschreibung": "Das historische Bergrennen Mitholz–Kandersteg fand von 1950 bis 1969 insgesamt 18 Mal statt, bevor es aufgrund des zunehmenden Verkehrs auf der Lötschberg-Route eingestellt wurde",
+      "name": "Bergrennen Mitholz–Kandersteg",
+      "beschreibung": "Das Bergrennen Mitholz–Kandersteg war ein Automobil-Bergrennen im Kandertal im Berner Oberland, das zwischen 1950 und 1969 insgesamt 18 Mal ausgetragen wurde. Im Modus eines Einzelzeitfahrens starteten die Fahrer nacheinander gegen die Stoppuhr auf der nur 2'640 Meter langen Strecke mit 179 Höhenmetern, die grösstenteils im Schlussabschnitt über die vier Haarnadelkurven am «Bühlstutz» überwunden wurden. Die letzte dieser Kehren war als natürliche Zuschauertribüne und Fotokurve bekannt und machte das Rennen zu einem Publikumsmagneten. Die Geschichte war nicht ohne Rückschläge: 1964 drohte wegen Streitigkeiten mit Landbesitzern die Absage, und 1967 wurde die Veranstaltung nach einem tödlichen Trainingsunfall von Gody Winzenried abgebrochen. Nach der Abschiedsvorstellung 1969 wurde das Rennen eingestellt, unter anderem wegen des zunehmenden Verkehrs auf der Lötschberg-Route. Heute erinnert die seit 2007 durchgeführte Oldtimer-Veranstaltung «Revival Mitholz–Kandersteg» als FIVA-Rallye an die historischen Bergrennen.",
       "sportart": "Automobil Bergrennen"
     },
     {
       "id": "E005",
-      "name": "Formel-E",
-      "beschreibung": "Die Formel E ist die FIA-Rennserie für vollelektrische Formelwagen, die 2018 in Zürich und 2019 in Bern je einen E-Prix auf einem temporären Stadtkurs austrug.",
+      "name": "Formel E",
+      "beschreibung": "Die Formel E ist die FIA-Rennserie für vollelektrische Formelwagen, die 2018 in Zürich und 2019 in Bern je einen E-Prix auf einem temporären Stadtkurs in der Schweiz austrug. Im Massenstart-Rennen fuhren die Teams auf abgesperrten Innenstadtstrassen: in Zürich auf einem 2,465 Kilometer langen Kurs am Seeufer über 39 Runden, in Bern auf einem 2,668 Kilometer langen, hügeligen Kurs über 31 Runden. Der Zürich E-Prix vom 10. Juni 2018 war das erste Rundstreckenrennen in der Schweiz seit dem Grossen Preis der Schweiz 1954 und lockte rund 150'000 Zuschauer an; möglich wurde er, weil das Rundstreckenverbot für Elektrofahrzeuge gelockert worden war. In Zürich siegte Lucas di Grassi (Audi), beim Swiss E-Prix in Bern am 22. Juni 2019 gewann Jean-Éric Vergne (DS Techeetah) von der Pole-Position aus nach einem Massenunfall in der ersten Runde. Da Zürich 2019 nicht erneut zur Verfügung stand und Bern die Veranstaltung nicht wiederholte, blieben es zwei Austragungen. Seither ist die Formel E nicht mehr in die Schweiz zurückgekehrt.",
       "sportart": "Elektroautomobil Rundstreckenrennen"
     },
     {
       "id": "E006",
       "name": "Grand Prix de Lausanne",
-      "beschreibung": "Der Grand Prix de Lausanne war ein internationales Automobil-Rundstreckenrennen, das 1947 und 1949 auf einem Strassenkurs im Norden von Lausanne ausgetragen wurde und Spitzenfahrer der Nachkriegszeit in die Schweiz brachte.",
+      "beschreibung": "Der Grand Prix de Lausanne war ein internationales Automobil-Rundstreckenrennen, das zweimal – am 5. Oktober 1947 und am 28. August 1949 – auf einem temporären Strassenkurs im Gebiet der Blécherette im Norden von Lausanne ausgetragen wurde. Im Massenstart-Rennen absolvierten die Fahrer jeweils 90 Runden auf dem rund 3,25 Kilometer langen Stadtkurs. Das Rennen zählte nicht zu einer Meisterschaft, brachte aber Spitzenfahrer der Nachkriegszeit in die Schweiz; im Rahmenprogramm fand zudem der Grand Prix de la Blécherette für kleine Sportwagen statt. 1947 siegte Luigi Villoresi auf Maserati 4CL, 1949 Giuseppe Farina auf Maserati 4CLT/48 vor Alberto Ascari (Ferrari 125) und dem Schweizer Emmanuel de Graffenried (Maserati). Nach 1949 wurde das Rennen nicht mehr durchgeführt, spätestens das Rundstreckenverbot von 1955 machte eine Neuauflage unmöglich. Heute gibt es keine regelmässige Gedenkveranstaltung an diesen Grand Prix.",
       "sportart": "Automobil Rundstreckenrennen"
     },
     {
       "id": "E007",
       "name": "Grand Prix automobile de Montreux",
-      "beschreibung": null,
-      "sportart": null
+      "beschreibung": "Der Grand Prix automobile de Montreux war ein internationales Automobil-Rundstreckenrennen, das nur ein einziges Mal – am 3. Juni 1934 – am Ufer des Genfersees im Kanton Waadt ausgetragen wurde. Im Massenstart-Rennen absolvierten die Fahrer 90 Runden auf dem 3,32 Kilometer langen, engen und von Tramschienen gesäumten Stadtkurs, der vorbei an Casinos, Palmen und Hotels führte und an den Grand Prix von Monaco erinnerte. Da am selben Tag das prestigeträchtige Eifelrennen auf dem Nürburgring stattfand, gingen nur zwölf Fahrzeuge an den Start, darunter drei Werks-Alfa-Romeos der Scuderia Ferrari. Der Franzose Philippe Étancelin (Maserati 8CM) startete von der Pole-Position und führte lange, bis nachlassende Bremsen es dem Italiener Carlo Felice Trossi (Alfa Romeo Tipo B «P3») erlaubten, ihn zwei Runden vor Schluss zu überholen und zu gewinnen; Dritter wurde Achille Varzi. Wegen der hohen Infrastrukturkosten und der Terminkollision blieb das Rennen eine einmalige Erscheinung. Seit den 1970er-Jahren erinnern gelegentliche Revival-Veranstaltungen daran, etwa 1977 mit Juan Manuel Fangio und Stirling Moss oder 2002.",
+      "sportart": "Automobil Rundstreckenrennen"
     }
   ],
   "austragungen": [
     {
       "id": "A001",
       "eventId": "E001",
-      "name": "Bergrennen Tiefencastel-Lenzerheide 1957",
+      "name": "2. Bergrennen Tiefencastel-Lenzerheide",
       "datumStart": "1957-08-25",
       "datumEnde": "1957-08-25",
       "start": {
@@ -61,13 +61,15 @@
         "lng": 9.558598309800137
       },
       "location": "Tiefencastel-Lenzerheide",
-      "rangliste": "Lenzerheide (Switzerland)  (Aug. 25th)\n1st: W. von Trips (Porsche 1,680-c.c.)\n2nd: R. von Frankenberg (Porsche 1,585-c.c.)\n3rd: W. Daetwyler (Maserati 200S)\n4th: H. Herrmann (Borgward 1500RS)\n5th: P. Monteverdi (Ferrari 750S)\n6th: T. Sopwith (Cooper F2)",
-      "siegerIds": []
+      "rangliste": "1. W. von Trips (Porsche 1,680-c.c.)\n2. R. von Frankenberg (Porsche 1,585-c.c.)\n3. W. Daetwyler (Maserati 200S)\n4. H. Herrmann (Borgward 1500RS)\n5. P. Monteverdi (Ferrari 750S)\n6. T. Sopwith (Cooper F2)",
+      "siegerIds": [
+        "P012"
+      ]
     },
     {
       "id": "A002",
       "eventId": "E002",
-      "name": "10. Klausenrennen 1934",
+      "name": "10. Klausenrennen",
       "datumStart": "1934-08-05",
       "datumEnde": "1934-08-05",
       "start": {
@@ -80,12 +82,14 @@
       },
       "location": "Klausenpass",
       "rangliste": "Automobil:\n1. Rudolf Caracciola (DE)\n2. Hans Stuck (DE)\n3 Whitney Straight (EN)\n\nMotorrad:\n1. E. Hänni (CH)\n2. B. Rosemeyer (DE)\n3. G. Cordey (CH)",
-      "siegerIds": []
+      "siegerIds": [
+        "P002"
+      ]
     },
     {
       "id": "A003",
       "eventId": "E002",
-      "name": "11. Klausenrennen 2013",
+      "name": "11. Klausenrennen",
       "datumStart": "2013-09-27",
       "datumEnde": "2013-09-29",
       "start": {
@@ -98,12 +102,14 @@
       },
       "location": "Klausenpass",
       "rangliste": "Automobil:\n1. Christian Traber (CH)\n2. Rainer Ott (D)\n3. Emilio Baldini (CH)\n\nMotorrad:\n1. Susan Jane Darbyshire (GB)\t\n2. Otto Ziegler (FL)\n3. Marco Blumer (CH)",
-      "siegerIds": []
+      "siegerIds": [
+        "P013"
+      ]
     },
     {
       "id": "A015",
       "eventId": "E004",
-      "name": "17. Autorennen Mitholz-Kandersteg 1966",
+      "name": "17. Autorennen Mitholz-Kandersteg",
       "datumStart": "1966-09-11",
       "datumEnde": "1966-09-11",
       "start": {
@@ -116,12 +122,14 @@
       },
       "location": "Mitholz-Kandersteg",
       "rangliste": "1. Harry Zweifel\n2. Hans Illert\n3. Walter Habegger",
-      "siegerIds": []
+      "siegerIds": [
+        "P014"
+      ]
     },
     {
       "id": "A007",
       "eventId": "E002",
-      "name": "2. International Klausenrennen 1923",
+      "name": "2. International Klausenrennen",
       "datumStart": "1923-07-29",
       "datumEnde": "1923-07-29",
       "start": {
@@ -134,12 +142,14 @@
       },
       "location": "Klausenpass",
       "rangliste": "1. H. Rützler (AT)\n2. G. Masetti (IT)\n3 J. Merz (CH)",
-      "siegerIds": []
+      "siegerIds": [
+        "P015"
+      ]
     },
     {
       "id": "A008",
       "eventId": "E002",
-      "name": "6. Klausenrennen 1930",
+      "name": "6. Klausenrennen",
       "datumStart": "1930-08-09",
       "datumEnde": "1930-08-10",
       "start": {
@@ -152,12 +162,14 @@
       },
       "location": "Klausenpass",
       "rangliste": "Automobil:\n1. L Chiron (FR)\n2. H. Stuck (DE)\n3. Bouriat (FR)\n\nMotrrad:\n1 T.F. Bullus (EN)\n2 C. Cérésole (CH)\n3 J. Zuber (CH)",
-      "siegerIds": []
+      "siegerIds": [
+        "P016"
+      ]
     },
     {
       "id": "A012",
       "eventId": "E004",
-      "name": "Autorennen Mitholz-Kandersteg 1958",
+      "name": "IX. Autorennen Mitholz-Kandersteg",
       "datumStart": "1958-09-14",
       "datumEnde": "1958-09-14",
       "start": {
@@ -169,13 +181,15 @@
         "lng": 7.677082
       },
       "location": "Mitholz-Kandersteg",
-      "rangliste": "1. Erwin Sommerhaider",
-      "siegerIds": []
+      "rangliste": "1. Erwin Sommerhalder",
+      "siegerIds": [
+        "P017"
+      ]
     },
     {
       "id": "A014",
       "eventId": "E004",
-      "name": "Autorennen Mitholz-Kandersteg 1960",
+      "name": "XI. Autorennen Mitholz-Kandersteg",
       "datumStart": "1960-05-14",
       "datumEnde": "1960-05-15",
       "start": {
@@ -187,13 +201,15 @@
         "lng": 7.677082
       },
       "location": "Mitholz-Kandersteg",
-      "rangliste": null,
-      "siegerIds": []
+      "rangliste": "1. Harry Zweifel",
+      "siegerIds": [
+        "P014"
+      ]
     },
     {
       "id": "A009",
       "eventId": "E004",
-      "name": "Autorennen Mitholz-Kandersteg 1961",
+      "name": "XII. Autorennen Mitholz-Kandersteg",
       "datumStart": "1961-05-07",
       "datumEnde": "1961-05-07",
       "start": {
@@ -206,12 +222,14 @@
       },
       "location": "Mitholz-Kandersteg",
       "rangliste": "1. Harry Zweifel",
-      "siegerIds": []
+      "siegerIds": [
+        "P014"
+      ]
     },
     {
       "id": "A013",
       "eventId": "E004",
-      "name": "Autorennen Mitholz-Kandersteg 1962",
+      "name": "XIII. Autorennen Mitholz-Kandersteg",
       "datumStart": "1962-09-22",
       "datumEnde": "1962-09-23",
       "start": {
@@ -224,12 +242,14 @@
       },
       "location": "Mitholz-Kandersteg",
       "rangliste": "1. Charles Vögele",
-      "siegerIds": []
+      "siegerIds": [
+        "P018"
+      ]
     },
     {
       "id": "A004",
       "eventId": "E001",
-      "name": "Bergrennen Tiefencastel-Lenzerheide 1951",
+      "name": "1. Bergrennen Tiefencastel-Lenzerheide",
       "datumStart": "1951-08-26",
       "datumEnde": "1951-08-26",
       "start": {
@@ -241,13 +261,15 @@
         "lng": 9.558598309800137
       },
       "location": "Tiefencastel-Lenzerheide",
-      "rangliste": null,
-      "siegerIds": []
+      "rangliste": "1. Rudolf Fischer",
+      "siegerIds": [
+        "P021"
+      ]
     },
     {
       "id": "A011",
       "eventId": "E005",
-      "name": "Formel-E Bern",
+      "name": "Swiss E-Prix",
       "datumStart": "2019-06-22",
       "datumEnde": "2019-06-22",
       "start": {
@@ -260,12 +282,14 @@
       },
       "location": "Bern",
       "rangliste": "1. Jean-Éric Vergne (DS Techeetah)\n2. Mitch Evans (Panasonic Jaguar Racing)\n3. Sébastien Buemi (Nissan e.dams)",
-      "siegerIds": []
+      "siegerIds": [
+        "P019"
+      ]
     },
     {
       "id": "A010",
       "eventId": "E005",
-      "name": "Formel-E Zürich",
+      "name": "Zurich E-Prix",
       "datumStart": "2018-06-10",
       "datumEnde": "2018-06-10",
       "start": {
@@ -278,7 +302,9 @@
       },
       "location": "Zürich",
       "rangliste": "1. Lucas di Grassi (ABT Schaeffler Audi Sport)\n2. Sam Bird (DS Virgin Racing)\n3. Jérôme D'Ambrosio (Dragon Racing)",
-      "siegerIds": []
+      "siegerIds": [
+        "P020"
+      ]
     },
     {
       "id": "A016",
@@ -295,7 +321,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Hans Stuck (GER)",
+      "rangliste": "1. Hans Stuck (GER)",
       "siegerIds": [
         "P001"
       ]
@@ -315,7 +341,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Rudolf Caracciola (GER)",
+      "rangliste": "1. Rudolf Caracciola (GER)",
       "siegerIds": [
         "P002"
       ]
@@ -335,7 +361,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Bernd Rosemeyer (GER)",
+      "rangliste": "1. Bernd Rosemeyer (GER)",
       "siegerIds": [
         "P003"
       ]
@@ -355,7 +381,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Rudolf Caracciola (GER)",
+      "rangliste": "1. Rudolf Caracciola (GER)",
       "siegerIds": [
         "P002"
       ]
@@ -375,7 +401,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Rudolf Caracciola (GER)",
+      "rangliste": "1. Rudolf Caracciola (GER)",
       "siegerIds": [
         "P002"
       ]
@@ -395,7 +421,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Hermann Lang (GER)",
+      "rangliste": "1. Hermann Lang (GER)",
       "siegerIds": [
         "P004"
       ]
@@ -415,7 +441,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Jean-Pierre Wimille (FRA)",
+      "rangliste": "1. Jean-Pierre Wimille (FRA)",
       "siegerIds": [
         "P005"
       ]
@@ -435,7 +461,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Carlo Felice Trossi (ITA)",
+      "rangliste": "1. Carlo Felice Trossi (ITA)",
       "siegerIds": [
         "P006"
       ]
@@ -455,7 +481,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Alberto Ascari (ITA)",
+      "rangliste": "1. Alberto Ascari (ITA)",
       "siegerIds": [
         "P007"
       ]
@@ -475,7 +501,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Giuseppe Farina (ITA)",
+      "rangliste": "1. Giuseppe Farina (ITA)",
       "siegerIds": [
         "P008"
       ]
@@ -495,7 +521,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Juan Manuel Fangio (ARG)",
+      "rangliste": "1. Juan Manuel Fangio (ARG)",
       "siegerIds": [
         "P009"
       ]
@@ -515,7 +541,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Piero Taruffi (ITA)",
+      "rangliste": "1. Piero Taruffi (ITA)",
       "siegerIds": [
         "P010"
       ]
@@ -535,7 +561,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Alberto Ascari (ITA)",
+      "rangliste": "1. Alberto Ascari (ITA)",
       "siegerIds": [
         "P007"
       ]
@@ -555,7 +581,7 @@
         "lng": 7.412015527945174
       },
       "location": "Bern",
-      "rangliste": "Juan Manuel Fangio (ARG)",
+      "rangliste": "1. Juan Manuel Fangio (ARG)",
       "siegerIds": [
         "P009"
       ]
@@ -563,7 +589,7 @@
     {
       "id": "A035",
       "eventId": "E006",
-      "name": "Grand Prix de Lausanne 1947",
+      "name": "I. Grand Prix de Lausanne",
       "datumStart": "1947-10-05",
       "datumEnde": "1947-10-05",
       "start": {
@@ -575,7 +601,7 @@
         "lng": 6.6199
       },
       "location": "Lausanne",
-      "rangliste": null,
+      "rangliste": "1. Luigi Villoresi (ITA)\n2. Jean-Pierre Wimille (FRA)\n3. Emmanuel de Graffenried (SUI)",
       "siegerIds": [
         "P011"
       ]
@@ -583,7 +609,7 @@
     {
       "id": "A036",
       "eventId": "E006",
-      "name": "Grand Prix de Lausanne 1949",
+      "name": "II. Grand Prix de Lausanne",
       "datumStart": "1949-08-28",
       "datumEnde": "1949-08-28",
       "start": {
@@ -595,13 +621,15 @@
         "lng": 6.6199
       },
       "location": "Lausanne",
-      "rangliste": null,
-      "siegerIds": []
+      "rangliste": "1. Giuseppe Farina (ITA)\n2. Alberto Ascari (ITA)\n3. Emmanuel de Graffenried (SUI)",
+      "siegerIds": [
+        "P008"
+      ]
     },
     {
       "id": "A037",
       "eventId": "E007",
-      "name": "Grand Prix automobile de Montreux 1934",
+      "name": "Grand Prix automobile de Montreux",
       "datumStart": "1934-06-03",
       "datumEnde": "1934-06-03",
       "start": {
@@ -613,8 +641,10 @@
         "lng": 6.910818
       },
       "location": "Montreux",
-      "rangliste": "Carlo Felice Trossi (ITA)",
-      "siegerIds": []
+      "rangliste": "1. Carlo Felice Trossi (ITA)",
+      "siegerIds": [
+        "P006"
+      ]
     }
   ],
   "medien": [
@@ -624,7 +654,7 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/3df4677d-ac87-483c-92cc-4716a7ae4a09?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0001-Screen.jpg&rsct=image%2Fjpeg&sig=cs0Dg%2B5TdZnIDtoXcG5X0U2RK2diPcragMbo%2F9jUdmk%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-100043118",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0001",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
@@ -635,20 +665,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/51251bcf-8199-47cd-b624-acb420ebe4c8?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0002-Screen.jpg&rsct=image%2Fjpeg&sig=%2FZ%2BWegMl1W4hiqjGAN%2FQOc9iNQ94C61Jy3V7hnx7FdE%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-100043121",
       "legende": "Anonymous: Attilio Buffa, Maserati 200S.",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0002",
-      "urheber": "Lindroos, Björn Erik (1919-1984)"
-    },
-    {
-      "id": "M002",
-      "eventId": "E001",
-      "austragungId": "A001",
-      "datum": "1957-08-25",
-      "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/04105133-2123-4e23-8534-374a57668b5c?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0003-Screen.jpg&rsct=image%2Fjpeg&sig=uVVHbFq6Z0%2Fi4YruY06kHYhg%2Bs07ZZ8pUJSKG4jP06I%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: Richard von Frankenberg, Porsche 550.",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0003",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -657,9 +676,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/db2bd869-0d33-48ee-9e78-695ef6fb44d2?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0004-Screen.jpg&rsct=image%2Fjpeg&sig=fWrD419MWFdOjbU0mrKpaPxGl2mCMMqKie8YjHsR8Jo%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: August 25, 1957 Maserati 200SI with Willy-Peter Daetwyler - Background at the top: Viglia veia Gelgia",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0004",
+      "url": "https://doi.org/10.3932/ethz-a-100043122",
+      "legende": "Anonymous: Richard von Frankenberg, Porsche 550.",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0003",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -668,9 +687,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/7a7bf89d-12fc-4ce7-916c-632ec34f730d?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0005-Screen.jpg&rsct=image%2Fjpeg&sig=gY9LJc9qR%2F8tFEXmmDn8ufGh92btzsps7kntKApp5P8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": null,
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0005",
+      "url": "https://doi.org/10.3932/ethz-a-100043124",
+      "legende": "Anonymous: August 25, 1957 Maserati 200SI with Willy-Peter Daetwyler - Background at the top: Viglia veia Gelgia",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0004",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -679,9 +698,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/b2e972ac-81a4-4b37-b23f-f7a9ec038a29?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0006-Screen.jpg&rsct=image%2Fjpeg&sig=ZSI9rQcfXkucG59NHiRHVLbELBT5vr9sfimSn2m7uTs%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: August 25, 1957. Porsche 550 with Wolfgang Graf Berghe von Trips—in the background on the left: Viglia veia Gelgia",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0006",
+      "url": "https://doi.org/10.3932/ethz-a-100043130",
+      "legende": null,
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0005",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -690,9 +709,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/1c166494-2348-46ad-8aa0-e666419c1cb1?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0007-Screen.jpg&rsct=image%2Fjpeg&sig=0r2nqEYX35tZkqBb%2Bkq07i9xpK3im38E%2FHlkzsTF7m8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: August 25, 1957. Maserati 200SI with Willy-Peter Daetwyler—in the background, center: Viglia veia Gelgia",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0007",
+      "url": "https://doi.org/10.3932/ethz-a-100043125",
+      "legende": "Anonymous: August 25, 1957. Porsche 550 with Wolfgang Graf Berghe von Trips—in the background on the left: Viglia veia Gelgia",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0006",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -701,9 +720,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/8c5ac986-113b-4943-8135-52e1e263e04c?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0008-Screen.jpg&rsct=image%2Fjpeg&sig=muL4ibnovoOo%2Flr78QkONGFheKtusVIvHgJ1rRoUPY0%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: August 25, 1957. Borgward RS with Hans Herrmann[?]",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0008",
+      "url": "https://doi.org/10.3932/ethz-a-100043123",
+      "legende": "Anonymous: August 25, 1957. Maserati 200SI with Willy-Peter Daetwyler—in the background, center: Viglia veia Gelgia",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0007",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -712,9 +731,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c8e12fc1-32e6-499f-9a8a-170078175245?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0009-Screen.jpg&rsct=image%2Fjpeg&sig=pJ6kt7aqn3AJLXFw3f5%2BWFBSwcoZYdRz6qBoTrIz2XU%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0009",
+      "url": "https://doi.org/10.3932/ethz-a-100043126",
+      "legende": "Anonymous: August 25, 1957. Borgward RS with Hans Herrmann[?]",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0008",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -723,9 +742,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/d617903d-042b-4cb1-bfde-3b30918b17c7?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0010-Screen.jpg&rsct=image%2Fjpeg&sig=7eA4kRyZR276XXjeYvrc1V5Xcc19UNHJX0PTIbQbLuw%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-100043140",
       "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0010",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0009",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -734,9 +753,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/f5642f16-4350-4887-8ba7-08a2c4afb209?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0011-Screen.jpg&rsct=image%2Fjpeg&sig=uZd8YsdcUh8UoO%2F%2BV%2FolxrDU8YzG4kTkbA5QwjH40qM%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: Porsche 550 with Wolfgang von Trips; behind it, Willy-Peter Daetwyler with children; Maserati 200SI.",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0011",
+      "url": "https://doi.org/10.3932/ethz-a-100043127",
+      "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0010",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -745,9 +764,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/52a63b73-c7c2-402a-9cba-bae7a764a0f9?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0012-Screen.jpg&rsct=image%2Fjpeg&sig=r9787oXxZLAXf80OAoai2BG89t3Lr%2Bs%2BzNBLXhxKpkk%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": null,
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0012",
+      "url": "https://doi.org/10.3932/ethz-a-100043128",
+      "legende": "Anonymous: Porsche 550 with Wolfgang von Trips; behind it, Willy-Peter Daetwyler with children; Maserati 200SI.",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0011",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -756,9 +775,9 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c008c783-83c3-40ce-9e61-91a8abdc41d5?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0013-Screen.jpg&rsct=image%2Fjpeg&sig=xZ2MOd6GJh9gMf0PtPGmcJE1VmswjlaYTQ25J84zG7k%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
-      "legende": "Anonymous: Wolfgang Graf Berghe von Trips. // Anonymous: August 25, 1957",
-      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0013",
+      "url": "https://doi.org/10.3932/ethz-a-100043131",
+      "legende": null,
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0012",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
@@ -767,13 +786,24 @@
       "austragungId": "A001",
       "datum": "1957-08-25",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4dbc273f-5ef8-46b5-8b8a-95f34c2f8bd6?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0014-Screen.jpg&rsct=image%2Fjpeg&sig=3CgGGhAoDWz%2BbMMMNCzCp%2FG9yh1zXzG605tf6Q909h8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-100043138",
+      "legende": "Anonymous: Wolfgang Graf Berghe von Trips. // Anonymous: August 25, 1957",
+      "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0013",
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
+    },
+    {
+      "id": "M014",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
+      "url": "https://doi.org/10.3932/ethz-a-100043129",
       "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0014",
       "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
-      "id": "M014",
+      "id": "M015",
       "eventId": "E002",
       "austragungId": "A003",
       "datum": "2013-09-27",
@@ -784,18 +814,18 @@
       "urheber": "Schweizer Radio und Fernsehen (SRF)"
     },
     {
-      "id": "M015",
+      "id": "M016",
       "eventId": "E002",
       "austragungId": "A002",
       "datum": "1934-08-05",
       "typ": "Video",
       "url": "https://media.memobase.ch/memo/agl-001-PA_111_Sch_Y06_002_Nr_47-1/viewer?auth=",
-      "legende": "Thema: Klausenrennen 1934. Radrennen, Motorradrennen, Autorennen. Zeltlager Zuschauer, Rückzug der Zuschauer. Rennen Aussicht vom Bergli Linthal, Frutt. Zwischentitel: Der Klausensieger 1934: R. Caracciola auf Mercedes Benz [Silberpfeil]. Zwischentitel: H. Stuckauf Auto-Union [heute Audi]. Nachspann: Zur Unterhaltung am Vereinsabend Natur-und Sportsfilme aus dem Glarnerland vorgeführt von Hans Schönwetter, Glarus sind immer interessant!",
+      "legende": "Rennen Aussicht vom Bergli Linthal, Frutt. Der Klausensieger 1934: R. Caracciola auf Mercedes Benz [Silberpfeil].",
       "credits": "Landesarchiv des Kantons Glarus",
       "urheber": "Schönwetter Hans Jakob (1906-1997)"
     },
     {
-      "id": "M016",
+      "id": "M017",
       "eventId": "E002",
       "austragungId": "A007",
       "datum": "1974-08-09",
@@ -806,7 +836,7 @@
       "urheber": "Schweizer Filmwochenschau (SFW)"
     },
     {
-      "id": "M017",
+      "id": "M018",
       "eventId": "E001",
       "austragungId": "A004",
       "datum": "1951-08-26",
@@ -817,7 +847,7 @@
       "urheber": null
     },
     {
-      "id": "M018",
+      "id": "M019",
       "eventId": "E001",
       "austragungId": "A004",
       "datum": "1951-08-26",
@@ -828,7 +858,7 @@
       "urheber": "Heinze Kurt"
     },
     {
-      "id": "M019",
+      "id": "M020",
       "eventId": "E001",
       "austragungId": "A004",
       "datum": "1951-08-26",
@@ -839,7 +869,7 @@
       "urheber": "Heinze Kurt"
     },
     {
-      "id": "M020",
+      "id": "M021",
       "eventId": "E001",
       "austragungId": "A004",
       "datum": "1951-08-26",
@@ -850,7 +880,7 @@
       "urheber": "Heinze Kurt"
     },
     {
-      "id": "M021",
+      "id": "M022",
       "eventId": "E001",
       "austragungId": "A004",
       "datum": "1951-08-26",
@@ -861,34 +891,34 @@
       "urheber": "Heinze Kurt"
     },
     {
-      "id": "M022",
+      "id": "M023",
       "eventId": "E002",
       "austragungId": "A008",
       "datum": "1930",
       "typ": "Video",
       "url": "https://media.memobase.ch/memo/ako-002-StaOW_263267-1/viewer?auth=\"",
-      "legende": null,
+      "legende": "Bergprüfungsfahrt Sarnen - Stalden des Automobilklubs Luzern, mit Start in Sarnen (oberhalb Rathausbrücke).",
       "credits": null,
       "urheber": "Abächerli, Carl"
     },
     {
-      "id": "M023",
+      "id": "M024",
       "eventId": "E003",
       "austragungId": "A005",
       "datum": "1954",
       "typ": "Foto",
-      "url": "https://eu-st01.ext.exlibrisgroup.com/41SNL_53_INST/storage/alma/86/2F/F3/AA/1B/6F/AD/B8/B4/0D/18/15/2F/7B/3D/0E/SNL_SPOR_235.jpg?AccessRightAllowDownload=true&Expires=1794648241&Signature=jUwpto7rGSwIoFmO-fZjNwsGq667Fyq6~rCwXHJIcer~-U6sPcWiynPVemmVsN8s6wgt9rpVqhX4-7sb9aUM-qreST66wcBWqQ7Jgn-hYLpNsiuZTGDMmkRp~lHBuXJevsIlM6g8y5rnYVF~r4zR0TuZKID28~s0kBwJlpv-MHBlLGkHWQe51-D2K7dlvR9aE82H9KXwmjFwee0luNDoAAsIHw4Mn1aAvi7bMTkRdtXOjIB0JESsH2oIqwuROYJPMEoP6scWlsjpmqC8nJ5iPRO-qw67-kCFEij3qF9w0MKH2a5h~VbF2XhMckDLVVW41ZFtz-Y1TwE0aLtjCZn19w__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA",
+      "url": "https://permalink.snl.ch/bib/chccsa000017768",
       "legende": "Wortlaut des Plakates: Grand Prix Bern // 21./22. August 1954 P.O: monogramme inconnu",
       "credits": null,
       "urheber": null
     },
     {
-      "id": "M024",
+      "id": "M025",
       "eventId": "E003",
       "austragungId": "A006",
       "datum": "1950",
       "typ": "Foto",
-      "url": "https://eu-st01.ext.exlibrisgroup.com/41SNL_53_INST/storage/alma/D6/C4/43/21/5F/31/D9/FA/96/25/D1/3A/BD/7C/52/C8/SNL_SPOR_237.jpg?AccessRightAllowDownload=true&Expires=1794648312&Signature=KmTy18QTkWjp1RxwKV785R-hDSovp2LWBBDqfO8LlpRlilDDf-UO4C2zrlCidIPo7f6oCWOiVaENvbbWp~Di5mWOHB6K25Gy7J8pNT3KLc05I2Bxl5QvYA5EM9nsLiFBBoZKdD6L2AgB-8GwT1RYPSFKgoCDf2sNq3P7bQDbNnxTjiKba~K0O9~DUUN8sJwiLpHDj6j9fajCx5WdiTA1h3GVFfRyBkriJ~mOMXRj6KcVtNeu6Qsa~Ldd1zSvI5Z8yJYVudSqDiXNDAtk08hP9WnWi-WH-Mk1WqSIJXuuYtXHGP6gfsRpBfjS3w3jhyAKjJIlMplxqKZu7Fsb2MtNfg__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA",
+      "url": "https://permalink.snl.ch/bib/chccsa000017770",
       "legende": "Libellé de l’affiche: Grand Prix // Bern // 3./4. Juni 1950 // Championnat du monde Existe aussi dans le format 68 x 49 cm",
       "credits": null,
       "urheber": null
@@ -900,7 +930,7 @@
       "datum": "1951-08-24",
       "typ": "Text",
       "url": "https://www.letempsarchives.ch/page/GDL_1951_08_24/5/article/2101077",
-      "legende": "Gazette de Lausanne, S. 5: Vorschau aufs erste Rennen, «une participation record sur un parcours nouveau»",
+      "legende": "Vorschau aufs erste Rennen, «une participation record sur un parcours nouveau»",
       "credits": "Gazette de Lausanne, Archives Le Temps; © Le Temps",
       "urheber": "Gazette de Lausanne"
     },
@@ -911,7 +941,7 @@
       "datum": "1957-08-26",
       "typ": "Text",
       "url": "https://www.letempsarchives.ch/page/JDG_1957_08_26/6/article/7696790",
-      "legende": "Journal de Genève, S. 6: Rangliste und Zeiten, Strecke 6,25 km / 504 m, 15'000 Zuschauer, EM-Zwischenstand",
+      "legende": "Rangliste und Zeiten, Strecke 6,25 km / 504 m, 15'000 Zuschauer, EM-Zwischenstand",
       "credits": "Journal de Genève, Archives Le Temps; © Le Temps",
       "urheber": "Journal de Genève"
     },
@@ -976,7 +1006,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c3f622c8-c843-4e65-860d-c2b100ea3ee4?sv=2026-06-06&spr=https&se=2026-11-13T22%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0010-Screen.jpg&rsct=image%2Fjpeg&sig=fRDpuQmh3RFtuTmUsqCweaaODwJP33bnC%2FNsvE4SVGw%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://ba.e-pics.ethz.ch/#detail-asset=11d4b913-4cbf-4054-88c1-9f5d8a1d9fa1",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0010",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1009,7 +1039,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4f57515e-dc59-459c-bf3d-627ff0db7020?sv=2026-06-06&spr=https&se=2026-11-13T22%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0001-Screen.jpg&rsct=image%2Fjpeg&sig=F8Bk9L1IfVCpGkKJf9ki649l15RqeA9FNI08BhaFzwQ%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861615",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0001",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1020,7 +1050,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/d311a7c0-ef18-4c74-9a39-7eafbc9fb17e?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0002-Screen.jpg&rsct=image%2Fjpeg&sig=14kuSPlfWuWkIuJ2JOs9020dRBQ5oejNduQlZnGDeV0%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861619",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0002",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1031,7 +1061,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4dbf7e3b-4a3c-4ec1-b881-41d2eb6296b8?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0003-Screen.jpg&rsct=image%2Fjpeg&sig=8OyT%2By%2FMqcmfMgqL5ZGAEBLw4fFtKdyV%2Bexn%2BS688dM%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861617",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0003",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1042,7 +1072,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/06c66d38-af63-49c5-aa94-eab163cc5d06?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0004-Screen.jpg&rsct=image%2Fjpeg&sig=yFVzr6D77j9TxMl%2BIsJN0s5RIIj81cbTEX6LfXq%2B5HY%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861616",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0004",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1053,7 +1083,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/6450ad4a-e347-4de8-bb78-d4ffa21f8ddc?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0005-Screen.jpg&rsct=image%2Fjpeg&sig=lEnSiAelFmHDMwLyPmus7E6D%2FFw8ioWCZA5pMqQc%2BiE%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861621",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0005",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1064,7 +1094,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/47aaaa4c-1e8f-4398-9aa5-087061a988bd?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0006-Screen.jpg&rsct=image%2Fjpeg&sig=CQhhlw%2BVXGf9SQMX60%2Fc4Sw79QfChXL17QTTiDDfg8k%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861623",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0006",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1075,7 +1105,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/1a056760-b942-4f77-b1ab-60ea4c8bd87b?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0001-Screen.jpg&rsct=image%2Fjpeg&sig=%2B8wYkd37t7A%2BzceLXLZIBCYsa8Fh8TwS%2FNqdMkWwOls%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861618",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0001",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1086,7 +1116,7 @@
       "austragungId": "A009",
       "datum": "1961-05-07",
       "typ": "Foto",
-      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/277fda0c-4fcf-4943-946e-b00bdaaaf017?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0002-Screen.jpg&rsct=image%2Fjpeg&sig=V9OSf8asXxiLbhAA79ZUCUYij10N83vvHmNaunJrOa8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "url": "https://doi.org/10.3932/ethz-a-000861624",
       "legende": null,
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0002",
       "urheber": "Baumann, Heinz (1935-2021)"
@@ -1172,10 +1202,10 @@
       "id": "M051",
       "eventId": "E006",
       "austragungId": "A035",
-      "datum": null,
+      "datum": "1947-10-05",
       "typ": "Text",
       "url": "https://www.letempsarchives.ch/page/GDL_1947_10_06/3/article/2904275",
-      "legende": null,
+      "legende": "Race report 1947",
       "credits": null,
       "urheber": null
     },
@@ -1183,25 +1213,71 @@
       "id": "M052",
       "eventId": "E007",
       "austragungId": "A037",
-      "datum": null,
+      "datum": "1934-06-07",
       "typ": "Video",
       "url": "https://youtu.be/QY25-5BHReI",
       "legende": null,
       "credits": null,
       "urheber": "British Pathé"
+    },
+    {
+      "id": "M053",
+      "eventId": "E007",
+      "austragungId": "A037",
+      "datum": "1934-06-07",
+      "typ": "Foto",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b90457664/f1.highres",
+      "legende": "Braillard, portrait",
+      "credits": "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2905)",
+      "urheber": "Agence de presse Meurisse"
+    },
+    {
+      "id": "M054",
+      "eventId": "E007",
+      "austragungId": "A037",
+      "datum": "1934-06-07",
+      "typ": "Foto",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b9045756r/f1.highres",
+      "legende": "Moll, portrait",
+      "credits": "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2905)",
+      "urheber": "Agence de presse Meurisse"
+    },
+    {
+      "id": "M055",
+      "eventId": "E007",
+      "austragungId": "A037",
+      "datum": "1934-06-07",
+      "typ": "Foto",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b9045722z/f1.highres",
+      "legende": null,
+      "credits": "Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2905)",
+      "urheber": "Agence de presse Meurisse"
     }
   ],
   "personen": [
     {
-      "id": "P007",
-      "name": "Alberto Ascari",
-      "land": "Italien",
-      "gnd": "129600172",
-      "wikidata": "Q2086",
-      "foto": "https://commons.wikimedia.org/wiki/File:Alberto_Ascari_-_El_Gr%C3%A1fico_1587.jpg",
+      "id": "P001",
+      "name": "Hans Stuck",
+      "land": "Deutschland",
+      "gnd": "11875615X",
+      "wikidata": "Q61541",
+      "foto": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-08188,_Hans_von_Stuck.jpg",
       "austragungIds": [
-        "A031",
-        "A034"
+        "A016"
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "Rudolf Caracciola",
+      "land": "Deutschland",
+      "gnd": "11866705X",
+      "wikidata": "Q57365",
+      "foto": "https://commons.wikimedia.org/wiki/File:Rudolf_Caracciola_by_Hugo_K%C3%BChn_1928cr.jpg",
+      "austragungIds": [
+        "A002",
+        "A017",
+        "A019",
+        "A020"
       ]
     },
     {
@@ -1213,39 +1289,6 @@
       "foto": "https://commons.wikimedia.org/wiki/File:Bernd_Rosemeyer_-_2.jpg",
       "austragungIds": [
         "A018"
-      ]
-    },
-    {
-      "id": "P006",
-      "name": "Carlo Felice Trossi",
-      "land": "Italien",
-      "gnd": "1051409276",
-      "wikidata": "Q776091",
-      "foto": "https://commons.wikimedia.org/wiki/File:Carlo_Felice_Trossi_at_the_1934_Grand_Prix_automobile_de_Montreux_(cropped).jpg",
-      "austragungIds": [
-        "A030"
-      ]
-    },
-    {
-      "id": "P008",
-      "name": "Giuseppe Farina",
-      "land": "Italien",
-      "gnd": "1208169556",
-      "wikidata": "Q2040",
-      "foto": "https://commons.wikimedia.org/wiki/File:NinoFarina.jpg",
-      "austragungIds": [
-        "A006"
-      ]
-    },
-    {
-      "id": "P001",
-      "name": "Hans Stuck",
-      "land": "Deutschland",
-      "gnd": "11875615X",
-      "wikidata": "Q61541",
-      "foto": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-08188,_Hans_von_Stuck.jpg",
-      "austragungIds": [
-        "A016"
       ]
     },
     {
@@ -1268,6 +1311,42 @@
       "foto": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Wimille_at_the_1933_French_Grand_Prix_(cropped).jpg",
       "austragungIds": [
         "A029"
+      ]
+    },
+    {
+      "id": "P006",
+      "name": "Carlo Felice Trossi",
+      "land": "Italien",
+      "gnd": "1051409276",
+      "wikidata": "Q776091",
+      "foto": "https://commons.wikimedia.org/wiki/File:Carlo_Felice_Trossi_at_the_1934_Grand_Prix_automobile_de_Montreux_(cropped).jpg",
+      "austragungIds": [
+        "A030",
+        "A037"
+      ]
+    },
+    {
+      "id": "P007",
+      "name": "Alberto Ascari",
+      "land": "Italien",
+      "gnd": "129600172",
+      "wikidata": "Q2086",
+      "foto": "https://commons.wikimedia.org/wiki/File:Alberto_Ascari_-_El_Gr%C3%A1fico_1587.jpg",
+      "austragungIds": [
+        "A031",
+        "A034"
+      ]
+    },
+    {
+      "id": "P008",
+      "name": "Giuseppe Farina",
+      "land": "Italien",
+      "gnd": "1208169556",
+      "wikidata": "Q2040",
+      "foto": "https://commons.wikimedia.org/wiki/File:NinoFarina.jpg",
+      "austragungIds": [
+        "A006",
+        "A036"
       ]
     },
     {
@@ -1294,19 +1373,6 @@
       ]
     },
     {
-      "id": "P002",
-      "name": "Rudolf Caracciola",
-      "land": "Deutschland",
-      "gnd": "11866705X",
-      "wikidata": "Q57365",
-      "foto": "https://commons.wikimedia.org/wiki/File:Rudolf_Caracciola_by_Hugo_K%C3%BChn_1928cr.jpg",
-      "austragungIds": [
-        "A017",
-        "A019",
-        "A020"
-      ]
-    },
-    {
       "id": "P011",
       "name": "Luigi Villoresi",
       "land": "Italien",
@@ -1315,6 +1381,118 @@
       "foto": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Luis_Villoresi_-_El_Gr%C3%A1fico_1442.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "austragungIds": [
         "A035"
+      ]
+    },
+    {
+      "id": "P012",
+      "name": "Wolfgang von Trips",
+      "land": "Deutschland",
+      "gnd": "11865604X",
+      "wikidata": "Q57451",
+      "foto": "https://commons.wikimedia.org/wiki/File:Wolfgang_von_Trips_in_1957.JPG",
+      "austragungIds": [
+        "A001"
+      ]
+    },
+    {
+      "id": "P013",
+      "name": "Christian Traber",
+      "land": "Schweiz",
+      "gnd": null,
+      "wikidata": null,
+      "foto": "https://gstaadautomobileclub.ch/en/wp-content/uploads/sites/3/2021/05/christian-traber-monaco-3.jpeg",
+      "austragungIds": [
+        "A003"
+      ]
+    },
+    {
+      "id": "P014",
+      "name": "Harry Zweifel",
+      "land": "Schweiz",
+      "gnd": "119060299",
+      "wikidata": "Q110584832",
+      "foto": "https://image.jimcdn.com/app/cms/image/transf/dimension=870x10000:format=jpg/path/se4ae2ba02d024dd7/image/ibd64ac735be0d1d2/version/1670257237/image.jpg",
+      "austragungIds": [
+        "A015",
+        "A014",
+        "A009"
+      ]
+    },
+    {
+      "id": "P015",
+      "name": "Hermann Rützler",
+      "land": "Österreich",
+      "gnd": "1360637192",
+      "wikidata": "Q1612544",
+      "foto": "https://commons.wikimedia.org/wiki/File:Hermann_R%C3%BCtzler_(cropped).jpg",
+      "austragungIds": [
+        "A007"
+      ]
+    },
+    {
+      "id": "P016",
+      "name": "Louis Chiron",
+      "land": "Frankreich",
+      "gnd": null,
+      "wikidata": "Q173226",
+      "foto": "https://commons.wikimedia.org/wiki/File:Louis_Chiron_at_the_1931_French_Grand_Prix_(2)_(cropped).jpg",
+      "austragungIds": [
+        "A008"
+      ]
+    },
+    {
+      "id": "P017",
+      "name": "Erwin Sommerhalder",
+      "land": "Schweiz",
+      "gnd": null,
+      "wikidata": null,
+      "foto": null,
+      "austragungIds": [
+        "A012"
+      ]
+    },
+    {
+      "id": "P018",
+      "name": "Charles Vögele",
+      "land": "Schweiz",
+      "gnd": "123983142",
+      "wikidata": "Q1066324",
+      "foto": "https://commons.wikimedia.org/wiki/File:1966-06-03_Porsche_906_-_Charles_V%C3%B6gele.jpg",
+      "austragungIds": [
+        "A013"
+      ]
+    },
+    {
+      "id": "P019",
+      "name": "Jean-Eric Vergne",
+      "land": "Frankreich",
+      "gnd": null,
+      "wikidata": "Q82829",
+      "foto": "https://commons.wikimedia.org/wiki/File:Jean-Eric_Vergne_2024_WEC_Fuji.jpg",
+      "austragungIds": [
+        "A011"
+      ]
+    },
+    {
+      "id": "P020",
+      "name": "Lucas di Grassi",
+      "land": "Brasilien",
+      "gnd": null,
+      "wikidata": "Q172783",
+      "foto": "https://commons.wikimedia.org/wiki/File:TechCrunch_Disrupt_Berlin_2018_(Day_1)_08_(cropped).jpg",
+      "austragungIds": [
+        "A010"
+      ]
+    },
+    {
+      "id": "P021",
+      "name": "Rudolf Fischer",
+      "land": "Schweiz",
+      "gnd": null,
+      "wikidata": "Q171968",
+      "foto": "https://commons.wikimedia.org/wiki/File:Schauinsland-Rennstrecke;_Training;_am_Start-_Fischer_(CH_Z%C3%BCrich);_Nr._174;_Ferrari_-_LABW_-_Staatsarchiv_Freiburg_W_134_Nr._021007.jpeg",
+      "austragungIds": [
+        "A004"
       ]
     }
   ]

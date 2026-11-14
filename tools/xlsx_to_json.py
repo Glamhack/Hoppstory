@@ -12,7 +12,7 @@ Output structure (field names as used by js/events.js):
     austragungen: id, eventId, name, datumStart, datumEnde, start {lat,lng} | null,
                   ende {lat,lng} | null, location, rangliste, siegerIds [Personen IDs]
     medien:       id, eventId, austragungId, datum, typ, url, legende, credits, urheber
-    personen:     id, name, land, gnd, wikidata, foto, austragungIds [Austragung IDs]
+    personen:     id, name, land, gnd, wikidata (both as IDs), foto, austragungIds [Austragung IDs]
 Dates are ISO strings ("1957-08-25"), or just the year ("1957") if only that is known.
 The "(DON'T EDIT)" helper columns in the sheet are ignored; links use the IDs only.
 """
@@ -154,6 +154,16 @@ def text(v):
     return None if v is None else str(v)
 
 
+def authority_id(v, pattern):
+    """GND / Wikidata given as ID or as link -> just the ID.
+    "https://www.wikidata.org/wiki/Q57451" -> "Q57451", "https://d-nb.info/gnd/11865604X" -> "11865604X"."""
+    v = text(v)
+    if v is None:
+        return None
+    m = re.search(pattern, v)
+    return m[1] if m else v
+
+
 # --- conversion -----------------------------------------------------------------
 
 def convert(wb):
@@ -171,8 +181,8 @@ def convert(wb):
             'id': text(r.get('ID')),
             'name': text(r.get('Sieger')),
             'land': text(r.get('Ursprungsland')),
-            'gnd': text(r.get('GND')),
-            'wikidata': text(r.get('Wikidata')),
+            'gnd': authority_id(r.get('GND'), r'gnd/([0-9X-]+)'),
+            'wikidata': authority_id(r.get('Wikidata'), r'\b(Q\d+)\b'),
             'foto': text(r.get('Photo')),
             # "Grand Prix Bern 1949 (A031), Grand Prix Bern 1953 (A034)" -> ["A031", "A034"]
             'austragungIds': re.findall(r'\b(A\d+)\b', wins),
@@ -241,20 +251,31 @@ def convert(wb):
         if not m['url']:
             warn(f'Medium {m["id"]}: keine URL')
 
-    # Winners: the Personen sheet lists the Austragung IDs each person won.
+    # Winners come from two places, both are used:
+    # - the Personen sheet: "Gewinn Austragung" lists the Austragung IDs a person won
+    # - the Austragung sheet: the "Sieger" column names the winner(s), matched to
+    #   the Personen sheet by name (several names separated by , ; / or a line break)
+    def link(a, pid):
+        if pid not in a['siegerIds']:
+            a['siegerIds'].append(pid)
     for p in personen:
         for aid in p['austragungIds']:
             if aid in by_aid:
-                by_aid[aid]['siegerIds'].append(p['id'])
+                link(by_aid[aid], p['id'])
             else:
                 warn(f'Person {p["id"]} ({p["name"]}): Austragung {aid} gibt es nicht')
-    names = {p['id']: p['name'] for p in personen}
+    by_name = {p['name'].strip().casefold(): p['id'] for p in personen if p['name']}
     for a in austragungen:
-        sheet_name = a.pop('_sieger')
-        linked = [names[i] for i in a['siegerIds']]
-        if sheet_name and sheet_name not in linked:
-            warn(f'Austragung {a["id"]}: Sieger "{sheet_name}" steht nicht im Blatt Personen'
-                 + (f' (dort: {", ".join(linked)})' if linked else ''))
+        sheet_names = [n.strip() for n in re.split(r'[,;/\n]', a.pop('_sieger') or '') if n.strip()]
+        for n in sheet_names:
+            pid = by_name.get(n.casefold())
+            if pid:
+                link(a, pid)
+            else:
+                warn(f'Austragung {a["id"]}: Sieger "{n}" steht nicht im Blatt Personen')
+    # Each person's austragungIds: all races they are linked to, from either source.
+    for p in personen:
+        p['austragungIds'] = [a['id'] for a in austragungen if p['id'] in a['siegerIds']]
 
     return {
         'quelle': 'Data.xlsx',

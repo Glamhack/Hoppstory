@@ -1,6 +1,6 @@
 // Service worker: caches the app shell, and map tiles as you view them.
 // Bump VERSION when you change any app file so clients pick up the new shell.
-const VERSION = 'v52';
+const VERSION = 'v53';
 const SHELL_CACHE = `shell-${VERSION}`;
 const TILE_CACHE = 'tiles-v1';
 const ROUTE_CACHE = 'routes-v1';
