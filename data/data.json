@@ -1,5 +1,6 @@
 {
-  "exportiert": "2026-11-14T08:38:30.316Z",
+  "quelle": "Data.xlsx",
+  "exportiert": "2026-11-14T12:53:01Z",
   "events": [
     {
       "id": "E001",
@@ -30,13 +31,27 @@
       "name": "Formel-E",
       "beschreibung": "Die Formel E ist die FIA-Rennserie für vollelektrische Formelwagen, die 2018 in Zürich und 2019 in Bern je einen E-Prix auf einem temporären Stadtkurs austrug.",
       "sportart": "Elektroautomobil Rundstreckenrennen"
+    },
+    {
+      "id": "E006",
+      "name": "Grand Prix de Lausanne",
+      "beschreibung": "Der Grand Prix de Lausanne war ein internationales Automobil-Rundstreckenrennen, das 1947 und 1949 auf einem Strassenkurs im Norden von Lausanne ausgetragen wurde und Spitzenfahrer der Nachkriegszeit in die Schweiz brachte.",
+      "sportart": "Automobil Rundstreckenrennen"
+    },
+    {
+      "id": "E007",
+      "name": "Grand Prix automobile de Montreux",
+      "beschreibung": null,
+      "sportart": null
     }
   ],
   "austragungen": [
     {
       "id": "A001",
+      "eventId": "E001",
       "name": "Bergrennen Tiefencastel-Lenzerheide 1957",
-      "location": "Tiefencastel-Lenzerheide",
+      "datumStart": "1957-08-25",
+      "datumEnde": "1957-08-25",
       "start": {
         "lat": 46.664303990210506,
         "lng": 9.586191454011402
@@ -45,15 +60,16 @@
         "lat": 46.6962616294476,
         "lng": 9.558598309800137
       },
-      "datumStart": "1957-08-25",
-      "datumEnde": "1957-08-25",
+      "location": "Tiefencastel-Lenzerheide",
       "rangliste": "Lenzerheide (Switzerland)  (Aug. 25th)\n1st: W. von Trips (Porsche 1,680-c.c.)\n2nd: R. von Frankenberg (Porsche 1,585-c.c.)\n3rd: W. Daetwyler (Maserati 200S)\n4th: H. Herrmann (Borgward 1500RS)\n5th: P. Monteverdi (Ferrari 750S)\n6th: T. Sopwith (Cooper F2)",
-      "eventId": null
+      "siegerIds": []
     },
     {
       "id": "A002",
+      "eventId": "E002",
       "name": "10. Klausenrennen 1934",
-      "location": "Klausenpass",
+      "datumStart": "1934-08-05",
+      "datumEnde": "1934-08-05",
       "start": {
         "lat": 46.91980336827304,
         "lng": 8.993024055507899
@@ -62,15 +78,16 @@
         "lat": 46.86978264811088,
         "lng": 8.858000506635708
       },
-      "datumStart": "1934-08-05",
-      "datumEnde": "1934-08-05",
+      "location": "Klausenpass",
       "rangliste": "Automobil:\n1. Rudolf Caracciola (DE)\n2. Hans Stuck (DE)\n3 Whitney Straight (EN)\n\nMotorrad:\n1. E. Hänni (CH)\n2. B. Rosemeyer (DE)\n3. G. Cordey (CH)",
-      "eventId": null
+      "siegerIds": []
     },
     {
       "id": "A003",
+      "eventId": "E002",
       "name": "11. Klausenrennen 2013",
-      "location": "Klausenpass",
+      "datumStart": "2013-09-27",
+      "datumEnde": "2013-09-29",
       "start": {
         "lat": 46.91980336827304,
         "lng": 8.993024055507899
@@ -79,15 +96,142 @@
         "lat": 46.86978264811088,
         "lng": 8.858000506635708
       },
-      "datumStart": "2013-09-27",
-      "datumEnde": "2013-09-29",
+      "location": "Klausenpass",
       "rangliste": "Automobil:\n1. Christian Traber (CH)\n2. Rainer Ott (D)\n3. Emilio Baldini (CH)\n\nMotorrad:\n1. Susan Jane Darbyshire (GB)\t\n2. Otto Ziegler (FL)\n3. Marco Blumer (CH)",
-      "eventId": null
+      "siegerIds": []
+    },
+    {
+      "id": "A015",
+      "eventId": "E004",
+      "name": "17. Autorennen Mitholz-Kandersteg 1966",
+      "datumStart": "1966-09-11",
+      "datumEnde": "1966-09-11",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "location": "Mitholz-Kandersteg",
+      "rangliste": "1. Harry Zweifel\n2. Hans Illert\n3. Walter Habegger",
+      "siegerIds": []
+    },
+    {
+      "id": "A007",
+      "eventId": "E002",
+      "name": "2. International Klausenrennen 1923",
+      "datumStart": "1923-07-29",
+      "datumEnde": "1923-07-29",
+      "start": {
+        "lat": 46.91980336827304,
+        "lng": 8.993024055507899
+      },
+      "ende": {
+        "lat": 46.86978264811088,
+        "lng": 8.858000506635708
+      },
+      "location": "Klausenpass",
+      "rangliste": "1. H. Rützler (AT)\n2. G. Masetti (IT)\n3 J. Merz (CH)",
+      "siegerIds": []
+    },
+    {
+      "id": "A008",
+      "eventId": "E002",
+      "name": "6. Klausenrennen 1930",
+      "datumStart": "1930-08-09",
+      "datumEnde": "1930-08-10",
+      "start": {
+        "lat": 46.91980336827304,
+        "lng": 8.993024055507899
+      },
+      "ende": {
+        "lat": 46.86978264811088,
+        "lng": 8.858000506635708
+      },
+      "location": "Klausenpass",
+      "rangliste": "Automobil:\n1. L Chiron (FR)\n2. H. Stuck (DE)\n3. Bouriat (FR)\n\nMotrrad:\n1 T.F. Bullus (EN)\n2 C. Cérésole (CH)\n3 J. Zuber (CH)",
+      "siegerIds": []
+    },
+    {
+      "id": "A012",
+      "eventId": "E004",
+      "name": "Autorennen Mitholz-Kandersteg 1958",
+      "datumStart": "1958-09-14",
+      "datumEnde": "1958-09-14",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "location": "Mitholz-Kandersteg",
+      "rangliste": "1. Erwin Sommerhaider",
+      "siegerIds": []
+    },
+    {
+      "id": "A014",
+      "eventId": "E004",
+      "name": "Autorennen Mitholz-Kandersteg 1960",
+      "datumStart": "1960-05-14",
+      "datumEnde": "1960-05-15",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "location": "Mitholz-Kandersteg",
+      "rangliste": null,
+      "siegerIds": []
+    },
+    {
+      "id": "A009",
+      "eventId": "E004",
+      "name": "Autorennen Mitholz-Kandersteg 1961",
+      "datumStart": "1961-05-07",
+      "datumEnde": "1961-05-07",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "location": "Mitholz-Kandersteg",
+      "rangliste": "1. Harry Zweifel",
+      "siegerIds": []
+    },
+    {
+      "id": "A013",
+      "eventId": "E004",
+      "name": "Autorennen Mitholz-Kandersteg 1962",
+      "datumStart": "1962-09-22",
+      "datumEnde": "1962-09-23",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "location": "Mitholz-Kandersteg",
+      "rangliste": "1. Charles Vögele",
+      "siegerIds": []
     },
     {
       "id": "A004",
+      "eventId": "E001",
       "name": "Bergrennen Tiefencastel-Lenzerheide 1951",
-      "location": "Tiefencastel-Lenzerheide",
+      "datumStart": "1951-08-26",
+      "datumEnde": "1951-08-26",
       "start": {
         "lat": 46.664303990210506,
         "lng": 9.586191454011402
@@ -96,775 +240,1134 @@
         "lat": 46.6962616294476,
         "lng": 9.558598309800137
       },
-      "datumStart": "1951-08-26",
-      "datumEnde": "1951-08-26",
+      "location": "Tiefencastel-Lenzerheide",
       "rangliste": null,
-      "eventId": null
-    },
-    {
-      "id": "A007",
-      "name": "2. International Klausenrennen 1923",
-      "location": "Klausenpass",
-      "start": {
-        "lat": 46.91980336827304,
-        "lng": 8.993024055507899
-      },
-      "ende": {
-        "lat": 46.86978264811088,
-        "lng": 8.858000506635708
-      },
-      "datumStart": "1923-07-29",
-      "datumEnde": "1923-07-29",
-      "rangliste": "1. H. Rützler (AT)\n2. G. Masetti (IT)\n3 J. Merz (CH)",
-      "eventId": null
-    },
-    {
-      "id": "A005",
-      "name": "Grand Prix, Bern 1954",
-      "location": "Bern",
-      "start": {
-        "lat": 46.950431932509964,
-        "lng": 7.412015527945174
-      },
-      "ende": {
-        "lat": 46.950431932509964,
-        "lng": 7.412015527945174
-      },
-      "datumStart": "1954-08-21",
-      "datumEnde": "1954-08-22",
-      "rangliste": null,
-      "eventId": null
-    },
-    {
-      "id": "A006",
-      "name": "Grand Prix Bern 1950",
-      "location": "Bern",
-      "start": {
-        "lat": 46.950431932509964,
-        "lng": 7.412015527945174
-      },
-      "ende": {
-        "lat": 46.950431932509964,
-        "lng": 7.412015527945174
-      },
-      "datumStart": "1950-06-03",
-      "datumEnde": "1950-06-04",
-      "rangliste": null,
-      "eventId": null
-    },
-    {
-      "id": "A008",
-      "name": "6. Klausenrennen 1930",
-      "location": "Klausenpass",
-      "start": {
-        "lat": 46.91980336827304,
-        "lng": 8.993024055507899
-      },
-      "ende": {
-        "lat": 46.86978264811088,
-        "lng": 8.858000506635708
-      },
-      "datumStart": "1930-08-09",
-      "datumEnde": "1930-08-10",
-      "rangliste": "Automobil:\n1. L Chiron (FR)\n2. H. Stuck (DE)\n3. Bouriat (FR)\n\nMotrrad:\n1 T.F. Bullus (EN)\n2 C. Cérésole (CH)\n3 J. Zuber (CH)",
-      "eventId": null
-    },
-    {
-      "id": "A009",
-      "name": "Autorennen Mitholz-Kandersteg 1961",
-      "location": "Mitholz-Kandersteg",
-      "start": {
-        "lat": 46.525285,
-        "lng": 7.676332
-      },
-      "ende": {
-        "lat": 46.505919,
-        "lng": 7.677082
-      },
-      "datumStart": "1961-05-07",
-      "datumEnde": "1961-05-07",
-      "rangliste": "1. Harry Zweifel",
-      "eventId": null
-    },
-    {
-      "id": "A010",
-      "name": "Formel-E Zürich",
-      "location": "Zürich",
-      "start": {
-        "lat": 47.36133,
-        "lng": 8.53533
-      },
-      "ende": {
-        "lat": 47.36133,
-        "lng": 8.53533
-      },
-      "datumStart": "2018-06-10",
-      "datumEnde": "2018-06-10",
-      "rangliste": "1. Lucas di Grassi (ABT Schaeffler Audi Sport)\n2. Sam Bird (DS Virgin Racing)\n3. Jérôme D'Ambrosio (Dragon Racing)",
-      "eventId": null
+      "siegerIds": []
     },
     {
       "id": "A011",
+      "eventId": "E005",
       "name": "Formel-E Bern",
-      "location": "Bern",
-      "start": {
-        "lat": 46.950635,
-        "lng": 7.463057
-      },
-      "ende": {
-        "lat": 46.950635,
-        "lng": 7.463057
-      },
       "datumStart": "2019-06-22",
       "datumEnde": "2019-06-22",
-      "rangliste": "1. Jean-Éric Vergne (DS Techeetah)\r\n2. Mitch Evans (Panasonic Jaguar Racing)\r\n3. Sébastien Buemi (Nissan e.dams)",
-      "eventId": null
-    },
-    {
-      "id": "A012",
-      "name": "Autorennen Mitholz-Kandersteg 1958",
-      "location": "Mitholz-Kandersteg",
       "start": {
-        "lat": 46.525285,
-        "lng": 7.676332
+        "lat": 46.950635,
+        "lng": 7.463057
       },
       "ende": {
-        "lat": 46.505919,
-        "lng": 7.677082
+        "lat": 46.950635,
+        "lng": 7.463057
       },
-      "datumStart": null,
-      "datumEnde": null,
-      "rangliste": "1. Erwin Sommerhaider",
-      "eventId": null
+      "location": "Bern",
+      "rangliste": "1. Jean-Éric Vergne (DS Techeetah)\n2. Mitch Evans (Panasonic Jaguar Racing)\n3. Sébastien Buemi (Nissan e.dams)",
+      "siegerIds": []
     },
     {
-      "id": "A013",
-      "name": "Autorennen Mitholz-Kandersteg 1962",
-      "location": "Mitholz-Kandersteg",
+      "id": "A010",
+      "eventId": "E005",
+      "name": "Formel-E Zürich",
+      "datumStart": "2018-06-10",
+      "datumEnde": "2018-06-10",
       "start": {
-        "lat": 46.525285,
-        "lng": 7.676332
+        "lat": 47.36133,
+        "lng": 8.53533
       },
       "ende": {
-        "lat": 46.505919,
-        "lng": 7.677082
+        "lat": 47.36133,
+        "lng": 8.53533
       },
-      "datumStart": "1962-09-22",
-      "datumEnde": "1962-09-23",
-      "rangliste": "1. Charles Vögele",
-      "eventId": null
+      "location": "Zürich",
+      "rangliste": "1. Lucas di Grassi (ABT Schaeffler Audi Sport)\n2. Sam Bird (DS Virgin Racing)\n3. Jérôme D'Ambrosio (Dragon Racing)",
+      "siegerIds": []
     },
     {
-      "id": "A014",
-      "name": "Autorennen Mitholz-Kandersteg 1960",
-      "location": "Mitholz-Kandersteg",
+      "id": "A016",
+      "eventId": "E003",
+      "name": "I. Grosser Preis der Schweiz",
+      "datumStart": "1934-08-26",
+      "datumEnde": "1934-08-26",
       "start": {
-        "lat": 46.525285,
-        "lng": 7.676332
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
       },
       "ende": {
-        "lat": 46.505919,
-        "lng": 7.677082
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
       },
-      "datumStart": null,
-      "datumEnde": null,
+      "location": "Bern",
+      "rangliste": "Hans Stuck (GER)",
+      "siegerIds": [
+        "P001"
+      ]
+    },
+    {
+      "id": "A017",
+      "eventId": "E003",
+      "name": "II. Grosser Preis der Schweiz",
+      "datumStart": "1935-08-25",
+      "datumEnde": "1935-08-25",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Rudolf Caracciola (GER)",
+      "siegerIds": [
+        "P002"
+      ]
+    },
+    {
+      "id": "A018",
+      "eventId": "E003",
+      "name": "III. Grosser Preis der Schweiz",
+      "datumStart": "1936-08-23",
+      "datumEnde": "1936-08-23",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Bernd Rosemeyer (GER)",
+      "siegerIds": [
+        "P003"
+      ]
+    },
+    {
+      "id": "A019",
+      "eventId": "E003",
+      "name": "IV. Grosser Preis der Schweiz",
+      "datumStart": "1937-08-22",
+      "datumEnde": "1937-08-22",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Rudolf Caracciola (GER)",
+      "siegerIds": [
+        "P002"
+      ]
+    },
+    {
+      "id": "A020",
+      "eventId": "E003",
+      "name": "V. Grosser Preis der Schweiz",
+      "datumStart": "1938-08-21",
+      "datumEnde": "1938-08-21",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Rudolf Caracciola (GER)",
+      "siegerIds": [
+        "P002"
+      ]
+    },
+    {
+      "id": "A021",
+      "eventId": "E003",
+      "name": "VI. Grosser Preis der Schweiz",
+      "datumStart": "1939-08-20",
+      "datumEnde": "1939-08-20",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Hermann Lang (GER)",
+      "siegerIds": [
+        "P004"
+      ]
+    },
+    {
+      "id": "A029",
+      "eventId": "E003",
+      "name": "VII. Grosser Preis der Schweiz",
+      "datumStart": "1947-06-08",
+      "datumEnde": "1947-06-08",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Jean-Pierre Wimille (FRA)",
+      "siegerIds": [
+        "P005"
+      ]
+    },
+    {
+      "id": "A030",
+      "eventId": "E003",
+      "name": "VIII. Grosser Preis der Schweiz",
+      "datumStart": "1948-07-04",
+      "datumEnde": "1948-07-04",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Carlo Felice Trossi (ITA)",
+      "siegerIds": [
+        "P006"
+      ]
+    },
+    {
+      "id": "A031",
+      "eventId": "E003",
+      "name": "IX. Grosser Preis der Schweiz",
+      "datumStart": "1949-07-03",
+      "datumEnde": "1949-07-03",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Alberto Ascari (ITA)",
+      "siegerIds": [
+        "P007"
+      ]
+    },
+    {
+      "id": "A006",
+      "eventId": "E003",
+      "name": "X. Grosser Preis der Schweiz",
+      "datumStart": "1950-06-04",
+      "datumEnde": "1950-06-04",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Giuseppe Farina (ITA)",
+      "siegerIds": [
+        "P008"
+      ]
+    },
+    {
+      "id": "A032",
+      "eventId": "E003",
+      "name": "XI. Grosser Preis der Schweiz",
+      "datumStart": "1951-05-27",
+      "datumEnde": "1951-05-27",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Juan Manuel Fangio (ARG)",
+      "siegerIds": [
+        "P009"
+      ]
+    },
+    {
+      "id": "A033",
+      "eventId": "E003",
+      "name": "XII. Grosser Preis der Schweiz",
+      "datumStart": "1952-05-18",
+      "datumEnde": "1952-05-18",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Piero Taruffi (ITA)",
+      "siegerIds": [
+        "P010"
+      ]
+    },
+    {
+      "id": "A034",
+      "eventId": "E003",
+      "name": "XIII. Grosser Preis der Schweiz",
+      "datumStart": "1953-08-23",
+      "datumEnde": "1953-08-23",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Alberto Ascari (ITA)",
+      "siegerIds": [
+        "P007"
+      ]
+    },
+    {
+      "id": "A005",
+      "eventId": "E003",
+      "name": "XIV. Grosser Preis der Schweiz",
+      "datumStart": "1954-08-22",
+      "datumEnde": "1954-08-22",
+      "start": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "ende": {
+        "lat": 46.950431932509964,
+        "lng": 7.412015527945174
+      },
+      "location": "Bern",
+      "rangliste": "Juan Manuel Fangio (ARG)",
+      "siegerIds": [
+        "P009"
+      ]
+    },
+    {
+      "id": "A035",
+      "eventId": "E006",
+      "name": "Grand Prix de Lausanne 1947",
+      "datumStart": "1947-10-05",
+      "datumEnde": "1947-10-05",
+      "start": {
+        "lat": 46.5416,
+        "lng": 6.6199
+      },
+      "ende": {
+        "lat": 46.5416,
+        "lng": 6.6199
+      },
+      "location": "Lausanne",
       "rangliste": null,
-      "eventId": null
+      "siegerIds": [
+        "P011"
+      ]
     },
     {
-      "id": "A015",
-      "name": "17. Autorennen Mitholz-Kandersteg 1966",
-      "location": "Mitholz-Kandersteg",
+      "id": "A036",
+      "eventId": "E006",
+      "name": "Grand Prix de Lausanne 1949",
+      "datumStart": "1949-08-28",
+      "datumEnde": "1949-08-28",
       "start": {
-        "lat": 46.525285,
-        "lng": 7.676332
+        "lat": 46.5416,
+        "lng": 6.6199
       },
       "ende": {
-        "lat": 46.505919,
-        "lng": 7.677082
+        "lat": 46.5416,
+        "lng": 6.6199
       },
-      "datumStart": "1966-09-11",
-      "datumEnde": "1966-09-11",
-      "rangliste": "1. Harry Zweifel\n2. Hans Illert\n3. Walter Habegger",
-      "eventId": null
+      "location": "Lausanne",
+      "rangliste": null,
+      "siegerIds": []
+    },
+    {
+      "id": "A037",
+      "eventId": "E007",
+      "name": "Grand Prix automobile de Montreux 1934",
+      "datumStart": "1934-06-03",
+      "datumEnde": "1934-06-03",
+      "start": {
+        "lat": 46.431082,
+        "lng": 6.910818
+      },
+      "ende": {
+        "lat": 46.431082,
+        "lng": 6.910818
+      },
+      "location": "Montreux",
+      "rangliste": "Carlo Felice Trossi (ITA)",
+      "siegerIds": []
     }
   ],
   "medien": [
     {
       "id": "M001",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/3df4677d-ac87-483c-92cc-4716a7ae4a09?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0001-Screen.jpg&rsct=image%2Fjpeg&sig=cs0Dg%2B5TdZnIDtoXcG5X0U2RK2diPcragMbo%2F9jUdmk%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": null,
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0001",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M002",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/51251bcf-8199-47cd-b624-acb420ebe4c8?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0002-Screen.jpg&rsct=image%2Fjpeg&sig=%2FZ%2BWegMl1W4hiqjGAN%2FQOc9iNQ94C61Jy3V7hnx7FdE%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Attilio Buffa, Maserati 200S.",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0002",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M002",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/04105133-2123-4e23-8534-374a57668b5c?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0003-Screen.jpg&rsct=image%2Fjpeg&sig=uVVHbFq6Z0%2Fi4YruY06kHYhg%2Bs07ZZ8pUJSKG4jP06I%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Richard von Frankenberg, Porsche 550.",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0003",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M003",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/db2bd869-0d33-48ee-9e78-695ef6fb44d2?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0004-Screen.jpg&rsct=image%2Fjpeg&sig=fWrD419MWFdOjbU0mrKpaPxGl2mCMMqKie8YjHsR8Jo%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: August 25, 1957 Maserati 200SI with Willy-Peter Daetwyler - Background at the top: Viglia veia Gelgia",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0004",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M004",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/7a7bf89d-12fc-4ce7-916c-632ec34f730d?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0005-Screen.jpg&rsct=image%2Fjpeg&sig=gY9LJc9qR%2F8tFEXmmDn8ufGh92btzsps7kntKApp5P8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": null,
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0005",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M005",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/b2e972ac-81a4-4b37-b23f-f7a9ec038a29?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0006-Screen.jpg&rsct=image%2Fjpeg&sig=ZSI9rQcfXkucG59NHiRHVLbELBT5vr9sfimSn2m7uTs%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: August 25, 1957. Porsche 550 with Wolfgang Graf Berghe von Trips—in the background on the left: Viglia veia Gelgia",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0006",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M006",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/1c166494-2348-46ad-8aa0-e666419c1cb1?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0007-Screen.jpg&rsct=image%2Fjpeg&sig=0r2nqEYX35tZkqBb%2Bkq07i9xpK3im38E%2FHlkzsTF7m8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: August 25, 1957. Maserati 200SI with Willy-Peter Daetwyler—in the background, center: Viglia veia Gelgia",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0007",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M007",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/8c5ac986-113b-4943-8135-52e1e263e04c?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0008-Screen.jpg&rsct=image%2Fjpeg&sig=muL4ibnovoOo%2Flr78QkONGFheKtusVIvHgJ1rRoUPY0%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: August 25, 1957. Borgward RS with Hans Herrmann[?]",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0008",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M008",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c8e12fc1-32e6-499f-9a8a-170078175245?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0009-Screen.jpg&rsct=image%2Fjpeg&sig=pJ6kt7aqn3AJLXFw3f5%2BWFBSwcoZYdRz6qBoTrIz2XU%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0009",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M009",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/d617903d-042b-4cb1-bfde-3b30918b17c7?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0010-Screen.jpg&rsct=image%2Fjpeg&sig=7eA4kRyZR276XXjeYvrc1V5Xcc19UNHJX0PTIbQbLuw%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0010",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M010",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/f5642f16-4350-4887-8ba7-08a2c4afb209?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0011-Screen.jpg&rsct=image%2Fjpeg&sig=uZd8YsdcUh8UoO%2F%2BV%2FolxrDU8YzG4kTkbA5QwjH40qM%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Porsche 550 with Wolfgang von Trips; behind it, Willy-Peter Daetwyler with children; Maserati 200SI.",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0011",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M011",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/52a63b73-c7c2-402a-9cba-bae7a764a0f9?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0012-Screen.jpg&rsct=image%2Fjpeg&sig=r9787oXxZLAXf80OAoai2BG89t3Lr%2Bs%2BzNBLXhxKpkk%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": null,
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0012",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M012",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c008c783-83c3-40ce-9e61-91a8abdc41d5?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0013-Screen.jpg&rsct=image%2Fjpeg&sig=xZ2MOd6GJh9gMf0PtPGmcJE1VmswjlaYTQ25J84zG7k%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Wolfgang Graf Berghe von Trips. // Anonymous: August 25, 1957",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0013",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M013",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-25",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4dbc273f-5ef8-46b5-8b8a-95f34c2f8bd6?sv=2026-06-06&spr=https&se=2026-11-13T16%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_M06-0241-0014-Screen.jpg&rsct=image%2Fjpeg&sig=3CgGGhAoDWz%2BbMMMNCzCp%2FG9yh1zXzG605tf6Q909h8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Anonymous: Willy-Peter Daetwyler with children, Maserati 200SI.",
-      "datum": "1957-08-25",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_M06-0241-0014",
-      "urheber": "Lindroos, Björn Erik (1919-1984)",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Lindroos, Björn Erik (1919-1984)"
     },
     {
       "id": "M014",
+      "eventId": "E002",
+      "austragungId": "A003",
+      "datum": "2013-09-27",
+      "typ": "Video",
       "url": "https://www.srf.ch/play/tv/-/video/-?urn=urn:srf:video:945d4876-5c57-4b88-89c3-37423be8b404",
       "titel": "Klausenrennen",
       "legende": "Schweiz, Klausenpass, UR, Glarus, Linthal, GL: Star am 11. Klausenrennen ist der mit 4,5 Millionen versicherte \"Silberpfeil\"-Oldtimer von Mercedes-Benz",
-      "datum": "2013-09-27",
-      "typ": "Video",
       "credits": "Fremdrechte/ unklare Rechtesituation",
-      "urheber": "Schweizer Radio und Fernsehen (SRF)",
-      "eventId": null,
-      "austragungId": null
+      "urheber": "Schweizer Radio und Fernsehen (SRF)"
     },
     {
       "id": "M015",
+      "eventId": "E002",
+      "austragungId": "A002",
+      "datum": "1934-08-05",
+      "typ": "Video",
       "url": "https://media.memobase.ch/memo/agl-001-PA_111_Sch_Y06_002_Nr_47-1/viewer?auth=",
       "titel": "Klausenrennen 1934",
       "legende": "Thema: Klausenrennen 1934. Radrennen, Motorradrennen, Autorennen. Zeltlager Zuschauer, Rückzug der Zuschauer. Rennen Aussicht vom Bergli Linthal, Frutt. Zwischentitel: Der Klausensieger 1934: R. Caracciola auf Mercedes Benz [Silberpfeil]. Zwischentitel: H. Stuckauf Auto-Union [heute Audi]. Nachspann: Zur Unterhaltung am Vereinsabend Natur-und Sportsfilme aus dem Glarnerland vorgeführt von Hans Schönwetter, Glarus sind immer interessant!",
-      "datum": "1934",
-      "typ": "Video",
       "credits": "Landesarchiv des Kantons Glarus",
-      "urheber": "Schönwetter Hans Jakob (1906-1997)",
-      "eventId": null,
-      "austragungId": "A002"
+      "urheber": "Schönwetter Hans Jakob (1906-1997)"
     },
     {
       "id": "M016",
+      "eventId": "E002",
+      "austragungId": "A007",
+      "datum": "1974-08-09",
+      "typ": "Video",
       "url": "https://media.memobase.ch/memo/bar-001-SFW_1618-1-1/viewer?auth=",
       "titel": "Klausenrennen 1923",
       "legende": "Schweiz, UR, GL: Klausenpass-Rennen 1923 und Klausenpass heute",
-      "datum": "1974-08-09",
-      "typ": "Video",
       "credits": "Cinémathèque suisse, Schweizerisches Bundesarchiv",
-      "urheber": "Schweizer Filmwochenschau (SFW)",
-      "eventId": null,
-      "austragungId": null
+      "urheber": "Schweizer Filmwochenschau (SFW)"
     },
     {
       "id": "M017",
+      "eventId": "E001",
+      "austragungId": "A004",
+      "datum": "1951-08-26",
+      "typ": "Video",
       "url": "https://media.zem.ch/01WS/1951/SFW_0488_f.mp4?end=295&start=246#t=246,295",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Schweizer Filmwochenschau, 31.08.1951, \"Ein neues Bergrennen\"",
-      "datum": null,
-      "typ": "Video",
       "credits": "Schweizer Filmwochenschau (SFW), Ein neues Bergrennen (0488-5), Schweizer Filmwochenschau, Schweizer Filmwochenschau vom 31.08.1951",
-      "urheber": null,
-      "eventId": null,
-      "austragungId": "A004"
+      "urheber": null
     },
     {
       "id": "M018",
+      "eventId": "E001",
+      "austragungId": "A004",
+      "datum": "1951-08-26",
+      "typ": "Foto",
       "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=1e05d4701afd47b392f79200bae653ae-29057&version=1&rendition=Image",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
-      "datum": "1951-08-26",
-      "typ": "Foto",
       "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
-      "urheber": "Heinze Kurt",
-      "eventId": null,
-      "austragungId": "A004"
+      "urheber": "Heinze Kurt"
     },
     {
       "id": "M019",
+      "eventId": "E001",
+      "austragungId": "A004",
+      "datum": "1951-08-26",
+      "typ": "Foto",
       "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=f68353dee3d44f82ba4608702c78da2b-29057&version=1&rendition=Image",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
-      "datum": "1951-08-26",
-      "typ": "Foto",
       "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
-      "urheber": "Heinze Kurt",
-      "eventId": null,
-      "austragungId": "A004"
+      "urheber": "Heinze Kurt"
     },
     {
       "id": "M020",
+      "eventId": "E001",
+      "austragungId": "A004",
+      "datum": "1951-08-26",
+      "typ": "Foto",
       "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=cf392ad33aa0442fb993629c6b85afec-29057&version=1&rendition=Image",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
-      "datum": "1951-08-26",
-      "typ": "Foto",
       "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
-      "urheber": "Heinze Kurt",
-      "eventId": null,
-      "austragungId": "A004"
+      "urheber": "Heinze Kurt"
     },
     {
       "id": "M021",
+      "eventId": "E001",
+      "austragungId": "A004",
+      "datum": "1951-08-26",
+      "typ": "Foto",
       "url": "https://staatsarchiv-findsystem.gr.ch/home/api/File/GetImage/?id=eb6ba820acc94aae88ed2417e1cb34c6-29057&version=1&rendition=Image",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Heinze Alfred und Kurt: Erstes Bergrennen der Lenzerheide Motor Classics",
-      "datum": "1951-08-26",
-      "typ": "Foto",
       "credits": "Erstes Bergrennen der Lenzerheide Motor Classics, 1951-08-26, aus: Staatsarchiv Graubünden, Fotobestand Alfred und Kurt Heinze - Lenzerheide",
-      "urheber": "Heinze Kurt",
-      "eventId": null,
-      "austragungId": "A004"
+      "urheber": "Heinze Kurt"
     },
     {
       "id": "M022",
+      "eventId": "E002",
+      "austragungId": "A008",
+      "datum": "1930",
+      "typ": "Video",
       "url": "https://media.memobase.ch/memo/ako-002-StaOW_263267-1/viewer?auth=\"",
       "titel": "Klausenrennen. Autorennen, Bergprüfungsfahrt Sarnen - Stalden des Automobilklubs Luzern, mit Start in Sarnen (oberhalb Rathausbrücke).",
       "legende": null,
-      "datum": "1930",
-      "typ": "Video",
       "credits": null,
-      "urheber": "Abächerli, Carl",
-      "eventId": null,
-      "austragungId": "A008"
+      "urheber": "Abächerli, Carl"
     },
     {
       "id": "M023",
+      "eventId": "E003",
+      "austragungId": "A005",
+      "datum": "1954",
+      "typ": "Foto",
       "url": "https://eu-st01.ext.exlibrisgroup.com/41SNL_53_INST/storage/alma/86/2F/F3/AA/1B/6F/AD/B8/B4/0D/18/15/2F/7B/3D/0E/SNL_SPOR_235.jpg?AccessRightAllowDownload=true&Expires=1794648241&Signature=jUwpto7rGSwIoFmO-fZjNwsGq667Fyq6~rCwXHJIcer~-U6sPcWiynPVemmVsN8s6wgt9rpVqhX4-7sb9aUM-qreST66wcBWqQ7Jgn-hYLpNsiuZTGDMmkRp~lHBuXJevsIlM6g8y5rnYVF~r4zR0TuZKID28~s0kBwJlpv-MHBlLGkHWQe51-D2K7dlvR9aE82H9KXwmjFwee0luNDoAAsIHw4Mn1aAvi7bMTkRdtXOjIB0JESsH2oIqwuROYJPMEoP6scWlsjpmqC8nJ5iPRO-qw67-kCFEij3qF9w0MKH2a5h~VbF2XhMckDLVVW41ZFtz-Y1TwE0aLtjCZn19w__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA",
       "titel": "Grand Prix, Bern, 21.-22. August 1954",
       "legende": "Wortlaut des Plakates: Grand Prix Bern // 21./22. August 1954 P.O: monogramme inconnu",
-      "datum": "1954",
-      "typ": "Foto",
       "credits": null,
-      "urheber": null,
-      "eventId": null,
-      "austragungId": "A005"
+      "urheber": null
     },
     {
       "id": "M024",
+      "eventId": "E003",
+      "austragungId": "A006",
+      "datum": "1950",
+      "typ": "Foto",
       "url": "https://eu-st01.ext.exlibrisgroup.com/41SNL_53_INST/storage/alma/D6/C4/43/21/5F/31/D9/FA/96/25/D1/3A/BD/7C/52/C8/SNL_SPOR_237.jpg?AccessRightAllowDownload=true&Expires=1794648312&Signature=KmTy18QTkWjp1RxwKV785R-hDSovp2LWBBDqfO8LlpRlilDDf-UO4C2zrlCidIPo7f6oCWOiVaENvbbWp~Di5mWOHB6K25Gy7J8pNT3KLc05I2Bxl5QvYA5EM9nsLiFBBoZKdD6L2AgB-8GwT1RYPSFKgoCDf2sNq3P7bQDbNnxTjiKba~K0O9~DUUN8sJwiLpHDj6j9fajCx5WdiTA1h3GVFfRyBkriJ~mOMXRj6KcVtNeu6Qsa~Ldd1zSvI5Z8yJYVudSqDiXNDAtk08hP9WnWi-WH-Mk1WqSIJXuuYtXHGP6gfsRpBfjS3w3jhyAKjJIlMplxqKZu7Fsb2MtNfg__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA",
       "titel": "Grand Prix Bern, Championnat du monde, 3.-4. Juni 1950",
       "legende": "Libellé de l’affiche: Grand Prix // Bern // 3./4. Juni 1950 // Championnat du monde Existe aussi dans le format 68 x 49 cm",
-      "datum": "1950",
-      "typ": "Foto",
       "credits": null,
-      "urheber": null,
-      "eventId": null,
-      "austragungId": "A006"
+      "urheber": null
     },
     {
       "id": "M026",
+      "eventId": "E001",
+      "austragungId": "A004",
+      "datum": "1951-08-24",
+      "typ": "Text",
       "url": "https://www.letempsarchives.ch/page/GDL_1951_08_24/5/article/2101077",
       "titel": "La course de côte de La Lenzerheide",
       "legende": "Gazette de Lausanne, S. 5: Vorschau aufs erste Rennen, «une participation record sur un parcours nouveau»",
-      "datum": "1951-08-24",
-      "typ": "Text",
       "credits": "Gazette de Lausanne, Archives Le Temps; © Le Temps",
-      "urheber": "Gazette de Lausanne",
-      "eventId": null,
-      "austragungId": "A004"
+      "urheber": "Gazette de Lausanne"
     },
     {
       "id": "M027",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-26",
+      "typ": "Text",
       "url": "https://www.letempsarchives.ch/page/JDG_1957_08_26/6/article/7696790",
       "titel": "Victoire de von Trips",
       "legende": "Journal de Genève, S. 6: Rangliste und Zeiten, Strecke 6,25 km / 504 m, 15'000 Zuschauer, EM-Zwischenstand",
-      "datum": "1957-08-26",
-      "typ": "Text",
       "credits": "Journal de Genève, Archives Le Temps; © Le Temps",
-      "urheber": "Journal de Genève",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Journal de Genève"
     },
     {
       "id": "M028",
+      "eventId": "E001",
+      "austragungId": "A001",
+      "datum": "1957-08-26",
+      "typ": "Text",
       "url": "https://www.letempsarchives.ch/page/GDL_1957_08_26/4/article/3003488",
       "titel": "Bergrennen Tiefencastel–Lenzerheide 1957",
       "legende": "Gazette de Lausanne, S. 4: Rennbericht EM-Lauf (noch nicht geöffnet)",
-      "datum": "1957-08-26",
-      "typ": "Text",
       "credits": "Gazette de Lausanne, Archives Le Temps; © Le Temps",
-      "urheber": "Gazette de Lausanne",
-      "eventId": null,
-      "austragungId": "A001"
+      "urheber": "Gazette de Lausanne"
     },
     {
       "id": "M029",
+      "eventId": "E003",
+      "austragungId": "A005",
+      "datum": "1954-08-22",
+      "typ": "Foto",
       "url": "https://media.memobase.ch/memo/bbb-002-370889-1/viewer?auth=",
       "titel": "Grand Prix Bern",
       "legende": null,
-      "datum": "1954-08-22",
-      "typ": "Foto",
       "credits": "Erben von Eugen Thierstein",
-      "urheber": "Thierstein, Eugen (1919-2010)",
-      "eventId": null,
-      "austragungId": "A005"
+      "urheber": "Thierstein, Eugen (1919-2010)"
     },
     {
       "id": "M030",
+      "eventId": "E003",
+      "austragungId": "A005",
+      "datum": "1954-08-22",
+      "typ": "Foto",
       "url": "https://media.memobase.ch/memo/bbb-002-370888-1/viewer?auth=",
       "titel": "Grand Prix Bern",
       "legende": null,
-      "datum": "1954-08-22",
-      "typ": "Foto",
       "credits": "Erben von Eugen Thierstein",
-      "urheber": "Thierstein, Eugen (1919-2010)",
-      "eventId": null,
-      "austragungId": "A005"
+      "urheber": "Thierstein, Eugen (1919-2010)"
     },
     {
       "id": "M031",
+      "eventId": "E003",
+      "austragungId": "A005",
+      "datum": "1954-08-22",
+      "typ": "Foto",
       "url": "https://media.memobase.ch/memo/bbb-002-370869-1/viewer?auth=",
       "titel": "Grand Prix Bern",
       "legende": null,
-      "datum": "1954-08-22",
-      "typ": "Foto",
       "credits": "Erben von Eugen Thierstein",
-      "urheber": "Thierstein, Eugen (1919-2010)",
-      "eventId": null,
-      "austragungId": "A005"
+      "urheber": "Thierstein, Eugen (1919-2010)"
     },
     {
       "id": "M032",
+      "eventId": "E003",
+      "austragungId": "A005",
+      "datum": "1954-08-22",
+      "typ": "Foto",
       "url": "https://media.memobase.ch/memo/bbb-002-370887-1/viewer?auth=\"",
       "titel": "Grand Prix Bern",
       "legende": null,
-      "datum": "1954-08-22",
-      "typ": "Foto",
       "credits": "Erben von Eugen Thierstein",
-      "urheber": "Thierstein, Eugen (1919-2010)",
-      "eventId": null,
-      "austragungId": "A005"
+      "urheber": "Thierstein, Eugen (1919-2010)"
     },
     {
       "id": "M033",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/c3f622c8-c843-4e65-860d-c2b100ea3ee4?sv=2026-06-06&spr=https&se=2026-11-13T22%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0010-Screen.jpg&rsct=image%2Fjpeg&sig=fRDpuQmh3RFtuTmUsqCweaaODwJP33bnC%2FNsvE4SVGw%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0010",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": null
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M034",
+      "eventId": "E003",
+      "austragungId": "A006",
+      "datum": "1950-06-09",
+      "typ": "Video",
       "url": "https://media.zem.ch/01WS/1950/SFW_0436.mp4?start=289#t=289",
       "titel": "Berner Grand Prix",
       "legende": null,
-      "datum": "1950-06-09",
-      "typ": "Video",
       "credits": "Schweizer Filmwochenschau (SFW), Berner Grand Prix (0436-7), Schweizer Filmwochenschau, Schweizer Filmwochenschau vom 09.06.1950",
-      "urheber": null,
-      "eventId": null,
-      "austragungId": "A006"
+      "urheber": null
     },
     {
       "id": "M035",
+      "eventId": "E003",
+      "austragungId": "A005",
+      "datum": "1954-08-27",
+      "typ": "Video",
       "url": "https://media.zem.ch/01WS/1954/SFW_0635.mp4?start=299#t=299",
       "titel": "Berner Grand-Prix",
       "legende": null,
-      "datum": "1954-08-27",
-      "typ": "Video",
       "credits": "Schweizer Filmwochenschau (SFW), Berner Grand-Prix (0635-6), Schweizer Filmwochenschau, Schweizer Filmwochenschau vom 27.08.1954",
-      "urheber": null,
-      "eventId": null,
-      "austragungId": "A005"
+      "urheber": null
     },
     {
       "id": "M036",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4f57515e-dc59-459c-bf3d-627ff0db7020?sv=2026-06-06&spr=https&se=2026-11-13T22%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0001-Screen.jpg&rsct=image%2Fjpeg&sig=F8Bk9L1IfVCpGkKJf9ki649l15RqeA9FNI08BhaFzwQ%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0001",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M037",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/d311a7c0-ef18-4c74-9a39-7eafbc9fb17e?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0002-Screen.jpg&rsct=image%2Fjpeg&sig=14kuSPlfWuWkIuJ2JOs9020dRBQ5oejNduQlZnGDeV0%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0002",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M038",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/4dbf7e3b-4a3c-4ec1-b881-41d2eb6296b8?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0003-Screen.jpg&rsct=image%2Fjpeg&sig=8OyT%2By%2FMqcmfMgqL5ZGAEBLw4fFtKdyV%2Bexn%2BS688dM%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0003",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M039",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/06c66d38-af63-49c5-aa94-eab163cc5d06?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0004-Screen.jpg&rsct=image%2Fjpeg&sig=yFVzr6D77j9TxMl%2BIsJN0s5RIIj81cbTEX6LfXq%2B5HY%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0004",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M040",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/6450ad4a-e347-4de8-bb78-d4ffa21f8ddc?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0005-Screen.jpg&rsct=image%2Fjpeg&sig=lEnSiAelFmHDMwLyPmus7E6D%2FFw8ioWCZA5pMqQc%2BiE%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0005",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M041",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/47aaaa4c-1e8f-4398-9aa5-087061a988bd?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0006-Screen.jpg&rsct=image%2Fjpeg&sig=CQhhlw%2BVXGf9SQMX60%2Fc4Sw79QfChXL17QTTiDDfg8k%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0006",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M042",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/1a056760-b942-4f77-b1ab-60ea4c8bd87b?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0001-Screen.jpg&rsct=image%2Fjpeg&sig=%2B8wYkd37t7A%2BzceLXLZIBCYsa8Fh8TwS%2FNqdMkWwOls%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0001",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M043",
+      "eventId": "E004",
+      "austragungId": "A009",
+      "datum": "1961-05-07",
+      "typ": "Foto",
       "url": "https://storage.ethz.sharedien.com/storagehandler-blob/277fda0c-4fcf-4943-946e-b00bdaaaf017?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0002-Screen.jpg&rsct=image%2Fjpeg&sig=V9OSf8asXxiLbhAA79ZUCUYij10N83vvHmNaunJrOa8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
       "titel": "Car racing Kandersteg-Mitholz",
       "legende": null,
-      "datum": "1961-05-07",
-      "typ": "Foto",
       "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0002",
-      "urheber": "Baumann, Heinz (1935-2021)",
-      "eventId": null,
-      "austragungId": "A009"
+      "urheber": "Baumann, Heinz (1935-2021)"
     },
     {
       "id": "M044",
+      "eventId": "E005",
+      "austragungId": "A010",
+      "datum": "2018-06-09",
+      "typ": "Foto",
       "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Zurich_E-Prix_Kurve_Mythenquai.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "titel": "Zurich E-Prix Kurve Mythenquai",
       "legende": "Spitzkehre am Mythenquai vor der Start-Ziel-Geraden, Tag vor dem Rennen",
-      "datum": "2018-06-09",
-      "typ": "Foto",
       "credits": "Wikimedia Commons; CC BY 4.0",
-      "urheber": "Albinfo",
-      "eventId": null,
-      "austragungId": "A010"
+      "urheber": "Albinfo"
     },
     {
       "id": "M045",
+      "eventId": "E005",
+      "austragungId": "A010",
+      "datum": "2018-06-09",
+      "typ": "Foto",
       "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Zurich_E-Prix_Dreik%C3%B6nigsstrasse.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "titel": "Zurich E-Prix Dreikönigstrasse",
       "legende": "Testfahrt auf der Dreikönigstrasse, Tag vor dem Rennen",
-      "datum": "2018-06-09",
-      "typ": "Foto",
       "credits": "Wikimedia Commons; CC BY 4.0",
-      "urheber": "Albinfo",
-      "eventId": null,
-      "austragungId": "A010"
+      "urheber": "Albinfo"
     },
     {
       "id": "M046",
+      "eventId": "E005",
+      "austragungId": "A010",
+      "datum": "2018-06-10",
+      "typ": "Foto",
       "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Zurich_e-Prix_Mythenquai_Hairpin.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "titel": "Zurich e-Prix Mythenquai Hairpin",
       "legende": "Blick von der Haupttribüne auf die Spitzkehre am Mythenquai, Renntag",
-      "datum": "2018-06-10",
-      "typ": "Foto",
       "credits": "Wikimedia Commons; CC BY-SA 4.0",
-      "urheber": "Wild8oar",
-      "eventId": null,
-      "austragungId": "A010"
+      "urheber": "Wild8oar"
     },
     {
       "id": "M047",
+      "eventId": "E005",
+      "austragungId": "A010",
+      "datum": "2018-06-07",
+      "typ": "Video",
       "url": "https://memobase.ch/de/object/srf-030-033aa2fb-0f4d-4e49-a901-f956259be6d9_05",
       "titel": "Formel E-Rennen",
       "legende": "10vor10: erstes Rundstreckenrennen in einer Schweizer Stadt seit 64 Jahren",
-      "datum": "2018-06-07",
-      "typ": "Video",
       "credits": "Schweizer Radio und Fernsehen (SRF); Weiternutzung nur mit Genehmigung SRF",
-      "urheber": "SRF",
-      "eventId": null,
-      "austragungId": "A010"
+      "urheber": "SRF"
     },
     {
       "id": "M048",
+      "eventId": "E005",
+      "austragungId": "A011",
+      "datum": "2019-06-22",
+      "typ": "Video",
       "url": "https://memobase.ch/de/object/srf-999-cadaa21f-8955-4483-9f92-bdd90e69618e_03",
       "titel": "Formel E E-Prix Bern",
       "legende": "Sport aktuell: Sieg Vergne, 3. Buemi, Interviews Buemi und Evans",
-      "datum": "2019-06-22",
-      "typ": "Video",
       "credits": "Schweizer Radio und Fernsehen (SRF); Weiternutzung nur mit Genehmigung SRF",
-      "urheber": "SRF",
-      "eventId": null,
-      "austragungId": "A011"
+      "urheber": "SRF"
+    },
+    {
+      "id": "M049",
+      "eventId": "E006",
+      "austragungId": "A035",
+      "datum": "1947-10-10",
+      "typ": "Video",
+      "url": "https://media.memobase.ch/memo/bar-001-CJS_0310-1_d-1/master?auth=#t=0,126",
+      "titel": "Lausanne : Grand Prix Automobile",
+      "legende": "Ciné-Journal suisse: Start mit Chiron, Wimille, Sommer; Ascari führt und fällt aus; Villoresi siegt vor Wimille und de Graffenried (103 km/h); die siamesische Königsfamilie im Publikum",
+      "credits": "Cinémathèque suisse / Schweizerisches Bundesarchiv; Nutzung zu Bildungszwecken erlaubt",
+      "urheber": "Ciné-Journal suisse / Schweizer Filmwochenschau"
+    },
+    {
+      "id": "M050",
+      "eventId": "E006",
+      "austragungId": "A036",
+      "datum": "1949-09-02",
+      "typ": "Video",
+      "url": "https://media.memobase.ch/memo/bar-001-CJS_0396-5_d-1/master?auth=#t=304",
+      "titel": "Lausanne: Grand Prix automobile",
+      "legende": "Ciné-Journal suisse: 16 Wagen am Start, Ascari (Nr. 14) führt, ab Runde 7 Farina (Nr. 10); Bira tankt nach 42 Runden; Villoresi Panne vor den Tribünen; Farina siegt",
+      "credits": "Cinémathèque suisse / Schweizerisches Bundesarchiv; Nutzung zu Bildungszwecken erlaubt",
+      "urheber": "Ciné-Journal suisse / Schweizer Filmwochenschau"
+    },
+    {
+      "id": "M051",
+      "eventId": "E006",
+      "austragungId": "A035",
+      "datum": null,
+      "typ": "Text",
+      "url": "https://www.letempsarchives.ch/page/GDL_1947_10_06/3/article/2904275",
+      "titel": "Race report 1947",
+      "legende": null,
+      "credits": null,
+      "urheber": null
+    },
+    {
+      "id": "M052",
+      "eventId": "E007",
+      "austragungId": "A037",
+      "datum": null,
+      "typ": "Video",
+      "url": "https://youtu.be/QY25-5BHReI",
+      "titel": "Motor Racing In Switzerland",
+      "legende": null,
+      "credits": null,
+      "urheber": "British Pathé"
+    }
+  ],
+  "personen": [
+    {
+      "id": "P007",
+      "name": "Alberto Ascari",
+      "land": "Italien",
+      "gnd": "129600172",
+      "wikidata": "Q2086",
+      "foto": "https://commons.wikimedia.org/wiki/File:Alberto_Ascari_-_El_Gr%C3%A1fico_1587.jpg",
+      "austragungIds": [
+        "A031",
+        "A034"
+      ]
+    },
+    {
+      "id": "P003",
+      "name": "Bernd Rosemeyer",
+      "land": "Deutschland",
+      "gnd": "118749722",
+      "wikidata": "Q60403",
+      "foto": "https://commons.wikimedia.org/wiki/File:Bernd_Rosemeyer_-_2.jpg",
+      "austragungIds": [
+        "A018"
+      ]
+    },
+    {
+      "id": "P006",
+      "name": "Carlo Felice Trossi",
+      "land": "Italien",
+      "gnd": "1051409276",
+      "wikidata": "Q776091",
+      "foto": "https://commons.wikimedia.org/wiki/File:Carlo_Felice_Trossi_at_the_1934_Grand_Prix_automobile_de_Montreux_(cropped).jpg",
+      "austragungIds": [
+        "A030"
+      ]
+    },
+    {
+      "id": "P008",
+      "name": "Giuseppe Farina",
+      "land": "Italien",
+      "gnd": "1208169556",
+      "wikidata": "Q2040",
+      "foto": "https://commons.wikimedia.org/wiki/File:NinoFarina.jpg",
+      "austragungIds": [
+        "A006"
+      ]
+    },
+    {
+      "id": "P001",
+      "name": "Hans Stuck",
+      "land": "Deutschland",
+      "gnd": "11875615X",
+      "wikidata": "Q61541",
+      "foto": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-08188,_Hans_von_Stuck.jpg",
+      "austragungIds": [
+        "A016"
+      ]
+    },
+    {
+      "id": "P004",
+      "name": "Hermann Lang",
+      "land": "Deutschland",
+      "gnd": "118726277",
+      "wikidata": "Q60409",
+      "foto": "https://commons.wikimedia.org/wiki/File:Hermann_Lang_El_Gr%C3%A1fico.jpg",
+      "austragungIds": [
+        "A021"
+      ]
+    },
+    {
+      "id": "P005",
+      "name": "Jean-Pierre Wimille",
+      "land": "Frankreich",
+      "gnd": "1221500449",
+      "wikidata": "Q1685271",
+      "foto": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Wimille_at_the_1933_French_Grand_Prix_(cropped).jpg",
+      "austragungIds": [
+        "A029"
+      ]
+    },
+    {
+      "id": "P009",
+      "name": "Juan Manuel Fangio",
+      "land": "Argentinien",
+      "gnd": "118686054",
+      "wikidata": "Q2069",
+      "foto": "https://commons.wikimedia.org/wiki/File:Juan_Manuel_Fangio_(circa_1952).jpg",
+      "austragungIds": [
+        "A032",
+        "A005"
+      ]
+    },
+    {
+      "id": "P010",
+      "name": "Piero Taruffi",
+      "land": "Italien",
+      "gnd": "1325695742",
+      "wikidata": "Q171578",
+      "foto": "https://commons.wikimedia.org/wiki/File:Piero_Taruffi.jpg",
+      "austragungIds": [
+        "A033"
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "Rudolf Caracciola",
+      "land": "Deutschland",
+      "gnd": "11866705X",
+      "wikidata": "Q57365",
+      "foto": "https://commons.wikimedia.org/wiki/File:Rudolf_Caracciola_by_Hugo_K%C3%BChn_1928cr.jpg",
+      "austragungIds": [
+        "A017",
+        "A019",
+        "A020"
+      ]
+    },
+    {
+      "id": "P011",
+      "name": "Luigi Villoresi",
+      "land": "Italien",
+      "gnd": null,
+      "wikidata": "Q171514",
+      "foto": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Luis_Villoresi_-_El_Gr%C3%A1fico_1442.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "austragungIds": [
+        "A035"
+      ]
     }
   ]
 }

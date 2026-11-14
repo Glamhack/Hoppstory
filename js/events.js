@@ -349,7 +349,15 @@
   // Austragung page: header in the event colour (Austragung name, link to its
   // event), location, exact start and end date, its photos and videos, the Rangliste,
   // its newspaper articles, the link to the event, and at the bottom a mini map.
-  function austragungHtml(a, event, media, color, articles = []) {
+  // A winner: name (linked to Wikidata if known) and country.
+  function winnerHtml(p) {
+    const name = p.wikidata
+      ? `<a href="https://www.wikidata.org/wiki/${esc(encodeURIComponent(p.wikidata))}" target="_blank" rel="noopener">${esc(p.name)}</a>`
+      : esc(p.name);
+    return `${name}${p.land ? ` <span class="fact-note">(${esc(p.land)})</span>` : ''}`;
+  }
+
+  function austragungHtml(a, event, media, color, articles = [], winners = []) {
     return `
       <div class="event-popup" style="--event-color: ${color}">
         <header class="popup-header">
@@ -364,6 +372,7 @@
             <div><dt>Ort</dt><dd>${esc(a.location || 'unbekannt')}</dd></div>
             <div><dt>Startdatum</dt><dd>${esc(singleDate(a.datumStart))}</dd></div>
             <div><dt>Enddatum</dt><dd>${esc(singleDate(a.datumEnde))}</dd></div>
+            ${winners.length ? `<div><dt>Sieger</dt><dd>${winners.map(winnerHtml).join('<br>')}</dd></div>` : ''}
           </dl>
           ${mediaHtml(media)}
           <div class="popup-heading">Rangliste</div>
@@ -460,7 +469,15 @@
   // Prepares the exported data for display: event lookup, event colours,
   // Austragungen linked to their event, and media. Shared by map and pages.
   function prepare(data) {
-    const eventsById = new Map((data.events || []).map((e) => [e.id, e]));
+    // Records without their own "id" (e.g. an older export without ID columns) get one
+    // from their position in the list: E001 = first event, A001 = first
+    // Austragung, M001 = first medium. An "id" in the data always wins.
+    const withIds = (list, prefix) => (list || []).map((x, i) =>
+      (x.id ? x : { ...x, id: `${prefix}${String(i + 1).padStart(3, '0')}` }));
+    const events = withIds(data.events, 'E');
+    const medien = withIds(data.medien, 'M');
+
+    const eventsById = new Map(events.map((e) => [e.id, e]));
     const colorByEvent = new Map();
     function colorFor(eventId) {
       if (!colorByEvent.has(eventId)) {
@@ -468,26 +485,71 @@
       }
       return colorByEvent.get(eventId);
     }
-    (data.events || []).forEach((e) => colorFor(e.id));
+    events.forEach((e) => colorFor(e.id));
+
+    // Link each Austragung to its event. If the export left eventId empty or it
+    // points nowhere, fall back to matching by name (and say so in the console).
+    const austragungen = withIds(data.austragungen, 'A').map((a) => {
+      if (eventsById.has(a.eventId)) return a;
+      const guess = guessEvent(a, events);
+      console.warn(`Austragung ${a.id} "${a.name}" has eventId ${JSON.stringify(a.eventId)};`,
+        guess ? `matched to event ${guess.id} "${guess.name}" by name.` : 'no event matched by name.');
+      return guess ? { ...a, eventId: guess.id } : a;
+    });
+    const austragungById = new Map(austragungen.map((a) => [a.id, a]));
+
+    // Link each medium to its Austragung. Its austragungId is used whenever that
+    // Austragung exists and belongs to the medium's event. Only if it is
+    // missing, unknown or belongs to another event, the medium goes to the
+    // Austragung of its event with a matching year (from "datum", or a year in
+    // title or caption), or to the event's only Austragung; failing that, it is
+    // shown with the event as a whole. Such corrections are listed in the console.
+    const fixes = [];
+    function mediumYears(m) {
+      const ys = new Set();
+      if (/^\d{4}/.test(String(m.datum ?? ''))) ys.add(year(m.datum));
+      `${m.titel ?? ''} ${m.legende ?? ''}`.replace(/\b(18|19|20)\d\d\b/g, (y) => ys.add(y));
+      return ys;
+    }
+    function austragungOf(m) {
+      const given = austragungById.get(m.austragungId);
+      const eventId = m.eventId || (given && given.eventId);
+      if (given && given.eventId === eventId) return given.id;
+      const ys = mediumYears(m);
+      const ofEvent = austragungen.filter((a) => a.eventId === eventId);
+      const byYear = ofEvent.filter((a) => ys.has(year(a.datumStart)));
+      const found = byYear.length === 1 ? byYear[0] : ofEvent.length === 1 ? ofEvent[0] : null;
+      if (m.austragungId || found) {
+        fixes.push({
+          medium: m.id, titel: m.titel, eventId, austragungId: m.austragungId,
+          war: given ? given.name : '(gibt es nicht)', jetzt: found ? `${found.id} ${found.name}` : '(ganzes Event)',
+        });
+      }
+      return found ? found.id : null;
+    }
 
     // Photos and videos per Austragung and per event (medien of typ "Foto" or "Video" with a URL).
+    // Newspaper articles per Austragung (medien of typ "Text" with a URL), oldest first;
+    // only shown on the Austragung page, not in the map popups.
     const mediaByAustragung = new Map();
     const mediaByEvent = new Map();
-    (data.medien || []).forEach((m) => {
-      if ((m.typ !== 'Foto' && m.typ !== 'Video') || !m.url) return;
-      const [map, id] = m.austragungId ? [mediaByAustragung, m.austragungId] : [mediaByEvent, m.eventId];
-      if (!id) return;
-      if (!map.has(id)) map.set(id, []);
-      map.get(id).push(m);
-    });
-    // Newspaper articles per Austragung (medien of typ "Text" with a URL), oldest first.
-    // Only shown on the Austragung page, not in the map popups.
     const articlesByAustragung = new Map();
-    (data.medien || []).forEach((m) => {
-      if (m.typ !== 'Text' || !m.url || !m.austragungId) return;
-      if (!articlesByAustragung.has(m.austragungId)) articlesByAustragung.set(m.austragungId, []);
-      articlesByAustragung.get(m.austragungId).push(m);
+    const push = (map, key, m) => { if (!map.has(key)) map.set(key, []); map.get(key).push(m); };
+    medien.forEach((m) => {
+      if (!m.url || !['Foto', 'Video', 'Text'].includes(m.typ)) return;
+      const austragungId = austragungOf(m);
+      if (m.typ === 'Text') {
+        if (austragungId) push(articlesByAustragung, austragungId, m);
+      } else if (austragungId) {
+        push(mediaByAustragung, austragungId, m);
+      } else if (m.eventId) {
+        push(mediaByEvent, m.eventId, m);
+      }
     });
+    if (fixes.length) {
+      console.warn(`${fixes.length} Medien haben keine passende Austragung (fehlt, unbekannt oder anderes Event); sie wurden so zugeordnet:`);
+      console.table(fixes);
+    }
     articlesByAustragung.forEach((list) => list.sort((x, y) => String(x.datum).localeCompare(String(y.datum))));
     function articlesFor(austragungId) {
       return articlesByAustragung.get(austragungId) || [];
@@ -501,17 +563,13 @@
       ];
     }
 
-    // Link each Austragung to its event. If the export left eventId empty or it
-    // points nowhere, fall back to matching by name (and say so in the console).
-    const austragungen = (data.austragungen || []).map((a) => {
-      if (eventsById.has(a.eventId)) return a;
-      const guess = guessEvent(a, data.events || []);
-      console.warn(`Austragung ${a.id} "${a.name}" has eventId ${JSON.stringify(a.eventId)};`,
-        guess ? `matched to event ${guess.id} "${guess.name}" by name.` : 'no event matched by name.');
-      return guess ? { ...a, eventId: guess.id } : a;
-    });
+    // Winners (sheet "Personen"): each Austragung lists its winners' IDs in siegerIds.
+    const personenById = new Map((data.personen || []).map((p) => [p.id, p]));
+    function winnersFor(a) {
+      return (a.siegerIds || []).map((id) => personenById.get(id)).filter(Boolean);
+    }
 
-    return { eventsById, colorFor, mediaFor, articlesFor, austragungen };
+    return { eventsById, colorFor, mediaFor, articlesFor, winnersFor, austragungen };
   }
 
   // Draws one Austragung on a Leaflet map (the mini map on the Austragung page)

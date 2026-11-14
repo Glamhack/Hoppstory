@@ -33,7 +33,7 @@
   window.loadEvents(cfg.dataUrl)
     .then((data) => {
       const { prepare, austragungHtml } = window.HoppEvents;
-      const { eventsById, colorFor, mediaFor, articlesFor, austragungen } = prepare(data);
+      const { eventsById, colorFor, mediaFor, articlesFor, winnersFor, austragungen } = prepare(data);
       const a = austragungen.find((x) => x.id === id);
       if (!a) {
         message('Diese Austragung wurde nicht gefunden.');
@@ -41,7 +41,7 @@
       }
       const event = eventsById.get(a.eventId) || null;
       // Only this Austragung's own media (not the event-wide ones).
-      root.innerHTML = austragungHtml(a, event, mediaFor([a], null), colorFor(a.eventId), articlesFor(a.id));
+      root.innerHTML = austragungHtml(a, event, mediaFor([a], null), colorFor(a.eventId), articlesFor(a.id), winnersFor(a));
       document.title = `${a.name} – Hopp!story`;
       showMiniMap(a, colorFor(a.eventId));
     })

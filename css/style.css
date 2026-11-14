@@ -302,3 +302,5 @@ body.page { background: #fff; }
   background: #e8e7e3; z-index: 0; /* keep Leaflet's panes below the app bar */
 }
 @media (max-width: 520px) { .event-popup .mini-map { height: 240px; } }
+.event-popup .facts dd a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--event-color) 50%, transparent); text-underline-offset: 2px; }
+.event-popup .facts .fact-note { font-weight: 400; color: #666; }
