@@ -4,8 +4,8 @@
   "events": [
     {
       "id": "E901",
-      "name": "GLAM-Hack Computerrennen",
-      "beschreibung": "Das härteste Ausdauerrennen der Schweiz findet nicht am Klausenpass statt, sondern im campo der Stiftung für Kunst, Kultur und Geschichte (SKKG) in Winterthur. Beim GLAM-Hack 2026 starteten die Teams nicht mit Motoren, sondern mit Laptops, Kabelsalat und einer bedenklichen Menge Kaffee. Die Strecke: über Datenbank-Haarnadelkurven, durch den Tunnel der fehlenden IDs und hinauf zur Passhöhe «Es läuft auf meinem Rechner». Gewertet wird nicht die schnellste Runde, sondern der kreativste Beitrag zu den Challenges des Hackathons. Ein Boxenstopp dauert genau so lange, wie die Kaffeemaschine braucht.",
+      "name": "GLAMhack Computerrennen",
+      "beschreibung": "Das härteste Ausdauerrennen der Schweiz findet nicht am Klausenpass statt, sondern im campo der Stiftung für Kunst, Kultur und Geschichte (SKKG) in Winterthur. Beim GLAMhack 2026 starteten die Teams nicht mit Motoren, sondern mit Laptops, Kabelsalat und einer bedenklichen Menge Kaffee. Die Strecke: über Datenbank-Haarnadelkurven, durch den Tunnel der fehlenden IDs und hinauf zur Passhöhe «Es läuft auf meinem Rechner». Gewertet wird nicht die schnellste Runde, sondern der kreativste Beitrag zu den Challenges des Hackathons. Ein Boxenstopp dauert genau so lange, wie die Kaffeemaschine braucht.",
       "sportart": "Computerrennen (Kaffee-Klasse)",
       "farbe": "#c2006b"
     },
@@ -21,7 +21,7 @@
     {
       "id": "A901",
       "eventId": "E901",
-      "name": "GLAM-Hack 2026",
+      "name": "GLAMhack 2026",
       "datumStart": "2026-11-13",
       "datumEnde": "2026-11-14",
       "start": {
@@ -33,7 +33,7 @@
         "lng": 8.765493599130641
       },
       "location": "campo – Stiftung für Kunst, Kultur und Geschichte (SKKG), Winterthur",
-      "rangliste": "Wertung: kreativster Beitrag zu den Challenges des GLAM-Hack 2026. Die offizielle Rangliste gibt es bei der Schlusspräsentation.\n\nSonderwertungen:\nSchnellster Boxenstopp: die Kaffeemaschine (ungeschlagen)\nLängste Nacht: alle, die um 3 Uhr noch «nur noch schnell» etwas fixen wollten\nBester Unfall: «git push --force»\nFairplay-Preis: wer das WLAN-Passwort mit allen geteilt hat",
+      "rangliste": "Wertung: kreativster Beitrag zu den Challenges des GLAMhack 2026. Die offizielle Rangliste gibt es bei der Schlusspräsentation.\n\nSonderwertungen:\nSchnellster Boxenstopp: die Kaffeemaschine (ungeschlagen)\nLängste Nacht: alle, die um 3 Uhr noch «nur noch schnell» etwas fixen wollten\nBester Unfall: «git push --force»\nFairplay-Preis: wer das WLAN-Passwort mit allen geteilt hat",
       "siegerIds": []
     },
     {
