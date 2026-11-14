@@ -23,7 +23,7 @@
     <button type="button" class="qr-close" aria-label="Schliessen">&times;</button>
     <img class="qr-image" src="docs/qr-code.svg" alt="QR-Code: ${url}">
     <p class="qr-caption">Hopp!story auf dem Handy öffnen</p>
-    <p class="qr-url">${url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</p>`;
+    <p class="qr-url"><a href="${url}" target="_blank" rel="noopener">${url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></p>`;
   document.body.appendChild(dialog);
 
   btn.addEventListener('click', () => dialog.showModal());
