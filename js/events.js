@@ -96,7 +96,7 @@
     const items = [...media.filter((m) => m.typ === 'Foto'), ...media.filter((m) => m.typ !== 'Foto')];
     if (!items.length) return '';
     const figs = items.map((m, i) => {
-      const caption = m.legende || m.titel || '';
+      const caption = m.legende || '';
       let body;
       if (m.typ === 'Foto') {
         body = `<a href="${esc(m.url)}" target="_blank" rel="noopener">
@@ -245,23 +245,13 @@
   // Austragungen with a year badge each (oldest first).
   // opts.link: URL of the event page, shown as a link at the bottom (popups).
   // opts.description: true to add the event description at the bottom (event page).
-  // opts.maxEditions: show at most this many Austragungen (the most recent ones)
-  // plus a "weitere" link to opts.link (popups, to keep them short).
   function eventHtml(event, group, media, color, opts = {}) {
     const locations = [...new Set(group.map((a) => a.location).filter(Boolean))];
-    let editions = group
+    // All Austragungen, oldest first (long lists scroll inside the popup).
+    const editions = group
       .slice()
       .sort((a, b) => String(a.datumStart ?? '9999').localeCompare(String(b.datumStart ?? '9999')));
-    let hidden = 0;
-    // Only shorten when it saves at least two rows ("1 weitere" instead of the row itself is no gain).
-    if (opts.maxEditions && editions.length > opts.maxEditions + 1) {
-      hidden = editions.length - opts.maxEditions;
-      editions = editions.slice(hidden);
-    }
-    const more = hidden
-      ? `<li><a class="popup-editions-more" href="${esc(opts.link || '#')}">+ ${hidden} frühere Austragung${hidden > 1 ? 'en' : ''}</a></li>`
-      : '';
-    const items = more + editions
+    const items = editions
       .map((a) => {
         const date = dateText(a.datumStart, a.datumEnde);
         return `<li>
@@ -333,11 +323,10 @@
               <path d="M7 8.5h7M7 11.5h7M7 14.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
             </svg>
             <span class="press-text">
+              <span class="press-title">${esc(m.legende || 'Zeitungsartikel')}</span>
               ${source ? `<span class="press-source">${esc(source)}</span>` : ''}
-              <span class="press-title">${esc(m.titel || 'Zeitungsartikel')}</span>
-              ${m.legende ? `<span class="press-summary">${esc(m.legende)}</span>` : ''}
-              <span class="press-open">Artikel lesen &#8599;</span>
               ${m.credits ? `<span class="popup-credits">${esc(m.credits)}</span>` : ''}
+              <span class="press-open">Artikel lesen &#8599;</span>
             </span>
           </a>
         </li>`;
@@ -521,13 +510,13 @@
     // Austragung exists and belongs to the medium's event. Only if it is
     // missing, unknown or belongs to another event, the medium goes to the
     // Austragung of its event with a matching year (from "datum", or a year in
-    // title or caption), or to the event's only Austragung; failing that, it is
+    // the caption), or to the event's only Austragung; failing that, it is
     // shown with the event as a whole. Such corrections are listed in the console.
     const fixes = [];
     function mediumYears(m) {
       const ys = new Set();
       if (/^\d{4}/.test(String(m.datum ?? ''))) ys.add(year(m.datum));
-      `${m.titel ?? ''} ${m.legende ?? ''}`.replace(/\b(18|19|20)\d\d\b/g, (y) => ys.add(y));
+      String(m.legende ?? '').replace(/\b(18|19|20)\d\d\b/g, (y) => ys.add(y));
       return ys;
     }
     function austragungOf(m) {
@@ -540,7 +529,7 @@
       const found = byYear.length === 1 ? byYear[0] : ofEvent.length === 1 ? ofEvent[0] : null;
       if (m.austragungId || found) {
         fixes.push({
-          medium: m.id, titel: m.titel, eventId, austragungId: m.austragungId,
+          medium: m.id, legende: m.legende, eventId, austragungId: m.austragungId,
           war: given ? given.name : '(gibt es nicht)', jetzt: found ? `${found.id} ${found.name}` : '(ganzes Event)',
         });
       }
@@ -660,7 +649,7 @@
         const color = colorFor(items[0].eventId);
         const title = event ? event.name : items[0].name;
         const media = mediaFor(items, items[0].eventId);
-        const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null, maxEditions: 3 });
+        const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null });
         const a = [start.lat, start.lng];
 
         if (!end) {

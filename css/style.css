@@ -86,8 +86,9 @@ body { display: flex; flex-direction: column; }
   display: block; width: 100%; height: 160px; object-fit: contain;
   border-radius: 8px; background: #000;
 }
-.event-popup .popup-photo figcaption { font-size: 12px; margin-top: 6px; }
-.event-popup .popup-author { color: #555; font-size: 11px; margin-top: 2px; } /* photographer / author, above the credits */
+/* Under each photo/video: Legende (biggest), then photographer, then credits (smallest) */
+.event-popup .popup-photo figcaption { font-size: 14px; font-weight: 500; line-height: 1.4; color: #222; margin-top: 8px; }
+.event-popup .popup-author { color: #555; font-size: 12px; margin-top: 4px; }
 .event-popup .popup-credits { color: #888; font-size: 11px; margin-top: 2px; }
 .event-pin { background: none; border: none; }
 .event-pin svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
@@ -127,8 +128,9 @@ body.page { background: #fff; }
 .event-page .popup-heading { margin-top: 22px; font-size: 12px; }
 .event-page .carousel { margin-top: 18px; }
 .event-page .popup-photo img { height: min(420px, 60vw); min-height: 200px; object-fit: contain; background: #e8e7e3; }
-.event-page .popup-photo figcaption { font-size: 14px; }
-.event-page .popup-author, .event-page .popup-credits { font-size: 12px; }
+.event-page .popup-photo figcaption { font-size: 17px; }
+.event-page .popup-author { font-size: 14px; }
+.event-page .popup-credits { font-size: 12px; }
 .event-page .popup-edition-date, .event-page .popup-year { font-size: 13px; }
 .event-page .popup-description { font-size: 15px; color: #333; }
 @media (max-width: 520px) {
@@ -184,11 +186,8 @@ body.page { background: #fff; }
 .event-popup .press-card:focus-visible { outline: 2px solid var(--event-color); outline-offset: 1px; }
 .event-popup .press-icon { flex: none; margin-top: 2px; color: color-mix(in srgb, var(--event-color) 75%, #000); }
 .event-popup .press-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.event-popup .press-source {
-  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #777;
-}
-.event-popup .press-title { font-weight: 700; font-family: Georgia, "Times New Roman", serif; font-size: 1.05em; }
-.event-popup .press-summary { line-height: 1.45; }
+.event-popup .press-source { font-size: 12px; color: #555; } /* author · date, like the photographer line */
+.event-popup .press-title { font-weight: 700; font-family: Georgia, "Times New Roman", serif; font-size: 1.05em; line-height: 1.35; } /* the Legende */
 .event-popup .press-open {
   margin-top: 2px; font-size: 12px; font-weight: 600;
   color: color-mix(in srgb, var(--event-color) 75%, #000);
@@ -288,13 +287,6 @@ body.page { background: #fff; }
 @media (max-height: 640px) {
   .event-popup-wrap .popup-photo img { height: 100px; }
 }
-/* "+ N frühere Austragungen" row at the top of a shortened list */
-.event-popup .popup-editions-more {
-  display: block; padding: 2px 4px 6px; margin: 0 -4px; border-radius: 6px;
-  font-size: 12px; font-weight: 600; text-decoration: none;
-  color: color-mix(in srgb, var(--event-color) 75%, #000);
-}
-.event-popup .popup-editions-more:hover { text-decoration: underline; }
 
 /* Mini map on the Austragung page */
 .event-popup .mini-map {

@@ -11,7 +11,7 @@ Output structure (field names as used by js/events.js):
     events:       id, name, beschreibung, sportart
     austragungen: id, eventId, name, datumStart, datumEnde, start {lat,lng} | null,
                   ende {lat,lng} | null, location, rangliste, siegerIds [Personen IDs]
-    medien:       id, eventId, austragungId, datum, typ, url, titel, legende, credits, urheber
+    medien:       id, eventId, austragungId, datum, typ, url, legende, credits, urheber
     personen:     id, name, land, gnd, wikidata, foto, austragungIds [Austragung IDs]
 Dates are ISO strings ("1957-08-25"), or just the year ("1957") if only that is known.
 The "(DON'T EDIT)" helper columns in the sheet are ignored; links use the IDs only.
@@ -209,7 +209,6 @@ def convert(wb):
             'datum': date_value(r.get('Datum'), f'Medium {mid}'),
             'typ': text(r.get('Typ')),
             'url': url,
-            'titel': text(r.get('Titel')),
             'legende': text(r.get('Legende')),
             'credits': text(r.get('Credits')),
             'urheber': text(r.get('FotografIn / UrheberIn')),
