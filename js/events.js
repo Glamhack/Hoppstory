@@ -281,9 +281,36 @@
       : '<p class="page-empty">Für diese Austragung ist keine Rangliste erfasst.</p>';
   }
 
+  // Newspaper articles: one card per article linking to the archive (the articles
+  // are copyrighted, so they are linked rather than copied or embedded).
+  function pressHtml(articles) {
+    if (!articles.length) return '';
+    const cards = articles.map((m) => {
+      const source = [m.urheber, m.datum ? singleDate(m.datum) : ''].filter(Boolean).join(' · ');
+      return `<li>
+          <a class="press-card" href="${esc(m.url)}" target="_blank" rel="noopener">
+            <svg class="press-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M4 5h13v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z M17 9h3v9a2 2 0 0 1-4 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M7 8.5h7M7 11.5h7M7 14.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <span class="press-text">
+              ${source ? `<span class="press-source">${esc(source)}</span>` : ''}
+              <span class="press-title">${esc(m.titel || 'Zeitungsartikel')}</span>
+              ${m.legende ? `<span class="press-summary">${esc(m.legende)}</span>` : ''}
+              <span class="press-open">Artikel lesen &#8599;</span>
+              ${m.credits ? `<span class="popup-credits">${esc(m.credits)}</span>` : ''}
+            </span>
+          </a>
+        </li>`;
+    }).join('');
+    return `<div class="popup-heading">Presse</div>
+      <ul class="press-list">${cards}</ul>`;
+  }
+
   // Austragung page: header in the event colour (Austragung name, link to its
-  // event), location, exact start and end date, its photos and videos, and the Rangliste.
-  function austragungHtml(a, event, media, color) {
+  // event), location, exact start and end date, its photos and videos, the Rangliste
+  // and its newspaper articles.
+  function austragungHtml(a, event, media, color, articles = []) {
     return `
       <div class="event-popup" style="--event-color: ${color}">
         <header class="popup-header">
@@ -302,6 +329,7 @@
           ${mediaHtml(media)}
           <div class="popup-heading">Rangliste</div>
           ${rankingHtml(a.rangliste)}
+          ${pressHtml(articles)}
           ${event ? `<a class="popup-more" href="${esc(eventPageUrl(event.id))}">Alle Austragungen von ${esc(event.name)} &rarr;</a>` : ''}
         </div>
       </div>`;
@@ -412,6 +440,19 @@
       if (!map.has(id)) map.set(id, []);
       map.get(id).push(m);
     });
+    // Newspaper articles per Austragung (medien of typ "Text" with a URL), oldest first.
+    // Only shown on the Austragung page, not in the map popups.
+    const articlesByAustragung = new Map();
+    (data.medien || []).forEach((m) => {
+      if (m.typ !== 'Text' || !m.url || !m.austragungId) return;
+      if (!articlesByAustragung.has(m.austragungId)) articlesByAustragung.set(m.austragungId, []);
+      articlesByAustragung.get(m.austragungId).push(m);
+    });
+    articlesByAustragung.forEach((list) => list.sort((x, y) => String(x.datum).localeCompare(String(y.datum))));
+    function articlesFor(austragungId) {
+      return articlesByAustragung.get(austragungId) || [];
+    }
+
     // Media of these Austragungen plus the media of the event as a whole.
     function mediaFor(items, eventId) {
       return [
@@ -430,7 +471,7 @@
       return guess ? { ...a, eventId: guess.id } : a;
     });
 
-    return { eventsById, colorFor, mediaFor, austragungen };
+    return { eventsById, colorFor, mediaFor, articlesFor, austragungen };
   }
 
   // For the event and Austragung pages (js/event-page.js, js/austragung-page.js).
