@@ -17,6 +17,19 @@
     root.append(p, back);
   }
 
+  // Small map close up on where the Austragung took place, on the first base
+  // layer from config.js (the grey national map). Scroll-wheel zoom is off so
+  // scrolling the page does not get stuck on the map; +/- and pinch still work.
+  function showMiniMap(a, color) {
+    const el = document.getElementById('mini-map');
+    if (!el || !window.L) return;
+    const map = L.map(el, { scrollWheelZoom: false, zoomControl: false, maxZoom: cfg.maxZoom });
+    L.control.zoom({ position: 'bottomleft', zoomInTitle: 'Hineinzoomen', zoomOutTitle: 'Herauszoomen' }).addTo(map);
+    const base = Object.values(cfg.baseLayers)[0];
+    L.tileLayer(base.url, { attribution: cfg.attribution, maxZoom: cfg.maxZoom, bounds: cfg.bounds }).addTo(map);
+    window.HoppEvents.drawAustragung(map, a, color, cfg.routingUrl);
+  }
+
   window.loadEvents(cfg.dataUrl)
     .then((data) => {
       const { prepare, austragungHtml } = window.HoppEvents;
@@ -30,6 +43,7 @@
       // Only this Austragung's own media (not the event-wide ones).
       root.innerHTML = austragungHtml(a, event, mediaFor([a], null), colorFor(a.eventId), articlesFor(a.id));
       document.title = `${a.name} – Hopp!story`;
+      showMiniMap(a, colorFor(a.eventId));
     })
     .catch((err) => {
       console.error('Could not load event data:', err);

@@ -308,8 +308,8 @@
   }
 
   // Austragung page: header in the event colour (Austragung name, link to its
-  // event), location, exact start and end date, its photos and videos, the Rangliste
-  // and its newspaper articles.
+  // event), location, exact start and end date, its photos and videos, the Rangliste,
+  // its newspaper articles, the link to the event, and at the bottom a mini map.
   function austragungHtml(a, event, media, color, articles = []) {
     return `
       <div class="event-popup" style="--event-color: ${color}">
@@ -331,6 +331,7 @@
           ${rankingHtml(a.rangliste)}
           ${pressHtml(articles)}
           ${event ? `<a class="popup-more" href="${esc(eventPageUrl(event.id))}">Alle Austragungen von ${esc(event.name)} &rarr;</a>` : ''}
+          ${isPoint(a.start) ? '<div id="mini-map" class="mini-map" role="img" aria-label="Karte: Ort der Austragung"></div>' : ''}
         </div>
       </div>`;
   }
@@ -371,7 +372,7 @@
   };
 
   // Pin size relative to Leaflet's default marker (25 x 41 px). Change this to resize all pins.
-  const PIN_SCALE = 0.75;
+  const PIN_SCALE = 1.2;
   const PIN_W = 25 * PIN_SCALE;
   const PIN_H = 41 * PIN_SCALE;
 
@@ -474,8 +475,37 @@
     return { eventsById, colorFor, mediaFor, articlesFor, austragungen };
   }
 
+  // Draws one Austragung on a Leaflet map (the mini map on the Austragung page)
+  // with the same pins as the main map: a cup for a single location, or start
+  // pin, finish pin and the route between them (following the road once loaded).
+  // Zooms the map to fit, and refits when the road route arrives.
+  function drawAustragung(map, a, color, routingUrl) {
+    if (!isPoint(a.start)) return;
+    const s = [a.start.lat, a.start.lng];
+    const pin = (latlng, kind) => L.marker(latlng, { icon: pinIcon(color, kind), interactive: false, keyboard: false });
+    const hasEnd = isPoint(a.ende) && pointKey(a.ende) !== pointKey(a.start);
+    if (!hasEnd) {
+      pin(s, 'single').addTo(map);
+      map.setView(s, 13);
+      return;
+    }
+    const e = [a.ende.lat, a.ende.lng];
+    const line = L.polyline([s, e], { color, weight: 5, opacity: 0.85, interactive: false }).addTo(map);
+    pin(s, 'start').addTo(map);
+    pin(e, 'end').addTo(map);
+    // Extra room at the top for the pins (they stand above their coordinate) and
+    // on the left for the zoom buttons.
+    const fit = () => map.fitBounds(line.getBounds(), { paddingTopLeft: [56, 60], paddingBottomRight: [30, 24], maxZoom: 15 });
+    fit();
+    if (routingUrl) {
+      fetchRoute(routingUrl, s, e).then((path) => {
+        if (path) { line.setLatLngs([s, ...path, e]); fit(); }
+      });
+    }
+  }
+
   // For the event and Austragung pages (js/event-page.js, js/austragung-page.js).
-  window.HoppEvents = { prepare, eventHtml, austragungHtml };
+  window.HoppEvents = { prepare, eventHtml, austragungHtml, drawAustragung };
 
   // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
   // The returned layer also has:

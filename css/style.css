@@ -298,3 +298,10 @@ body.page { background: #fff; }
   color: color-mix(in srgb, var(--event-color) 75%, #000);
 }
 .event-popup .popup-editions-more:hover { text-decoration: underline; }
+
+/* Mini map on the Austragung page */
+.event-popup .mini-map {
+  height: 300px; margin-top: 16px; border-radius: 10px; overflow: hidden;
+  background: #e8e7e3; z-index: 0; /* keep Leaflet's panes below the app bar */
+}
+@media (max-width: 520px) { .event-popup .mini-map { height: 240px; } }
