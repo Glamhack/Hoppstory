@@ -466,9 +466,13 @@
 
     const eventsById = new Map(events.map((e) => [e.id, e]));
     const colorByEvent = new Map();
+    // Events take the next palette colour, unless they bring their own ("farbe",
+    // used by the easter eggs so they never share a colour with a real event).
+    let paletteIndex = 0;
     function colorFor(eventId) {
       if (!colorByEvent.has(eventId)) {
-        colorByEvent.set(eventId, PALETTE[colorByEvent.size % PALETTE.length]);
+        const own = eventsById.get(eventId) && eventsById.get(eventId).farbe;
+        colorByEvent.set(eventId, own || PALETTE[paletteIndex++ % PALETTE.length]);
       }
       return colorByEvent.get(eventId);
     }
@@ -617,5 +621,24 @@
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
     return res.json();
+  };
+
+  // For the event and Austragung pages: the real data plus the easter eggs
+  // (cfg.eastereggsUrl, optional), so pages of both can be opened. Easter-egg
+  // Austragungen are marked with easterEgg: true (drawn without road routing).
+  window.loadAllEvents = async function loadAllEvents(cfg) {
+    const data = await window.loadEvents(cfg.dataUrl);
+    if (!cfg.eastereggsUrl) return data;
+    let eggs;
+    try {
+      eggs = await window.loadEvents(cfg.eastereggsUrl);
+    } catch (err) {
+      console.warn('Could not load easter eggs:', err);
+      return data;
+    }
+    const merged = { ...data };
+    ['events', 'medien', 'personen'].forEach((k) => { merged[k] = [...(data[k] || []), ...(eggs[k] || [])]; });
+    merged.austragungen = [...(data.austragungen || []), ...(eggs.austragungen || []).map((a) => ({ ...a, easterEgg: true }))];
+    return merged;
   };
 })();

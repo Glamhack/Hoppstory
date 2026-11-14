@@ -16,7 +16,7 @@
     root.append(p, back);
   }
 
-  window.loadEvents(cfg.dataUrl)
+  window.loadAllEvents(cfg)
     .then((data) => {
       const { prepare, eventHtml } = window.HoppEvents;
       const { eventsById, colorFor, mediaFor, austragungen } = prepare(data);

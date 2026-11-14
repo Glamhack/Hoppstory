@@ -35,6 +35,8 @@ window.APP_CONFIG = {
 
   // Exported data (Event / Austragung / Medien).
   dataUrl: 'data/data.json',
+  // Fake races for fun, shown as the "Easter Eggs" layer (off by default). Set to null to drop them.
+  eastereggsUrl: 'data/eastereggs.json',
   // Milestones shown on the timeline (racing ban 1955–2026).
   milestonesUrl: 'data/meilensteine.json',
 

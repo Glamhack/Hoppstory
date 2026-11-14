@@ -9,6 +9,14 @@
   window.loadEvents(cfg.dataUrl)
     .then((data) => {
       const layer = addOverlay('Events', window.buildEventLayer(data, { routingUrl: cfg.routingUrl }));
+
+      // Easter eggs (fake races) as their own layer in the layer chooser, off by
+      // default and not filtered by the timeline. Routes are straight lines.
+      if (cfg.eastereggsUrl) {
+        window.loadEvents(cfg.eastereggsUrl)
+          .then((eggs) => addOverlay('Easter Eggs', window.buildEventLayer(eggs, { routingUrl: null }), false))
+          .catch((err) => console.warn('Could not load easter eggs:', err));
+      }
       const years = layer.years.map((y) => y.year);
 
       // After a range is selected, make sure all the matching markers are on

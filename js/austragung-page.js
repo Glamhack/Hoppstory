@@ -27,10 +27,11 @@
     L.control.zoom({ position: 'bottomleft', zoomInTitle: 'Hineinzoomen', zoomOutTitle: 'Herauszoomen' }).addTo(map);
     const base = Object.values(cfg.baseLayers)[0];
     L.tileLayer(base.url, { attribution: cfg.attribution, maxZoom: cfg.maxZoom, bounds: cfg.bounds }).addTo(map);
-    window.HoppEvents.drawAustragung(map, a, color, cfg.routingUrl);
+    // Easter eggs (e.g. the spaceship race) fly in a straight line, no road routing.
+    window.HoppEvents.drawAustragung(map, a, color, a.easterEgg ? null : cfg.routingUrl);
   }
 
-  window.loadEvents(cfg.dataUrl)
+  window.loadAllEvents(cfg)
     .then((data) => {
       const { prepare, austragungHtml } = window.HoppEvents;
       const { eventsById, colorFor, mediaFor, articlesFor, winnersFor, austragungen } = prepare(data);

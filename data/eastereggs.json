@@ -1,0 +1,83 @@
+{
+  "quelle": "Easter Eggs (von Hand erstellt, keine echten Rennen)",
+  "exportiert": "2026-11-14T12:00:00Z",
+  "events": [
+    {
+      "id": "E901",
+      "name": "GLAM-Hack Computerrennen",
+      "beschreibung": "Das härteste Ausdauerrennen der Schweiz findet nicht am Klausenpass statt, sondern im campo der Stiftung für Kunst, Kultur und Geschichte (SKKG) in Winterthur. Beim GLAM-Hack 2026 starteten die Teams nicht mit Motoren, sondern mit Laptops, Kabelsalat und einer bedenklichen Menge Kaffee. Die Strecke: über Datenbank-Haarnadelkurven, durch den Tunnel der fehlenden IDs und hinauf zur Passhöhe «Es läuft auf meinem Rechner». Gewertet wird nicht die schnellste Runde, sondern der kreativste Beitrag zu den Challenges des Hackathons. Ein Boxenstopp dauert genau so lange, wie die Kaffeemaschine braucht.",
+      "sportart": "Computerrennen (Kaffee-Klasse)",
+      "farbe": "#c2006b"
+    },
+    {
+      "id": "E902",
+      "name": "Grand Prix der Galaxis",
+      "beschreibung": "Seit dem Rundstreckenverbot von 1955 sind Autorennen in der Schweiz verboten. Von Raumschiffen steht im Gesetz allerdings nichts. Diese Lücke nutzten zwei ausserirdische Pilot:innen für das erste interplanetare Rennen der Schweizer Sportgeschichte: von Chiasso im Süden in einem Satz über die Alpen bis nach Basel. Der Gotthard wurde nicht unter-, sondern überflogen, die Vignette trotzdem kontrolliert. Augenzeugen am Gotthard berichten von einem Ufo, das kurz anhielt, um Toblerone zu kaufen.",
+      "sportart": "Raumschiffrennen (Untertassen-Formel Ω)",
+      "farbe": "#1d2a6b"
+    }
+  ],
+  "austragungen": [
+    {
+      "id": "A901",
+      "eventId": "E901",
+      "name": "GLAM-Hack 2026",
+      "datumStart": "2026-11-13",
+      "datumEnde": "2026-11-14",
+      "start": {
+        "lat": 47.50689099679524,
+        "lng": 8.765493599130641
+      },
+      "ende": {
+        "lat": 47.50689099679524,
+        "lng": 8.765493599130641
+      },
+      "location": "campo – Stiftung für Kunst, Kultur und Geschichte (SKKG), Winterthur",
+      "rangliste": "Wertung: kreativster Beitrag zu den Challenges des GLAM-Hack 2026. Die offizielle Rangliste gibt es bei der Schlusspräsentation.\n\nSonderwertungen:\nSchnellster Boxenstopp: die Kaffeemaschine (ungeschlagen)\nLängste Nacht: alle, die um 3 Uhr noch «nur noch schnell» etwas fixen wollten\nBester Unfall: «git push --force»\nFairplay-Preis: wer das WLAN-Passwort mit allen geteilt hat",
+      "siegerIds": []
+    },
+    {
+      "id": "A902",
+      "eventId": "E902",
+      "name": "1. Grand Prix der Galaxis Chiasso–Basel",
+      "datumStart": "2026-04-01",
+      "datumEnde": "2026-04-01",
+      "start": {
+        "lat": 45.8325,
+        "lng": 9.0313
+      },
+      "ende": {
+        "lat": 47.5476,
+        "lng": 7.5897
+      },
+      "location": "Chiasso – Basel (via Gotthard, oben drüber)",
+      "rangliste": "1. Blip-7 (Andromeda) – Untertasse Typ Φ – 4 Min. 12 Sek.\n2. Zorg vom Orionnebel – Untertasse Typ Ω – 4 Min. 13 Sek.\n\nRennkommissär: Zorg erhielt eine Strafsekunde, weil er am Gotthard für eine Toblerone gelandet war und ohne Vignette über die Autobahn schwebte.\nZuschauer: 3 Kühe, 1 verwirrter Zollbeamter in Chiasso.",
+      "siegerIds": [
+        "P901"
+      ]
+    }
+  ],
+  "medien": [],
+  "personen": [
+    {
+      "id": "P901",
+      "name": "Blip-7",
+      "land": "Andromeda",
+      "gnd": null,
+      "wikidata": null,
+      "foto": null,
+      "austragungIds": [
+        "A902"
+      ]
+    },
+    {
+      "id": "P902",
+      "name": "Zorg vom Orionnebel",
+      "land": "Orionnebel",
+      "gnd": null,
+      "wikidata": null,
+      "foto": null,
+      "austragungIds": []
+    }
+  ]
+}
