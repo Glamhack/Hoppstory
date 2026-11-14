@@ -87,6 +87,7 @@ body { display: flex; flex-direction: column; }
   border-radius: 8px; background: #000;
 }
 .event-popup .popup-photo figcaption { font-size: 12px; margin-top: 6px; }
+.event-popup .popup-author { color: #555; font-size: 11px; margin-top: 2px; } /* photographer / author, above the credits */
 .event-popup .popup-credits { color: #888; font-size: 11px; margin-top: 2px; }
 .event-pin { background: none; border: none; }
 .event-pin svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
@@ -127,7 +128,7 @@ body.page { background: #fff; }
 .event-page .carousel { margin-top: 18px; }
 .event-page .popup-photo img { height: min(420px, 60vw); min-height: 200px; object-fit: contain; background: #e8e7e3; }
 .event-page .popup-photo figcaption { font-size: 14px; }
-.event-page .popup-credits { font-size: 12px; }
+.event-page .popup-author, .event-page .popup-credits { font-size: 12px; }
 .event-page .popup-edition-date, .event-page .popup-year { font-size: 13px; }
 .event-page .popup-description { font-size: 15px; color: #333; }
 @media (max-width: 520px) {

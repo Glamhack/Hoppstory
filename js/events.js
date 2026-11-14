@@ -120,6 +120,7 @@
       return `<figure class="popup-photo" data-media-id="${esc(m.id || '')}" data-url="${esc(m.url)}"${i ? ' hidden' : ''}>
           ${body}
           ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
+          ${m.urheber ? `<div class="popup-author">${m.typ === 'Foto' ? 'Foto' : 'Video'}: ${esc(m.urheber)}</div>` : ''}
           ${m.credits ? `<div class="popup-credits">${esc(m.credits)}</div>` : ''}
         </figure>`;
     }).join('');
