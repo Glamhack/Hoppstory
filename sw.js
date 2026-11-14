@@ -1,6 +1,6 @@
 // Service worker: caches the app shell, and map tiles as you view them.
 // Bump VERSION when you change any app file so clients pick up the new shell.
-const VERSION = 'v40';
+const VERSION = 'v42';
 const SHELL_CACHE = `shell-${VERSION}`;
 const TILE_CACHE = 'tiles-v1';
 const ROUTE_CACHE = 'routes-v1';
@@ -21,6 +21,8 @@ const SHELL = [
   'js/austragung-page.js',
   'data/data.json',
   'js/app.js',
+  'js/qr.js',
+  'docs/qr-code.svg',
   'vendor/leaflet/leaflet.js',
   'vendor/leaflet/leaflet.css',
   'vendor/leaflet/images/layers.png',

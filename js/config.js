@@ -30,6 +30,9 @@ window.APP_CONFIG = {
   },
   attribution: '&copy; <a href="https://www.swisstopo.admin.ch/" target="_blank" rel="noopener">swisstopo</a>',
 
+  // Address of the live app (GitHub Pages); shown with the QR code in the header.
+  liveUrl: 'https://glamhack.github.io/Hoppstory/',
+
   // Exported data (Event / Austragung / Medien).
   dataUrl: 'data/data.json',
 

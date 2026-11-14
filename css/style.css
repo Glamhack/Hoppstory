@@ -302,5 +302,47 @@ body.page { background: #fff; }
   background: #e8e7e3; z-index: 0; /* keep Leaflet's panes below the app bar */
 }
 @media (max-width: 520px) { .event-popup .mini-map { height: 240px; } }
-.event-popup .facts dd a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--event-color) 50%, transparent); text-underline-offset: 2px; }
-.event-popup .facts .fact-note { font-weight: 400; color: #666; }
+
+/* Winners on the Austragung page: portrait, name (linked to Wikidata), country */
+.event-popup .winners { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.event-popup .winner {
+  display: flex; align-items: center; gap: 12px; padding: 8px 14px 8px 8px; border-radius: 12px;
+  background: color-mix(in srgb, var(--event-color) 8%, #fff);
+}
+.event-popup .winner-photo {
+  position: relative; flex: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+  background: color-mix(in srgb, var(--event-color) 20%, #fff);
+}
+.event-popup .winner-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+.event-popup .winner-photo-missing::after {
+  content: attr(data-initial); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 700; color: color-mix(in srgb, var(--event-color) 75%, #000);
+}
+.event-popup .winner-text { display: flex; flex-direction: column; }
+.event-popup .winner-name { font-weight: 700; }
+.event-popup .winner-name a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--event-color) 50%, transparent); text-underline-offset: 2px; }
+.event-popup .winner-land { color: #666; font-size: 0.9em; }
+
+/* QR-Code button in the header and its large popup */
+.qr-btn {
+  display: inline-flex; align-items: center; gap: 6px; margin-left: 14px; padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,.45); border-radius: 8px; background: transparent;
+  color: #fff; font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer;
+}
+.app-bar h1 + .qr-btn { margin-left: auto; } /* map page: no back link, push to the right */
+.qr-btn:hover { background: rgba(255,255,255,.12); }
+.qr-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+@media (max-width: 520px) { .qr-btn-text { display: none; } .qr-btn { padding: 6px; margin-left: 10px; } }
+.qr-dialog {
+  border: 0; border-radius: 20px; padding: 24px 24px 16px; background: #fff; color: #222;
+  max-width: 95vw; max-height: 95vh; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.4);
+}
+.qr-dialog::backdrop { background: rgba(20, 24, 28, .75); }
+.qr-image { display: block; width: min(86vw, 100vh - 190px, 1000px); height: auto; aspect-ratio: 1; margin: 0 auto; }
+.qr-caption { margin: 14px 0 2px; font-size: clamp(18px, 2.4vw, 28px); font-weight: 700; }
+.qr-url { margin: 0; font-size: clamp(14px, 1.8vw, 20px); color: #555; }
+.qr-close {
+  position: absolute; top: 8px; right: 12px; width: 40px; height: 40px; border: 0; border-radius: 50%;
+  background: transparent; font-size: 30px; line-height: 1; color: #555; cursor: pointer;
+}
+.qr-close:hover { background: #eee; color: #000; }

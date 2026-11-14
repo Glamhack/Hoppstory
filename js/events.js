@@ -350,11 +350,28 @@
   // event), location, exact start and end date, its photos and videos, the Rangliste,
   // its newspaper articles, the link to the event, and at the bottom a mini map.
   // A winner: name (linked to Wikidata if known) and country.
+  // A winner card: portrait (from the Personen sheet's photo link; Wikimedia
+  // Commons pages are turned into the image itself), name linked to Wikidata,
+  // and country. If the portrait cannot be loaded, the card shows an initial.
   function winnerHtml(p) {
-    const name = p.wikidata
-      ? `<a href="https://www.wikidata.org/wiki/${esc(encodeURIComponent(p.wikidata))}" target="_blank" rel="noopener">${esc(p.name)}</a>`
+    const wd = p.wikidata ? `https://www.wikidata.org/wiki/${encodeURIComponent(p.wikidata)}` : null;
+    const name = wd
+      ? `<a href="${esc(wd)}" target="_blank" rel="noopener">${esc(p.name)}</a>`
       : esc(p.name);
-    return `${name}${p.land ? ` <span class="fact-note">(${esc(p.land)})</span>` : ''}`;
+    const initial = esc(String(p.name || '?').trim().charAt(0));
+    const photo = p.foto
+      ? `<a class="winner-photo" href="${esc(p.foto)}" target="_blank" rel="noopener" data-initial="${initial}">
+          <img src="${esc(imageSrc(p.foto))}" alt="${esc(p.name)}" loading="lazy"
+               onerror="this.parentNode.classList.add('winner-photo-missing');this.remove()">
+        </a>`
+      : `<span class="winner-photo winner-photo-missing" data-initial="${initial}"></span>`;
+    return `<li class="winner">
+        ${photo}
+        <span class="winner-text">
+          <span class="winner-name">${name}</span>
+          ${p.land ? `<span class="winner-land">${esc(p.land)}</span>` : ''}
+        </span>
+      </li>`;
   }
 
   function austragungHtml(a, event, media, color, articles = [], winners = []) {
@@ -372,9 +389,11 @@
             <div><dt>Ort</dt><dd>${esc(a.location || 'unbekannt')}</dd></div>
             <div><dt>Startdatum</dt><dd>${esc(singleDate(a.datumStart))}</dd></div>
             <div><dt>Enddatum</dt><dd>${esc(singleDate(a.datumEnde))}</dd></div>
-            ${winners.length ? `<div><dt>Sieger</dt><dd>${winners.map(winnerHtml).join('<br>')}</dd></div>` : ''}
           </dl>
           ${mediaHtml(media)}
+          ${winners.length ? `
+            <div class="popup-heading">Sieger</div>
+            <ul class="winners">${winners.map(winnerHtml).join('')}</ul>` : ''}
           <div class="popup-heading">Rangliste</div>
           ${rankingHtml(a.rangliste)}
           ${pressHtml(articles)}
