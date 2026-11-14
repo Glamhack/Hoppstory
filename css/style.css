@@ -172,6 +172,7 @@ body.page { background: #fff; }
 
 /* Austragung page: newspaper articles, one link card each */
 .event-popup .press-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.event-popup .press-list + .popup-more { margin-top: 24px; } /* breathing room after the articles */
 .event-popup .press-card {
   display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; border-radius: 10px;
   color: inherit; text-decoration: none;
@@ -205,11 +206,6 @@ body.page { background: #fff; }
   display: flex; align-items: center; justify-content: center;
   color: #fff; font-weight: 600; text-decoration: none;
 }
-.event-popup .media-source {
-  display: inline-block; margin-top: 6px; font-size: 12px; font-weight: 600; text-decoration: none;
-  color: color-mix(in srgb, var(--event-color) 75%, #000);
-}
-.event-popup .media-source:hover { text-decoration: underline; }
 
 /* Timeline under the map: the whole period fits the width. A thin axis with
    decade ticks and labels, a dot per Austragung, and the selected range as a

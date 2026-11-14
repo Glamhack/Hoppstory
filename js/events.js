@@ -73,16 +73,24 @@
   }
 
   // Name of a video's source, for the "watch at the source" link.
+  // Name of a medium's source, for "open at the source" links.
   function sourceName(url) {
-    if (/memobase\.ch/.test(url)) return 'Memobase';
-    if (/srf\.ch/.test(url)) return 'SRF Play';
+    const s = String(url);
+    if (/memobase\.ch/.test(s)) return 'Memobase';
+    if (/srf\.ch/.test(s)) return 'SRF Play';
+    if (/wikimedia\.org/.test(s)) return 'Wikimedia Commons';
+    if (/ethz\.sharedien\.com|e-pics\.ethz\.ch/.test(s)) return 'der ETH-Bibliothek';
+    if (/staatsarchiv-findsystem\.gr\.ch/.test(s)) return 'dem Staatsarchiv Graubünden';
+    if (/exlibrisgroup\.com/.test(s)) return 'der Bibliothek';
+    if (/zem\.ch/.test(s)) return 'der Quelle';
     return 'der Quelle';
   }
 
   // Media carousel: one photo or video at a time, with previous/next buttons, a
   // counter and swipe on touch screens. Photos come first, then videos.
   // Photos open the full image in a new tab; images that fail to load (e.g.
-  // expired links) are dropped. Videos play in the source's embedded player,
+  // expired links) show a "Foto bei … ansehen" link box instead (see hoppPhotoFailed). Videos play in the
+  // source's embedded player (a link box if it fails, see hoppCheckVideo),
   // which is only loaded while its slide is shown (see showPhoto).
   function mediaHtml(media) {
     const items = [...media.filter((m) => m.typ === 'Foto'), ...media.filter((m) => m.typ !== 'Foto')];
@@ -100,15 +108,16 @@
         // frame, so it gets a 4:3 frame; SRF is 16:9. scrolling="no" hides the
         // player's own scrollbar in any case.
         const ratio = embed && embed.includes('memobase.ch') ? ' media-frame-4x3' : '';
+        // onload: checks once that the player URL works (see hoppCheckVideo).
         body = embed
           ? `<div class="media-frame${ratio}">
               <iframe data-src="${esc(embed)}"${i === 0 ? ` src="${esc(embed)}"` : ''} title="${esc(caption || 'Video')}"
+                      onload="hoppCheckVideo(this)"
                       scrolling="no" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
             </div>`
-          : `<a class="media-frame media-placeholder" href="${esc(m.url)}" target="_blank" rel="noopener">&#9654; Video ansehen</a>`;
-        body += `<a class="media-source" href="${esc(m.url)}" target="_blank" rel="noopener">Video bei ${sourceName(m.url)} öffnen &#8599;</a>`;
+          : `<a class="media-frame media-placeholder" href="${esc(m.url)}" target="_blank" rel="noopener">&#9654; Video bei ${sourceName(m.url)} ansehen &#8599;</a>`;
       }
-      return `<figure class="popup-photo"${i ? ' hidden' : ''}>
+      return `<figure class="popup-photo" data-media-id="${esc(m.id || '')}" data-url="${esc(m.url)}"${i ? ' hidden' : ''}>
           ${body}
           ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
           ${m.credits ? `<div class="popup-credits">${esc(m.credits)}</div>` : ''}
@@ -144,16 +153,45 @@
     carousel.querySelector('.carousel-nav').hidden = figs.length < 2;
   }
 
-  // Called by a photo that failed to load: drop it and show the next one.
+  // Media that cannot be shown stay in the carousel as a dark box that only
+  // links to the medium at its source ("Foto bei … ansehen"), the same as videos
+  // without an embeddable player. The medium's ID and URL go to the console.
+  function sourceLinkBox(fig, kind) {
+    const url = fig.dataset.url;
+    console.warn(`Medium ${fig.dataset.mediaId || '(ohne ID)'} konnte nicht geladen werden:`, url);
+    const box = document.createElement('a');
+    box.className = 'media-frame media-placeholder';
+    box.href = url;
+    box.target = '_blank';
+    box.rel = 'noopener';
+    box.textContent = kind === 'Video'
+      ? `▶ Video bei ${sourceName(url)} ansehen ↗`
+      : `Foto bei ${sourceName(url)} ansehen ↗`;
+    return box;
+  }
+
+  // Called by a photo that failed to load (e.g. an expired or wrong link).
   window.hoppPhotoFailed = function (img) {
+    const link = img.closest('a');
     const fig = img.closest('.popup-photo');
-    const carousel = fig && fig.closest('.carousel');
-    if (!carousel) return;
-    const pos = [...carousel.querySelectorAll('.popup-photo')].indexOf(fig);
-    let index = +carousel.dataset.index;
-    fig.remove();
-    if (pos < index) index -= 1; // keep showing the same photo; if the shown one failed, the next moves up
-    showPhoto(carousel, index);
+    if (link && fig) link.replaceWith(sourceLinkBox(fig, 'Foto'));
+  };
+
+  // Called when a video player frame loads. Whether an embedded player works
+  // cannot be seen from outside, so the player URL is requested once (Memobase
+  // and SRF allow this); if it fails, the player is replaced by the link box.
+  window.hoppCheckVideo = function (frame) {
+    const src = frame.dataset.src;
+    if (!src || frame.dataset.checked) return;
+    frame.dataset.checked = '1';
+    const fail = () => {
+      const fig = frame.closest('.popup-photo');
+      const box = frame.closest('.media-frame');
+      if (fig && box) box.replaceWith(sourceLinkBox(fig, 'Video'));
+    };
+    fetch(src, { mode: 'cors', credentials: 'omit' })
+      .then((res) => { if (!res.ok) fail(); })
+      .catch(fail);
   };
 
   // Buttons and swipes, handled once for all popups. Capture phase, because
