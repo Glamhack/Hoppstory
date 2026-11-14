@@ -206,11 +206,23 @@
   // Austragungen with a year badge each (oldest first).
   // opts.link: URL of the event page, shown as a link at the bottom (popups).
   // opts.description: true to add the event description at the bottom (event page).
+  // opts.maxEditions: show at most this many Austragungen (the most recent ones)
+  // plus a "weitere" link to opts.link (popups, to keep them short).
   function eventHtml(event, group, media, color, opts = {}) {
     const locations = [...new Set(group.map((a) => a.location).filter(Boolean))];
-    const items = group
+    let editions = group
       .slice()
-      .sort((a, b) => String(a.datumStart ?? '9999').localeCompare(String(b.datumStart ?? '9999')))
+      .sort((a, b) => String(a.datumStart ?? '9999').localeCompare(String(b.datumStart ?? '9999')));
+    let hidden = 0;
+    // Only shorten when it saves at least two rows ("1 weitere" instead of the row itself is no gain).
+    if (opts.maxEditions && editions.length > opts.maxEditions + 1) {
+      hidden = editions.length - opts.maxEditions;
+      editions = editions.slice(hidden);
+    }
+    const more = hidden
+      ? `<li><a class="popup-editions-more" href="${esc(opts.link || '#')}">+ ${hidden} frühere Austragung${hidden > 1 ? 'en' : ''}</a></li>`
+      : '';
+    const items = more + editions
       .map((a) => {
         const date = dateText(a.datumStart, a.datumEnde);
         return `<li>
@@ -239,8 +251,8 @@
           ${opts.description && event && event.beschreibung ? `
             <div class="popup-heading">Beschreibung</div>
             <div class="popup-description">${paragraphsHtml(event.beschreibung)}</div>` : ''}
-          ${opts.link ? `<a class="popup-more" href="${esc(opts.link)}">Mehr zum Event &rarr;</a>` : ''}
         </div>
+        ${opts.link ? `<footer class="popup-footer"><a class="popup-more" href="${esc(opts.link)}">Mehr zum Event &rarr;</a></footer>` : ''}
       </div>`;
   }
 
@@ -461,7 +473,7 @@
         const color = colorFor(items[0].eventId);
         const title = event ? event.name : items[0].name;
         const media = mediaFor(items, items[0].eventId);
-        const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null });
+        const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null, maxEditions: 3 });
         const a = [start.lat, start.lng];
 
         if (!end) {

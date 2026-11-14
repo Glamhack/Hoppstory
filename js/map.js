@@ -72,8 +72,25 @@ window.createMap = function createMap(elementId, cfg) {
       return;
     }
   }
+  // Cap the popup height to what fits in the map (its content then scrolls, see
+  // style.css). 20px for the tip below the popup.
+  function limitPopupHeight(popup) {
+    const el = popup.getElement();
+    if (el) el.style.setProperty('--popup-max-h', `${map.getSize().y - 2 * POPUP_PAD - 20}px`);
+  }
   // Wait one frame so the popup has its final size before measuring.
-  map.on('popupopen', (e) => requestAnimationFrame(() => revealPopup(e.popup)));
+  map.on('popupopen', (e) => {
+    limitPopupHeight(e.popup);
+    requestAnimationFrame(() => revealPopup(e.popup));
+  });
+  // Window resized or phone rotated: fit the open popup again.
+  map.on('resize', () => {
+    const popup = map._popup;
+    if (!popup || !map.hasLayer(popup)) return;
+    limitPopupHeight(popup);
+    popup.update();
+    requestAnimationFrame(() => revealPopup(popup));
+  });
 
   const baseLayers = {};
   Object.entries(cfg.baseLayers).forEach(([name, def], i) => {

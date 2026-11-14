@@ -82,8 +82,9 @@ body { display: flex; flex-direction: column; }
 .event-popup .carousel-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .event-popup .carousel-count { color: #777; font-size: 0.85em; min-width: 3.5em; text-align: center; }
 .event-popup .popup-photo img {
-  display: block; width: 100%; height: 160px; object-fit: cover;
-  border-radius: 8px; background: #eee;
+  /* whole image visible; black bars where it does not fit the frame */
+  display: block; width: 100%; height: 160px; object-fit: contain;
+  border-radius: 8px; background: #000;
 }
 .event-popup .popup-photo figcaption { font-size: 12px; margin-top: 6px; }
 .event-popup .popup-credits { color: #888; font-size: 11px; margin-top: 2px; }
@@ -92,7 +93,7 @@ body { display: flex; flex-direction: column; }
 
 /* "Mehr zum Event" link at the bottom of a popup */
 .event-popup .popup-more {
-  display: block; margin-top: 12px; padding: 7px 10px; border-radius: 8px; text-align: center;
+  display: block; padding: 7px 10px; border-radius: 8px; text-align: center;
   font-weight: 600; text-decoration: none;
   background: color-mix(in srgb, var(--event-color) 14%, #fff);
   color: color-mix(in srgb, var(--event-color) 75%, #000);
@@ -247,3 +248,31 @@ body.page { background: #fff; }
 .tl-handle-to { right: -8px; border-radius: 0 3px 3px 0; }
 .tl-handle-to::after { left: 2px; border-left-color: #fff; border-right-width: 0; }
 .tl-handle:focus-visible { outline: 2px solid #222; outline-offset: 1px; }
+
+/* Map popups never get taller than the map: header and "Mehr zum Event" stay
+   put, the part in between scrolls. map.js sets --popup-max-h from the map height. */
+.event-popup-wrap .event-popup {
+  display: flex; flex-direction: column; max-height: var(--popup-max-h, none);
+}
+.event-popup-wrap .popup-header, .event-popup-wrap .popup-footer { flex: none; }
+.event-popup-wrap .popup-body {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y; /* the map blocks native touch scrolling; allow it here */
+}
+.event-popup-wrap .popup-footer {
+  padding: 8px 14px 12px;
+  border-top: 1px solid #eee;
+}
+/* Smaller photo in popups, even smaller on short screens */
+.event-popup-wrap .popup-photo img { height: 130px; }
+@media (max-height: 640px) {
+  .event-popup-wrap .popup-photo img { height: 100px; }
+}
+/* "+ N frühere Austragungen" row at the top of a shortened list */
+.event-popup .popup-editions-more {
+  display: block; padding: 2px 4px 6px; margin: 0 -4px; border-radius: 6px;
+  font-size: 12px; font-weight: 600; text-decoration: none;
+  color: color-mix(in srgb, var(--event-color) 75%, #000);
+}
+.event-popup .popup-editions-more:hover { text-decoration: underline; }
