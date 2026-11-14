@@ -425,48 +425,66 @@
   window.HoppEvents = { prepare, eventHtml, austragungHtml };
 
   // options.routingUrl: OSRM route endpoint; routes are drawn as straight lines if not set.
+  // The returned layer also has:
+  // - setFilter(fn): show only the markers/routes that have at least one
+  //   Austragung for which fn(austragung) is true (null shows all). Popups
+  //   always list all Austragungen of the marker, whatever the filter.
+  // - years: [{ year, color }] for every dated Austragung, for the timeline
   window.buildEventLayer = function buildEventLayer(data, options = {}) {
     const { eventsById, colorFor, mediaFor, austragungen } = prepare(data);
+    const layer = L.featureGroup();
+    layer.setFilter = (fn) => {
+      layer.clearLayers();
+      buildLayers(fn).forEach((l) => layer.addLayer(l));
+      return layer;
+    };
+    layer.years = austragungen
+      .filter((a) => /^\d{4}/.test(String(a.datumStart ?? '')))
+      .map((a) => ({ year: +year(a.datumStart), color: colorFor(a.eventId) }));
+    return layer.setFilter(null);
 
-    // Group Austragungen by event + start point (+ end point if it is a route).
-    const groups = new Map();
-    austragungen.forEach((a) => {
-      if (!isPoint(a.start)) return;
-      const end = isPoint(a.ende) && pointKey(a.ende) !== pointKey(a.start) ? a.ende : null;
-      const key = `${a.eventId}|${pointKey(a.start)}|${end ? pointKey(end) : ''}`;
-      if (!groups.has(key)) groups.set(key, { start: a.start, end, items: [] });
-      groups.get(key).items.push(a);
-    });
+    function buildLayers(fn) {
+      // Group Austragungen by event + start point (+ end point if it is a route).
+      const groups = new Map();
+      austragungen.forEach((a) => {
+        if (!isPoint(a.start)) return;
+        const end = isPoint(a.ende) && pointKey(a.ende) !== pointKey(a.start) ? a.ende : null;
+        const key = `${a.eventId}|${pointKey(a.start)}|${end ? pointKey(end) : ''}`;
+        if (!groups.has(key)) groups.set(key, { start: a.start, end, items: [] });
+        groups.get(key).items.push(a);
+      });
 
-    const layers = [];
-    groups.forEach(({ start, end, items }) => {
-      const event = eventsById.get(items[0].eventId);
-      const color = colorFor(items[0].eventId);
-      const title = event ? event.name : items[0].name;
-      const media = mediaFor(items, items[0].eventId);
-      const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null });
-      const a = [start.lat, start.lng];
+      const layers = [];
+      groups.forEach(({ start, end, items }) => {
+        if (fn && !items.some(fn)) return;
+        const event = eventsById.get(items[0].eventId);
+        const color = colorFor(items[0].eventId);
+        const title = event ? event.name : items[0].name;
+        const media = mediaFor(items, items[0].eventId);
+        const html = eventHtml(event, items, media, color, { link: event ? eventPageUrl(event.id) : null });
+        const a = [start.lat, start.lng];
 
-      if (!end) {
-        layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html, POPUP_OPTS));
-        return;
-      }
-      // Route: start pin, end pin and a line between them, all opening the same popup.
-      // The line starts out straight and follows the road once the route has loaded.
-      const b = [end.lat, end.lng];
-      const line = L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' });
-      if (options.routingUrl) {
-        fetchRoute(options.routingUrl, a, b).then((path) => {
-          if (path) line.setLatLngs([a, ...path, b]);
-        });
-      }
-      layers.push(
-        line.bindPopup(html, POPUP_OPTS),
-        L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html, POPUP_OPTS),
-        L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html, POPUP_OPTS),
-      );
-    });
-    return L.featureGroup(layers);
+        if (!end) {
+          layers.push(L.marker(a, { title, icon: pinIcon(color, 'single') }).bindPopup(html, POPUP_OPTS));
+          return;
+        }
+        // Route: start pin, end pin and a line between them, all opening the same popup.
+        // The line starts out straight and follows the road once the route has loaded.
+        const b = [end.lat, end.lng];
+        const line = L.polyline([a, b], { color, weight: 4, opacity: 0.85, className: 'event-route' });
+        if (options.routingUrl) {
+          fetchRoute(options.routingUrl, a, b).then((path) => {
+            if (path) line.setLatLngs([a, ...path, b]);
+          });
+        }
+        layers.push(
+          line.bindPopup(html, POPUP_OPTS),
+          L.marker(a, { title: `${title} – Start`, icon: pinIcon(color, 'start') }).bindPopup(html, POPUP_OPTS),
+          L.marker(b, { title: `${title} – Ziel`, icon: pinIcon(color, 'end') }).bindPopup(html, POPUP_OPTS),
+        );
+      });
+      return layers;
+    }
   };
 
   window.loadEvents = async function loadEvents(url) {

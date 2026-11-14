@@ -1,5 +1,5 @@
 {
-  "exportiert": "2026-11-13T20:30:29.980Z",
+  "exportiert": "2026-11-14T08:38:30.316Z",
   "events": [
     {
       "id": "E001",
@@ -22,7 +22,7 @@
     {
       "id": "E004",
       "name": "Autorennen Mitholz-Kandersteg",
-      "beschreibung": "Das Bergrennen Mitholz–Kandersteg war ein früheres Motorsport-Bergrennen. Historische Hinweise darauf finden sich beispielsweise in den Motorsportarchiven von 1953 und 1966.",
+      "beschreibung": "Das historische Bergrennen Mitholz–Kandersteg fand von 1950 bis 1969 insgesamt 18 Mal statt, bevor es aufgrund des zunehmenden Verkehrs auf der Lötschberg-Route eingestellt wurde",
       "sportart": "Automobil Bergrennen"
     },
     {
@@ -173,11 +173,17 @@
       "id": "A009",
       "name": "Autorennen Mitholz-Kandersteg 1961",
       "location": "Mitholz-Kandersteg",
-      "start": null,
-      "ende": null,
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
       "datumStart": "1961-05-07",
       "datumEnde": "1961-05-07",
-      "rangliste": null,
+      "rangliste": "1. Harry Zweifel",
       "eventId": null
     },
     {
@@ -185,35 +191,47 @@
       "name": "Formel-E Zürich",
       "location": "Zürich",
       "start": {
-        "lat": 47.36185959582186,
-        "lng": 8.535337901965331
+        "lat": 47.36133,
+        "lng": 8.53533
       },
       "ende": {
-        "lat": 47.36185959582186,
-        "lng": 8.535337901965331
+        "lat": 47.36133,
+        "lng": 8.53533
       },
       "datumStart": "2018-06-10",
       "datumEnde": "2018-06-10",
-      "rangliste": null,
+      "rangliste": "1. Lucas di Grassi (ABT Schaeffler Audi Sport)\n2. Sam Bird (DS Virgin Racing)\n3. Jérôme D'Ambrosio (Dragon Racing)",
       "eventId": null
     },
     {
       "id": "A011",
       "name": "Formel-E Bern",
       "location": "Bern",
-      "start": null,
-      "ende": null,
-      "datumStart": null,
-      "datumEnde": null,
-      "rangliste": null,
+      "start": {
+        "lat": 46.950635,
+        "lng": 7.463057
+      },
+      "ende": {
+        "lat": 46.950635,
+        "lng": 7.463057
+      },
+      "datumStart": "2019-06-22",
+      "datumEnde": "2019-06-22",
+      "rangliste": "1. Jean-Éric Vergne (DS Techeetah)\r\n2. Mitch Evans (Panasonic Jaguar Racing)\r\n3. Sébastien Buemi (Nissan e.dams)",
       "eventId": null
     },
     {
       "id": "A012",
       "name": "Autorennen Mitholz-Kandersteg 1958",
       "location": "Mitholz-Kandersteg",
-      "start": null,
-      "ende": null,
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
       "datumStart": null,
       "datumEnde": null,
       "rangliste": "1. Erwin Sommerhaider",
@@ -223,11 +241,51 @@
       "id": "A013",
       "name": "Autorennen Mitholz-Kandersteg 1962",
       "location": "Mitholz-Kandersteg",
-      "start": null,
-      "ende": null,
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "datumStart": "1962-09-22",
+      "datumEnde": "1962-09-23",
+      "rangliste": "1. Charles Vögele",
+      "eventId": null
+    },
+    {
+      "id": "A014",
+      "name": "Autorennen Mitholz-Kandersteg 1960",
+      "location": "Mitholz-Kandersteg",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
       "datumStart": null,
       "datumEnde": null,
-      "rangliste": "1. Charles Vögele",
+      "rangliste": null,
+      "eventId": null
+    },
+    {
+      "id": "A015",
+      "name": "17. Autorennen Mitholz-Kandersteg 1966",
+      "location": "Mitholz-Kandersteg",
+      "start": {
+        "lat": 46.525285,
+        "lng": 7.676332
+      },
+      "ende": {
+        "lat": 46.505919,
+        "lng": 7.677082
+      },
+      "datumStart": "1966-09-11",
+      "datumEnde": "1966-09-11",
+      "rangliste": "1. Harry Zweifel\n2. Hans Illert\n3. Walter Habegger",
       "eventId": null
     }
   ],
@@ -438,7 +496,7 @@
     },
     {
       "id": "M017",
-      "url": "https://memobase.ch/de/object/bar-001-SFW_0488-5_f",
+      "url": "https://media.zem.ch/01WS/1951/SFW_0488_f.mp4?end=295&start=246#t=246,295",
       "titel": "Tiefencastel-Lenzerheide Hill Climb",
       "legende": "Schweizer Filmwochenschau, 31.08.1951, \"Ein neues Bergrennen\"",
       "datum": null,
@@ -510,7 +568,7 @@
     },
     {
       "id": "M023",
-      "url": null,
+      "url": "https://eu-st01.ext.exlibrisgroup.com/41SNL_53_INST/storage/alma/86/2F/F3/AA/1B/6F/AD/B8/B4/0D/18/15/2F/7B/3D/0E/SNL_SPOR_235.jpg?AccessRightAllowDownload=true&Expires=1794648241&Signature=jUwpto7rGSwIoFmO-fZjNwsGq667Fyq6~rCwXHJIcer~-U6sPcWiynPVemmVsN8s6wgt9rpVqhX4-7sb9aUM-qreST66wcBWqQ7Jgn-hYLpNsiuZTGDMmkRp~lHBuXJevsIlM6g8y5rnYVF~r4zR0TuZKID28~s0kBwJlpv-MHBlLGkHWQe51-D2K7dlvR9aE82H9KXwmjFwee0luNDoAAsIHw4Mn1aAvi7bMTkRdtXOjIB0JESsH2oIqwuROYJPMEoP6scWlsjpmqC8nJ5iPRO-qw67-kCFEij3qF9w0MKH2a5h~VbF2XhMckDLVVW41ZFtz-Y1TwE0aLtjCZn19w__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA",
       "titel": "Grand Prix, Bern, 21.-22. August 1954",
       "legende": "Wortlaut des Plakates: Grand Prix Bern // 21./22. August 1954 P.O: monogramme inconnu",
       "datum": "1954",
@@ -522,7 +580,7 @@
     },
     {
       "id": "M024",
-      "url": "https://nb-posters.primo.exlibrisgroup.com/discovery/delivery/41SNL_53_INST:posters/991000159309703978?lang=fr#1335628550003978",
+      "url": "https://eu-st01.ext.exlibrisgroup.com/41SNL_53_INST/storage/alma/D6/C4/43/21/5F/31/D9/FA/96/25/D1/3A/BD/7C/52/C8/SNL_SPOR_237.jpg?AccessRightAllowDownload=true&Expires=1794648312&Signature=KmTy18QTkWjp1RxwKV785R-hDSovp2LWBBDqfO8LlpRlilDDf-UO4C2zrlCidIPo7f6oCWOiVaENvbbWp~Di5mWOHB6K25Gy7J8pNT3KLc05I2Bxl5QvYA5EM9nsLiFBBoZKdD6L2AgB-8GwT1RYPSFKgoCDf2sNq3P7bQDbNnxTjiKba~K0O9~DUUN8sJwiLpHDj6j9fajCx5WdiTA1h3GVFfRyBkriJ~mOMXRj6KcVtNeu6Qsa~Ldd1zSvI5Z8yJYVudSqDiXNDAtk08hP9WnWi-WH-Mk1WqSIJXuuYtXHGP6gfsRpBfjS3w3jhyAKjJIlMplxqKZu7Fsb2MtNfg__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA",
       "titel": "Grand Prix Bern, Championnat du monde, 3.-4. Juni 1950",
       "legende": "Libellé de l’affiche: Grand Prix // Bern // 3./4. Juni 1950 // Championnat du monde Existe aussi dans le format 68 x 49 cm",
       "datum": "1950",
@@ -630,7 +688,7 @@
     },
     {
       "id": "M034",
-      "url": "https://memobase.ch/de/object/bar-001-SFW_0436-7",
+      "url": "https://media.zem.ch/01WS/1950/SFW_0436.mp4?start=289#t=289",
       "titel": "Berner Grand Prix",
       "legende": null,
       "datum": "1950-06-09",
@@ -642,7 +700,7 @@
     },
     {
       "id": "M035",
-      "url": "https://memobase.ch/de/object/bar-001-SFW_0635-6",
+      "url": "https://media.zem.ch/01WS/1954/SFW_0635.mp4?start=299#t=299",
       "titel": "Berner Grand-Prix",
       "legende": null,
       "datum": "1954-08-27",
@@ -702,7 +760,55 @@
     },
     {
       "id": "M040",
-      "url": "https://commons.wikimedia.org/wiki/File:Zurich_E-Prix_Kurve_Mythenquai.jpg",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/6450ad4a-e347-4de8-bb78-d4ffa21f8ddc?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0005-Screen.jpg&rsct=image%2Fjpeg&sig=lEnSiAelFmHDMwLyPmus7E6D%2FFw8ioWCZA5pMqQc%2BiE%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0005",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M041",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/47aaaa4c-1e8f-4398-9aa5-087061a988bd?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0001-0006-Screen.jpg&rsct=image%2Fjpeg&sig=CQhhlw%2BVXGf9SQMX60%2Fc4Sw79QfChXL17QTTiDDfg8k%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0001-0006",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M042",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/1a056760-b942-4f77-b1ab-60ea4c8bd87b?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0001-Screen.jpg&rsct=image%2Fjpeg&sig=%2B8wYkd37t7A%2BzceLXLZIBCYsa8Fh8TwS%2FNqdMkWwOls%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0001",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M043",
+      "url": "https://storage.ethz.sharedien.com/storagehandler-blob/277fda0c-4fcf-4943-946e-b00bdaaaf017?sv=2026-06-06&spr=https&se=2026-11-14T00%3A00%3A00Z&sr=b&sp=r&rscd=inline%3BfileName%3DCom_L10-0126-0002-0002-Screen.jpg&rsct=image%2Fjpeg&sig=V9OSf8asXxiLbhAA79ZUCUYij10N83vvHmNaunJrOa8%3D&userid=6eaed924-1088-4b5b-8888-651af9937bee",
+      "titel": "Car racing Kandersteg-Mitholz",
+      "legende": null,
+      "datum": "1961-05-07",
+      "typ": "Foto",
+      "credits": "ETH Library Zurich, Image Archive / Com_L10-0126-0002-0002",
+      "urheber": "Baumann, Heinz (1935-2021)",
+      "eventId": null,
+      "austragungId": "A009"
+    },
+    {
+      "id": "M044",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Zurich_E-Prix_Kurve_Mythenquai.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "titel": "Zurich E-Prix Kurve Mythenquai",
       "legende": "Spitzkehre am Mythenquai vor der Start-Ziel-Geraden, Tag vor dem Rennen",
       "datum": "2018-06-09",
@@ -713,8 +819,8 @@
       "austragungId": "A010"
     },
     {
-      "id": "M041",
-      "url": "https://commons.wikimedia.org/wiki/File:Zurich_E-Prix_Dreik%C3%B6nigsstrasse.jpg",
+      "id": "M045",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Zurich_E-Prix_Dreik%C3%B6nigsstrasse.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "titel": "Zurich E-Prix Dreikönigstrasse",
       "legende": "Testfahrt auf der Dreikönigstrasse, Tag vor dem Rennen",
       "datum": "2018-06-09",
@@ -725,8 +831,8 @@
       "austragungId": "A010"
     },
     {
-      "id": "M042",
-      "url": "https://commons.wikimedia.org/wiki/File:Zurich_e-Prix_Mythenquai_Hairpin.jpg",
+      "id": "M046",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Zurich_e-Prix_Mythenquai_Hairpin.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "titel": "Zurich e-Prix Mythenquai Hairpin",
       "legende": "Blick von der Haupttribüne auf die Spitzkehre am Mythenquai, Renntag",
       "datum": "2018-06-10",
@@ -737,7 +843,7 @@
       "austragungId": "A010"
     },
     {
-      "id": "M043",
+      "id": "M047",
       "url": "https://memobase.ch/de/object/srf-030-033aa2fb-0f4d-4e49-a901-f956259be6d9_05",
       "titel": "Formel E-Rennen",
       "legende": "10vor10: erstes Rundstreckenrennen in einer Schweizer Stadt seit 64 Jahren",
@@ -749,7 +855,7 @@
       "austragungId": "A010"
     },
     {
-      "id": "M044",
+      "id": "M048",
       "url": "https://memobase.ch/de/object/srf-999-cadaa21f-8955-4483-9f92-bdd90e69618e_03",
       "titel": "Formel E E-Prix Bern",
       "legende": "Sport aktuell: Sieg Vergne, 3. Buemi, Interviews Buemi und Evans",

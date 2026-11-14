@@ -1,5 +1,8 @@
 :root {
-  --red: #d52b1e;
+  /* App chrome (header, timeline): a calm slate, so the event colours on the map
+     stand out. The brand red stays in the app icon only. */
+  --accent: #3d4852;
+  --accent-dark: #262e35;
   --bar-h: 48px;
 }
 * { box-sizing: border-box; }
@@ -10,7 +13,7 @@ body { display: flex; flex-direction: column; }
   padding: 0 16px;
   padding-top: env(safe-area-inset-top);
   display: flex; align-items: center;
-  background: var(--red); color: #fff;
+  background: var(--accent); color: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,.3), 0 6px 16px rgba(0,0,0,.18);
   position: relative; /* keeps the bar (and its shadow) above the map */
   z-index: 1000;
@@ -76,7 +79,7 @@ body { display: flex; flex-direction: column; }
   font-size: 20px; line-height: 28px; cursor: pointer;
 }
 .event-popup .carousel-btn:hover { background: color-mix(in srgb, var(--event-color) 24%, #fff); }
-.event-popup .carousel-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.event-popup .carousel-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .event-popup .carousel-count { color: #777; font-size: 0.85em; min-width: 3.5em; text-align: center; }
 .event-popup .popup-photo img {
   display: block; width: 100%; height: 160px; object-fit: cover;
@@ -109,7 +112,7 @@ body.page { background: #fff; }
 .page-main { --page-top: 24px; flex: 1; overflow-y: auto; overflow-x: hidden; padding: var(--page-top) 16px 40px; }
 .event-page { max-width: 760px; margin: 0 auto; }
 .page-message { color: #555; }
-.event-page > a { color: var(--red); font-weight: 600; }
+.event-page > a { color: var(--accent); font-weight: 600; }
 .event-page .event-popup { font-size: 15px; }
 .event-page .popup-header {
   /* stretch to the edges of the page; text stays aligned with the content column */
@@ -184,3 +187,73 @@ body.page { background: #fff; }
   color: color-mix(in srgb, var(--event-color) 75%, #000);
 }
 .event-popup .media-source:hover { text-decoration: underline; }
+
+/* Timeline under the map: the whole period fits the width. A thin axis with
+   decade ticks and labels, a dot per Austragung, and the selected range as a
+   slate block with a handle on each end (see js/timeline.js). */
+.timeline {
+  flex: none; display: flex; align-items: center; gap: 18px;
+  height: calc(52px + env(safe-area-inset-bottom));
+  padding: 0 10px env(safe-area-inset-bottom) 22px;
+  background: #f7f6f3; border-top: 1px solid #dcdad5;
+  box-shadow: 0 -2px 8px rgba(0,0,0,.12);
+  position: relative; z-index: 1000;
+  user-select: none; -webkit-user-select: none;
+}
+.timeline:empty { display: none; }
+.tl-track { position: relative; flex: 1; min-width: 0; height: 100%; cursor: pointer; touch-action: none; }
+.tl-axis { position: absolute; left: 0; right: 0; top: 24px; height: 2px; background: #cfccc6; border-radius: 1px; }
+.tl-tick { position: absolute; top: 21px; height: 8px; width: 1px; background: #cfccc6; }
+.tl-tick-major { top: 16px; height: 18px; background: #b3afa8; }
+.tl-decade {
+  position: absolute; bottom: 4px; transform: translateX(-50%); z-index: 2;
+  font-size: 11px; color: #8a867f; font-variant-numeric: tabular-nums; pointer-events: none;
+}
+.tl-decade[hidden] { display: none; }
+.tl-decade.in-range { color: #fff; }
+/* Austragungen: dots stacked above the axis at their year */
+.tl-dots {
+  position: absolute; bottom: 30px; transform: translateX(-50%); z-index: 3;
+  display: flex; flex-direction: column-reverse; gap: 1px; pointer-events: none;
+}
+.tl-dots i { width: 6px; height: 6px; border-radius: 50%; box-shadow: 0 0 0 1px #f7f6f3; }
+.tl-dots.in-range i { box-shadow: 0 0 0 1.5px #fff; }
+/* Hover preview of the decade a click selects */
+.tl-ghost {
+  position: absolute; top: 4px; bottom: 4px; border-radius: 4px; pointer-events: none;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.tl-ghost[hidden], .tl-range[hidden] { display: none; }
+.tl-range {
+  position: absolute; top: 4px; bottom: 4px; z-index: 1; cursor: grab;
+  background: color-mix(in srgb, var(--accent) 82%, #fff);
+}
+.tl-range.is-dragging { background: var(--accent); cursor: grabbing; }
+.tl-handle {
+  position: absolute; top: 0; bottom: 0; width: 8px; z-index: 4;
+  background: var(--accent-dark); cursor: ew-resize; touch-action: none;
+}
+/* Bigger invisible grab area for fingers */
+.tl-handle::before { content: ""; position: absolute; top: -4px; bottom: -4px; width: 22px; }
+.tl-handle-from::before { right: 0; }
+.tl-handle-to::before { left: 0; }
+.tl-handle::after {
+  content: ""; position: absolute; top: 50%; margin-top: -4px;
+  border: 4px solid transparent;
+}
+.tl-handle-from { left: -8px; border-radius: 3px 0 0 3px; }
+.tl-handle-from::after { right: 2px; border-right-color: #fff; border-left-width: 0; }
+.tl-handle-to { right: -8px; border-radius: 0 3px 3px 0; }
+.tl-handle-to::after { left: 2px; border-left-color: #fff; border-right-width: 0; }
+.tl-handle:focus-visible { outline: 2px solid #222; outline-offset: 1px; }
+/* Selection chip on the right: "1950–1961 ×", or "Alle Jahre" when nothing is selected */
+.tl-reset {
+  flex: none; display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px 0 12px;
+  border: 0; border-radius: 999px; background: var(--accent); color: #fff;
+  font: inherit; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums;
+  white-space: nowrap; cursor: pointer;
+}
+.tl-reset span { font-size: 17px; line-height: 1; opacity: .85; }
+.tl-reset:not(:disabled):hover { background: var(--accent-dark); }
+.tl-reset:disabled { background: none; color: #9a968f; font-weight: 500; cursor: default; padding: 0 4px; }

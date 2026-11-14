@@ -43,6 +43,7 @@ sw.js                   service worker: caches the app and viewed map tiles
 css/style.css           layout
 js/config.js            map centre, zoom, bounds, base layers, data settings
 js/map.js               creates the Leaflet map; addOverlay() for data layers
+js/timeline.js          year range picker under the map (filters the Austragungen)
 js/app.js               entry point, registers the service worker
 icons/                  app icons (SVG + 192/512 PNG)
 vendor/leaflet/         Leaflet 1.9.4 (BSD-2-Clause), served locally so it works offline
