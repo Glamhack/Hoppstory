@@ -1,0 +1,137 @@
+{
+  "exportiert": "2026-11-14T13:10:00.000Z",
+  "thema": "Rundstreckenverbot in der Schweiz (1955–2026)",
+  "meilensteine": [
+    {
+      "id": "T001",
+      "datum": "1955-06-11",
+      "datumBis": "1958-12-19",
+      "datumAnzeige": "1955–1958",
+      "titel": "Wie das Rundstreckenverbot entstand",
+      "kurztext": "Vom Unglück in Le Mans bis zum Verbot im Strassenverkehrsgesetz: in vier Schritten zum Verbot.",
+      "beschreibung": "Nach der Katastrophe von Le Mans forderten Parlamentarier und Kirchenkreise ein Rennverbot. Der Bundesrat wollte die Frage den Kantonen überlassen, doch das Parlament schrieb das Verbot selbst ins neue Strassenverkehrsgesetz.",
+      "kategorie": "Entstehung",
+      "eventId": "E003",
+      "location": "Bundeshaus, Bern",
+      "start": {
+        "lat": 46.9466,
+        "lng": 7.444
+      },
+      "abstimmung": null,
+      "zuPruefen": false,
+      "schritte": [
+        {
+          "datum": "1955-06-11",
+          "datumAnzeige": "11. Juni 1955",
+          "titel": "Katastrophe von Le Mans",
+          "kurztext": "84 Tote beim 24-Stunden-Rennen. In der Schweiz folgen sofort Forderungen nach einem Rennverbot.",
+          "abstimmung": null,
+          "zuPruefen": false,
+          "quellen": [
+            {
+              "titel": "Übersicht über die Verhandlungen, Sommersession 1955 (Motion Zigerli «Verbot der Autorennen»)",
+              "url": "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/110001035.pdf?ID=110001035",
+              "typ": "Primärquelle",
+              "herausgeber": "Schweizerisches Bundesarchiv"
+            }
+          ]
+        },
+        {
+          "datum": "1957-03-19",
+          "datumAnzeige": "19. März 1957",
+          "titel": "Nationalrat beschliesst das Verbot",
+          "kurztext": "Gegen Bundesrat und Kommission: 66 zu 46 Stimmen für «Rundstreckenrennen mit Motorfahrzeugen sind verboten».",
+          "abstimmung": {
+            "rat": "Nationalrat",
+            "ja": 66,
+            "nein": 46
+          },
+          "zuPruefen": false,
+          "quellen": [
+            {
+              "titel": "Amtliches Bulletin der Bundesversammlung 1957 I, S. 205–237 (Nationalrat, 19.03.1957)",
+              "url": "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/20036288.pdf?ID=20036288",
+              "typ": "Primärquelle",
+              "herausgeber": "Schweizerisches Bundesarchiv"
+            }
+          ]
+        },
+        {
+          "datum": "1958-03-13",
+          "datumAnzeige": "13. März 1958",
+          "titel": "Ständerat stimmt zu",
+          "kurztext": "27 zu 10 Stimmen für das Verbot. Die Minderheit sieht die Strassenhoheit der Kantone verletzt.",
+          "abstimmung": {
+            "rat": "Ständerat",
+            "ja": 27,
+            "nein": 10
+          },
+          "zuPruefen": false,
+          "quellen": [
+            {
+              "titel": "Amtliches Bulletin der Bundesversammlung 1958 II, S. 113–137 (Ständerat, 13.03.1958)",
+              "url": "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/20036546.pdf?ID=20036546",
+              "typ": "Primärquelle",
+              "herausgeber": "Schweizerisches Bundesarchiv"
+            }
+          ]
+        },
+        {
+          "datum": "1958-12-19",
+          "datumAnzeige": "19. Dezember 1958",
+          "titel": "Verbot wird Gesetz (Art. 52 SVG)",
+          "kurztext": "Das Strassenverkehrsgesetz wird verabschiedet: «Öffentliche Rundstreckenrennen mit Motorfahrzeugen sind verboten.»",
+          "abstimmung": null,
+          "zuPruefen": false,
+          "quellen": [
+            {
+              "titel": "Amtliches Bulletin 1958 V, S. 352–354 (Ständerat, 18.12.1958, Bereinigung Art. 49)",
+              "url": "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/20036704.pdf?ID=20036704",
+              "typ": "Primärquelle",
+              "herausgeber": "Schweizerisches Bundesarchiv"
+            }
+          ]
+        }
+      ],
+      "quellen": []
+    },
+    {
+      "id": "T002",
+      "datum": "2026-07-01",
+      "datumAnzeige": "1. Juli 2026",
+      "titel": "Verbot aufgehoben",
+      "kurztext": "Rundstreckenrennen sind wieder erlaubt. Die Kantone erteilen die Bewilligungen.",
+      "beschreibung": "Mehrere Anläufe scheiterten am Ständerat (2007, 2009, 2011). 2015 erlaubte das Parlament eine Ausnahme für Rennen mit Elektrofahrzeugen. Mit der Revision des Strassenverkehrsgesetzes strich das Parlament das Verbot (Ständerat am 31.05.2022 mit 27 zu 15, Schlussabstimmung am 17.03.2023). Die angepasste Verkehrsregelnverordnung gilt seit dem 1. Juli 2026.",
+      "kategorie": "Aufhebung",
+      "eventId": null,
+      "location": "Schweiz",
+      "start": null,
+      "abstimmung": {
+        "rat": "Ständerat",
+        "ja": 27,
+        "nein": 15,
+        "datum": "2022-05-31"
+      },
+      "zuPruefen": false,
+      "quellen": [
+        {
+          "titel": "Curia Vista 21.080 Strassenverkehrsgesetz. Änderung",
+          "url": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20210080",
+          "typ": "Primärquelle",
+          "herausgeber": "Parlamentsdienste"
+        },
+        {
+          "titel": "Bundesrat/ASTRA, 06.05.2026: Rundstreckenrennen wieder zugelassen",
+          "url": "https://www.astra.admin.ch/de/newnsb/rEO-ipY0tkkG",
+          "typ": "Medienmitteilung",
+          "herausgeber": "Bundesamt für Strassen ASTRA"
+        }
+      ]
+    }
+  ],
+  "verbot": {
+    "von": "1958-12-19",
+    "bis": "2026-07-01",
+    "label": "Rundstreckenverbot"
+  }
+}

@@ -44,12 +44,15 @@ css/style.css           layout
 js/config.js            map centre, zoom, bounds, base layers, data settings
 js/map.js               creates the Leaflet map; addOverlay() for data layers
 js/timeline.js          year range picker under the map (filters the Austragungen)
+js/milestones.js        milestone markers, ban band and cards on the timeline
+css/milestones.css      styles for the milestones
 js/events.js            pins, routes, popups and media carousel; shared card renderers
 js/app.js               entry point, registers the service worker
 event.html              event page        (js/event-page.js)
 austragung.html         Austragung page   (js/austragung-page.js)
 data/Data.xlsx          source data: sheets Event, Austragung, Medien, Personen
 data/data.json          the data the app loads, generated from Data.xlsx
+data/meilensteine.json  milestones of the circuit-racing ban (edited by hand)
 tools/xlsx_to_json.py   converts Data.xlsx to data.json
 icons/                  app icons (SVG + 192/512 PNG)
 vendor/leaflet/         Leaflet 1.9.4 (BSD-2-Clause), served locally so it works offline
